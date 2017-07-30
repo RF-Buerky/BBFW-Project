@@ -1,6 +1,8 @@
 # BBFW-Project
 ## Projektbeschreibung
-Dieses Projekt ist das Abschlussprojekt des Modules Informatik an der Technischen Hochschule Bingen. In Gruppen von zwei bis vier Personen bearbeiten dabei die Studenten eine Aufgabenstellung. Die Form, wie die Gruppe dieses Abschlussprojekt bearbeitet entscheidet über die Benotung.
+Dieses Projekt ist das Abschlussprojekt des Modules Informatik an der Technischen Hochschule Bingen. In Gruppen von zwei bis vier Personen bearbeiten dabei die Studenten eine Aufgabenstellung. Die Form, wie die Gruppe dieses Abschlussprojekt bearbeitet entscheidet über die Benotung des Modules.
+
+Der Bearbeitungszeitraum für das Projekt ist vom 30. Juli ab 18:00 Uhr bis zum 13. August um 18:00 Uhr.
 
 Weiter unten kann die Zielstellung/die Aufgabenstellung gelesen werden.
 
