@@ -27,7 +27,7 @@ Es gilt zu beachten:
 Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodieren. Das Projekt dient nicht nur als Prüfung sondern auch als Lehreinheit. Damit die Studierenden sich nichts durch einen Merge zerstören, ist ein Merge auf den master-Branch nur auszufügen, wenn der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog") sein OK gegeben hat. 
 
 ## Zielsetzung / Aufgabenstellung
-Die Aufgabenstellungen sind vier aufeinander folgende Blöcke an Einzelaufgaben. Jeder Aufgabenblock bildet einen Milestone und ist Voraussetzung für den nächsten Block. Nachfolgend sind die Aufgabenstellungen übernommen - Aufgabensteller ist der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog").
+Die Aufgabenstellungen sind vier aufeinander folgende Blöcke an Einzelaufgaben. Jeder Aufgabenblock bildet einen Milestone und ist Voraussetzung für den nächsten Block. Nachfolgend sind die Aufgabenstellungen aus der E-Lerning Plattform [OLAT](https://olat.vcrp.de/auth/RepositoryEntry/1676804160/CourseNode/95999652079122 "Link zur Aufgabenstellung in OLAT") übernommen - Aufgabensteller ist der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog").
 #### Block 1: "Project Infrastructure" - Aufbau der Projektinfrastruktur
 Create the project's infrastructure:
 * create a README.md describing the project and listing your names (they do not have to be real names if you don’t want; GitHub user names are fine as well)
