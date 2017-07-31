@@ -8,4 +8,8 @@ Es gilt im Einzelnen einzuhalten:
 
 - Die Mitwirkenden verschreiben sich dem obersten Ziel, möglichst viele Aufgaben möglichst gut zu lösen.
 
+- Der Umgang ist geprägt von Gemeinschaftssinn. Die Aufgaben müssen letzendlich gemeinsam gelößt werden weshalb offene Kommunikation, Hilfsbereitschaft und konstruktive Kritik mit Verbesserungsvorschlägen besonders erwünscht sind.
+
 - Die Bearbeitung der Aufgaben erfolgt rücksichtsvoll bezüglich der individuellen Benotung. Die Aufgaben sollen nach Möglichkeit gleichmäßig durch die Projekteigner bearbeitet werden können. Erstellt zum Beispiel eine Person alle Issues alleine, nimmt dies den anderen Personen Chancen, sich zu profilieren. Daher soll man etwas geduldig sein.
+
+- Beachte auch die Freundlichkeit gegenüber deinem eigenen Körper - immer schön aufrecht sitzen ;)
