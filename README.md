@@ -1,5 +1,7 @@
 # BBFW-Project
+
 ## Projektbeschreibung
+
 Dieses Projekt ist das Abschlussprojekt des Modules Informatik an der Technischen Hochschule Bingen. In Gruppen von zwei bis vier Personen bearbeiten dabei die Studenten eine Aufgabenstellung. Die Form, wie die Gruppe dieses Abschlussprojekt bearbeitet entscheidet über die Benotung des Modules.
 
 Der Bearbeitungszeitraum für das Projekt ist vom 30. Juli ab 18:00 Uhr bis zum 13. August um 18:00 Uhr.
@@ -7,6 +9,7 @@ Der Bearbeitungszeitraum für das Projekt ist vom 30. Juli ab 18:00 Uhr bis zum 
 Weiter unten kann die Zielstellung/die Aufgabenstellung gelesen werden.
 
 ## Projektteam
+
 Die Bearbeiter des Projektes ist ein Team aus diesen vier Studierenden:
 * [dbaumy](https://github.com/dbaumy "Link zum GitHub-Profil von dbaumy")
 * [jwustmann](https://github.com/jwustmann "Link zum GitHub-Profil von jwustmann")
@@ -17,7 +20,9 @@ Als Betrachter und Ratgeber des Projektes tritt auch der Dozent auf:
 * [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog")
 
 ## Informationen für Mitwirkende
+
 ### Sprachregeln
+
 Für das Projekt gelten festgelegte Regeln für die Sprache. Dies soll Durcheinander bei der Kommunikation miteinander und dem Code vermeiden.
 
 Es gilt zu beachten:
@@ -26,11 +31,15 @@ Es gilt zu beachten:
 * GitHub: mit den verschiedenen Bestandteilen wie Kommentare, Beschreibungen von Issues und PullRequests sowie Milestones auf Deutsch
 
 ### Merge-Regeln
+
 Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodieren. Das Projekt dient nicht nur als Prüfung sondern auch als Lehreinheit. Damit die Studierenden sich nichts durch einen Merge zerstören, ist ein Merge auf den master-Branch nur auszufügen, wenn der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog") sein OK gegeben hat. 
 
 ## Zielsetzung / Aufgabenstellung
+
 Die Aufgabenstellungen sind vier aufeinander folgende Blöcke an Einzelaufgaben. Jeder Aufgabenblock bildet einen Milestone und ist Voraussetzung für den nächsten Block. Nachfolgend sind die Aufgabenstellungen aus der E-Lerning Plattform [OLAT](https://olat.vcrp.de/auth/RepositoryEntry/1676804160/CourseNode/95999652079122 "Link zur Aufgabenstellung in OLAT") übernommen - Aufgabensteller ist der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog").
+
 ### Block 1: "Project Infrastructure" - Aufbau der Projektinfrastruktur
+
 Create the project's infrastructure:
 * create a README.md describing the project and listing your names (they do not have to be real names if you don’t want; GitHub user names are fine as well)
 * add a license and document it in the README
@@ -47,6 +56,7 @@ Create the project's infrastructure:
 * release version 1.0
 
 ### Block 2: "Create a Simple Traffic Simulation" - Einfache Verkehrs-Simulation
+
 Now that the infrastructure is set up, you can write some code. Please always include tests for your code and remember to use issues and pull requests, like described above:
 
 * create a simulation consisting of cars and an abstract, monolithic road network (meaning it does not yet consist of individual roads - it’s just a single network); each car knows whether it wants to drive and the road network has a total capacity for cars; implement a single simulation step (which is supposed to represent one hour), where:
@@ -64,6 +74,7 @@ When all that's done:
 * release version 2.0
 
 ### Block 3: "Extend Simulation to Cover an Entire Day" - Erweiterte Simulation um einen Tag abzubilden
+
 * randomize the decision for whether each individual car can drive or gets delayed; the chance for a delay depends on how many cars or on the road compared to the network’s capacity:
 	* less than at 50% capacity: 5% chance of delay
     * less than at 70% capacity: 10% chance of delay
@@ -86,6 +97,7 @@ When all that's done:
 * release version 3.0
 
 ### Block 4: "Extend Simulation with Various Participants" - Erweiterte Simulation mit verschiedenen Teilnehmern
+
 * extend the simulation to allow for other traffic participants:
     * create a suitable interface, of which the car is one implementation
     * make sure the code simulating individual steps only uses that interface
@@ -106,4 +118,3 @@ When all that's done:
 
 When all that's done:
 * release version 4.0
-
