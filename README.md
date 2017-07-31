@@ -23,7 +23,7 @@ Als Betrachter und Ratgeber des Projektes tritt auch der Dozent auf:
 
 ### Verhaltenskodex - Code of Conduct
 
-Unser Verhaltenskodex ist in der Textdatei [Code of Conduct]( "Link zur Textdatei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen. 
+Unser Verhaltenskodex ist in der Textdatei [Code of Conduct](Code-Of-Conduct.txt "Link zur Textdatei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen. 
 
 Der Verhaltenskodex beinhaltet eine Sammlung von Verhaltensweisen zur der sich alle Mitwirkenden selbstverpflichten. Verstöße gegen den Verhaltenskodex durch Mitwirkende können einen Ausschluss aus der Mitarbeit zur Folge haben.
 
