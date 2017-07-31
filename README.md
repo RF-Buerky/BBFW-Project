@@ -21,7 +21,7 @@ Als Betrachter und Ratgeber des Projektes tritt auch der Dozent auf:
 
 ## License
 
-Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LICENSE.txt") zu lesen. Sie beinhaltet Informationen zu Nutzungsrecht, Schutz und Übertragbarkeit des Codes von diesem Projekt.
+Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LICENSE.txt") zu lesen. Sie beinhaltet Informationen zu Nutzungsrecht, Schutz und Übertragbarkeit des Codes von diesem Projekt. Der Inhalt entspricht der allgemein geläufigen Lizenz des [Massachusetts Institute of Technology - MIT](https://de.wikipedia.org/wiki/MIT-Lizenz "Link zum Wikipedia-Artikel der MIT-Lizenz").
 
 ## Informationen für Mitwirkende
 
