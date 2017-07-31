@@ -6,6 +6,6 @@ Es gilt im Einzelnen einzuhalten:
 
 - Der Umgang untereinander sowie Code und sonstiger Inhalt ist respektvoll (keine Beleidigungen, Demütigungen, Diffamierungen, ...)
 
-- Die Mitwirkenden verschreiben sich dem obersten Ziel, möglichst viele Aufgaben zu lösen.
+- Die Mitwirkenden verschreiben sich dem obersten Ziel, möglichst viele Aufgaben möglichst gut zu lösen.
 
 - Die Bearbeitung der Aufgaben erfolgt rücksichtsvoll bezüglich der individuellen Benotung. Die Aufgaben sollen nach Möglichkeit gleichmäßig durch die Projekteigner bearbeitet werden können. Erstellt zum Beispiel eine Person alle Issues alleine, nimmt dies den anderen Personen Chancen, sich zu profilieren. Daher soll man etwas geduldig sein.
