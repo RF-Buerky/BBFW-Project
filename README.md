@@ -21,6 +21,14 @@ Als Betrachter und Ratgeber des Projektes tritt auch der Dozent auf:
 
 ## Informationen für Mitwirkende
 
+### Verhaltenskodex - Code of Conduct
+
+Unser Verhaltenskodex ist in der Textdatei [Code of Conduct]( "Link zur Textdatei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen. 
+
+Der Verhaltenskodex beinhaltet eine Sammlung von Verhaltensweisen zur der sich alle Mitwirkenden selbstverpflichten. Verstöße gegen den Verhaltenskodex durch Mitwirkende können einen Ausschluss aus der Mitarbeit zur Folge haben.
+
+Für den Ausschluss eines Mitwirkenden ist eine absolute Mehrheit der Projekteigner von Nöten. Handelt es sich bei dem Beschuldigten um einen Projekteigner, so ist dieser nicht Stimmberechtigt. Ein Ausschluss eines Projekteigners kann einzig per Götterurteil des allmächtigen [Gott des Codes](https://github.com/nicolaiparlog "Link zu Profil von Nicolai Parlog") erfolgen.
+
 ### Sprachregeln
 
 Für das Projekt gelten festgelegte Regeln für die Sprache. Dies soll Durcheinander bei der Kommunikation miteinander und dem Code vermeiden.
