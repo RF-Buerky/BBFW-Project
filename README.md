@@ -19,6 +19,10 @@ Die Bearbeiter des Projektes ist ein Team aus diesen vier Studierenden:
 Als Betrachter und Ratgeber des Projektes tritt auch der Dozent auf:
 * [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog")
 
+## License
+
+Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LICENSE.txt") zu lesen. Sie beinhaltet Informationen zu Nutzungsrecht, Schutz und Übertragbarkeit des Codes von diesem Projekt.
+
 ## Informationen für Mitwirkende
 
 ### Sprachregeln
