@@ -21,6 +21,14 @@ Als Betrachter und Ratgeber des Projektes tritt auch der Dozent auf:
 
 ## Informationen für Mitwirkende
 
+### Verhaltenskodex - Code of Conduct
+
+Unser Verhaltenskodex ist in der Datei [Code of Conduct](CODE-OF-CONDUCT.md "Link zur Datei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen. 
+
+Der Verhaltenskodex beinhaltet eine Sammlung von Verhaltensweisen zur der sich alle Mitwirkenden selbstverpflichten. Verstöße gegen den Verhaltenskodex durch fremde Mitwirkende können einen Ausschluss aus der Mitarbeit zur Folge haben.
+
+Für den Ausschluss eines fremden Mitwirkenden ist eine absolute Mehrheit der Projekteigner von Nöten. Handelt es sich bei dem Beschuldigten um einen Projekteigner, so liegt ein Ausschluss nicht in der Macht der Projekteigner. Über das Vorgehen in einem sochen Fall entscheidet einzig allmächtiger [God of Programming](https://github.com/nicolaiparlog "Link zu Profil von Nicolai Parlog"), Breaker der langen Funktionen, Virtuose der Minidrehorgel, Bändiger des Noten-Würfels, Herr der Steckerleisten und Verlängerungskabel, Rechtmäßiger Nachfolger des Professor Herrmann, erster Kotlin-Dozent und Retter im falschen Film.
+
 ### Sprachregeln
 
 Für das Projekt gelten festgelegte Regeln für die Sprache. Dies soll Durcheinander bei der Kommunikation miteinander und dem Code vermeiden.
