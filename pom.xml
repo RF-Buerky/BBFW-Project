@@ -12,7 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<kotlin.version>1.1.2</kotlin.version>
-		<main.class>HelloWorld.kt</main.class>
+		<main.class>HelloWorldKt</main.class>
 	</properties>
 
 	<dependencies>
