@@ -13,9 +13,21 @@ Noch keine Struktur vorhanden - Block 1 war der Setup des Projektes
 Das Projekt ist eine einfache Straßenverkehrs-Simulation. Fahrzeuge sind auf einem Straßennetz unterwegs. Anhand der Kapazität des Straßennetzes und den fahrenden Fahrzeugen wird simuliert, ob die Fahrzeuge sich durch überschreiten der Straßenkapazität verspäten.
 
 ### values
+* <Null> -
 
 ### entities
 
+* car (licensePlate, )
+* roadNetwork (carsCapacity, )
+
 ### methods
+* car: announceDrive
+* car: drive
+* car: logSituation
+* car: printLog
+* roadNetwork: compareAnnouncesToCapacity
+* roadNetwork: scenarioSimulation
+* parseInput
+* parseOutput
 
 ## truktur bei Block 3
