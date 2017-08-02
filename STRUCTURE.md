@@ -4,11 +4,13 @@ Diese Datei bietet eine Übersicht über die OOP-Struktur des Projektes. Diese Z
 
 Das Projekt entwickelt sich über die verschiedenen Aufgabenblöcke hinweg weiter. Eine Erweiterung der Struktur für einen neuen Block wird in einem neuen Abschnitt formuliert - die alte Struktur wird noch beibehalten.
 
-## Release 1.0 - Struktur bei Block 1
+## Struktur bei Block 1
 
 Noch keine Struktur vorhanden - Block 1 war der Setup des Projektes
 
-## Release 2.0 - Struktur bei Block 2
+## Struktur bei Block 2
+
+Das Projekt ist eine einfache Straßenverkehrs-Simulation. Fahrzeuge sind auf einem Straßennetz unterwegs. Anhand der Kapazität des Straßennetzes und den fahrenden Fahrzeugen wird simuliert, ob die Fahrzeuge sich durch überschreiten der Straßenkapazität verspäten.
 
 ### values
 
@@ -16,4 +18,4 @@ Noch keine Struktur vorhanden - Block 1 war der Setup des Projektes
 
 ### methods
 
-## Release 3.0 - Struktur bei Block 3
+## truktur bei Block 3
