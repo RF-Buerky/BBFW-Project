@@ -41,7 +41,7 @@ Es sollte nun die Ausgabe des Programms in der Konsole erscheinen.
 
 ### Verhaltenskodex - Code of Conduct
 
-Unser Verhaltenskodex ist in der Datei [Code of Conduct](CODE-OF-CONDUCT.md "Link zur Datei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen. 
+Unser Verhaltenskodex ist in der Datei [Code of Conduct](CODE_OF_CONDUCT.md "Link zur Datei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen. 
 
 Der Verhaltenskodex beinhaltet eine Sammlung von Verhaltensweisen zur der sich alle Mitwirkenden selbstverpflichten. Verstöße gegen den Verhaltenskodex durch fremde Mitwirkende können einen Ausschluss aus der Mitarbeit zur Folge haben.
 
