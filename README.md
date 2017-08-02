@@ -29,8 +29,7 @@ Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://
 
 Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter, im Ordner `target` befindet sich die .jar-Datei.
 
-
-In Windows PowerShell gibt man ein (der Ort andem man sich Befindet ist egal):  
+In Windows PowerShell gibt man ein (der Pfad, an dem man sich Befindet ist egal):  
 `java -jar ${Pfad zur .jar-Datei}`   
 Also zum Beispiel:   
 `java -jar ${C:\Users\Name\Documents\Studium\2_INFO\Session_3\Tutorial1\target\traffic_solution-1.0.jar}`
@@ -45,7 +44,7 @@ Unser Verhaltenskodex ist in der Datei [Code of Conduct](CODE_OF_CONDUCT.md "Lin
 
 Der Verhaltenskodex beinhaltet eine Sammlung von Verhaltensweisen zur der sich alle Mitwirkenden selbstverpflichten. Verstöße gegen den Verhaltenskodex durch fremde Mitwirkende können einen Ausschluss aus der Mitarbeit zur Folge haben.
 
-Für den Ausschluss eines fremden Mitwirkenden ist eine absolute Mehrheit der Projekteigner von Nöten. Handelt es sich bei dem Beschuldigten um einen Projekteigner, so liegt ein Ausschluss nicht in der Macht der Projekteigner. Über das Vorgehen in einem sochen Fall entscheidet einzig allmächtiger [God of Programming](https://github.com/nicolaiparlog "Link zu Profil von Nicolai Parlog"), Erster seines Namens, Breaker der langen Funktionen, Virtuose der Minidrehorgel, Bändiger des Noten-Würfels, Herr der Steckerleisten und Verlängerungskabel, Rechtmäßiger Nachfolger des Professor Herrmann, erster Kotlin-Dozent und Retter im falschen Film.
+Für den Ausschluss eines fremden Mitwirkenden ist eine absolute Mehrheit der Projekteigner von Nöten. Handelt es sich bei dem Beschuldigten um einen Projekteigner, so liegt ein Ausschluss nicht in der Macht der Projekteigner. Über das Vorgehen in einem solchen Fall entscheidet einzig allmächtiger [God of Programming](https://github.com/nicolaiparlog "Link zu Profil von Nicolai Parlog"), Erster seines Namens, Breaker der langen Funktionen, Virtuose der Minidrehorgel, Bändiger des Noten-Würfels, Herr der Steckerleisten und Verlängerungskabel, Rechtmäßiger Nachfolger des Professor Herrmann, erster Kotlin-Dozent und Retter im falschen Film.
 
 ### Sprachregeln
 
@@ -68,7 +67,7 @@ Die .jar-Datei wird durch das Buildtool [Maven](https://maven.apache.org/ "Link 
 
 Nachfolgend sind die auszuführenden Schritte aufgeführt.
 
->Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispile habe man sich den Release 1.0 heruntergeladen.
+>Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispiel habe man sich den Release 1.0 heruntergeladen.
 
 >Starten von Windows PowerShell und Wechsel bis in den Ordnerpfad der [pom.xml]( XXXXXXXXXXXXXXXXXX Link noch einfügen XXXXXXXXX "Link zur Datei pom.xml")  
 
@@ -83,7 +82,7 @@ Nachfolgend sind die auszuführenden Schritte aufgeführt.
 
 ## Zielsetzung / Aufgabenstellung
 
-Die Aufgabenstellungen sind vier aufeinander folgende Blöcke an Einzelaufgaben. Jeder Aufgabenblock bildet einen Milestone und ist Voraussetzung für den nächsten Block. Nachfolgend sind die Aufgabenstellungen aus der E-Lerning Plattform [OLAT](https://olat.vcrp.de/auth/RepositoryEntry/1676804160/CourseNode/95999652079122 "Link zur Aufgabenstellung in OLAT") übernommen - Aufgabensteller ist der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog").
+Die Aufgabenstellungen sind vier aufeinander folgende Blöcke an Einzelaufgaben. Jeder Aufgabenblock bildet einen Milestone und ist Voraussetzung für den nächsten Block. Nachfolgend sind die Aufgabenstellungen aus der E-Learning Plattform [OLAT](https://olat.vcrp.de/auth/RepositoryEntry/1676804160/CourseNode/95999652079122 "Link zur Aufgabenstellung in OLAT") übernommen - Aufgabensteller ist der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog").
 
 ### Block 1: "Project Infrastructure" - Aufbau der Projektinfrastruktur
 
