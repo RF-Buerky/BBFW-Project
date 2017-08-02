@@ -27,7 +27,7 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 Die Ausführung des Programmes gliedert sich in zwei Arbeitsschritte: Erstellung einer .jar-Datei und als zweites die Ausführung der .jar-Datei.
 
-Zunächst ist noch die Voraussetzung einer Lauffährigen [Maven](https://maven.apache.org/ "Link zur Webseite des Apache-Maven Projektes")-Umgebung zu schaffen. Eine Erläuterung, wie Maven in Windows eingebunden wird, ist [hier]( XXXXXXXXXXXXXXXXXX Link noch einfügen XXXXXXXXX "Link zur Datei mit Maven-Tutorial für Windows")
+Zunächst ist noch die Voraussetzung einer Lauffährigen [Maven](https://maven.apache.org/ "Link zur Webseite des Apache-Maven Projektes")-Umgebung zu schaffen. Eine Erläuterung, wie Maven in Windows eingebunden wird, ist [hier]( http://www.it-adviser.net/apache-maven-installieren/ "Link Webseite IT-Adviser mit Anleitung zur Maven-Installation") zu finden.
 
 ### Erstellung der .jar-Datei
 
