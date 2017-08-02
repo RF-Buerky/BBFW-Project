@@ -35,10 +35,18 @@ Die .jar-Datei wird durch das Buildtool [Maven](https://maven.apache.org/ "Link 
 
 Nachfolgend sind die auszuführenden Schritte aufgeführt.
 
-1. Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispile habe man sich den Release 1.0 heruntergeladen.
-1. Starten von Windows PowerShell und Wechsel bis in den Ordnerpfad der [pom.xml]( XXXXXXXXXXXXXXXXXX Link noch einfügen XXXXXXXXX "Link zur Datei pom.xml")
-   * Den Orderpfad kann man wechseln durch Eingabe von  `cd "Orderpfad"` . Beispiel wenn eine pom.xml in dem Ordner "Turorial1" liegt: `cd "C:\Users\Name\Documents\Studium\2_INFO\Session_3\Tutorial1"`
-1. Eingabe des Befehles `mvn clean install` in die PowerShell Kommandozeile. Nun wird der Code in eine ausführbare Java-Datei kompiliert. Ist PowerShell mit der Ausführung des Befehls fertig und steht "BUILD SUCCESS" am Ende der PowerShell-Ausgabe, so entstand ein Order namens `target` in dem Verzeichnis der pom.xml. In diesen Ordner befindet sich eine dem heruntergeladenen Release entsprechend benannte .jar-Datei - in unserem eingehens genannten Beispiel hießte die Datei "traffic_solution-1.0.jar" XXXXXXXXXXXnamen überprüfenXXXXXXXXXXX.
+>Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispile habe man sich den Release 1.0 heruntergeladen.
+
+>Starten von Windows PowerShell und Wechsel bis in den Ordnerpfad der [pom.xml]( XXXXXXXXXXXXXXXXXX Link noch einfügen XXXXXXXXX "Link zur Datei pom.xml")  
+
+>>Den Orderpfad kann man wechseln durch Eingabe von  
+>> `cd "Orderpfad"`  
+>> Beispiel wenn eine pom.xml in dem Ordner "Turorial1" liegt:   
+>>`cd "C:\Users\Name\Documents\Studium\2_INFO\Session_3\Tutorial1"`
+
+> Eingabe in die Kommandozeile bei PowerShell von:  
+>`mvn clean install`
+>> Nun wird der Code in eine ausführbare Java-Datei kompiliert. Ist PowerShell mit der Ausführung des Befehls fertig und steht "BUILD SUCCESS" am Ende der PowerShell-Ausgabe, so entstand ein Order namens `target` in dem Verzeichnis der pom.xml. In diesen Ordner befindet sich eine dem heruntergeladenen Release entsprechend benannte .jar-Datei - in unserem eingehens genannten Beispiel hieße die Datei "traffic_solution-1.0.jar" XXXXXXXXXXXnamen überprüfenXXXXXXXXXXX.
 
 Die Ausführung der .jar-Datei ist im nächten Abschnitt beschrieben
 
