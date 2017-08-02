@@ -25,15 +25,10 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 ## Ausführen des Programmes - How to launch the application
 
-Die Ausführung des Programmes gliedert sich in zwei Arbeitsschritte: Erstellung einer .jar-Datei und als zweites die Ausführung der .jar-Datei.
+Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
 
-Zunächst ist noch die Voraussetzung einer Lauffährigen [Maven](https://maven.apache.org/ "Link zur Webseite des Apache-Maven Projektes")-Umgebung zu schaffen. Eine Erläuterung, wie Maven in Windows eingebunden wird, ist [hier]( http://www.it-adviser.net/apache-maven-installieren/ "Link Webseite IT-Adviser mit Anleitung zur Maven-Installation") zu finden.
+Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter, im Ordner `target` befindet sich die .jar-Datei.
 
-
-
-Die Ausführung der .jar-Datei ist im nächten Abschnitt beschrieben
-
-### Ausführung der .jar-Datei
 
 In Windows PowerShell gibt man ein (der Ort andem man sich Befindet ist egal):  
 `java -jar ${Pfad zur .jar-Datei}`   
@@ -66,6 +61,8 @@ Es gilt zu beachten:
 Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodieren. Das Projekt dient nicht nur als Prüfung sondern auch als Lehreinheit. Damit die Studierenden sich nichts durch einen Merge zerstören, ist ein Merge auf den master-Branch nur auszufügen, wenn der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog") sein OK gegeben hat. 
 
 ### Erstellung der .jar-Datei zum Ausführen
+
+Zunächst ist noch die Voraussetzung einer Lauffährigen [Maven](https://maven.apache.org/ "Link zur Webseite des Apache-Maven Projektes")-Umgebung zu schaffen. Eine Erläuterung, wie Maven in Windows eingebunden wird, ist [hier]( http://www.it-adviser.net/apache-maven-installieren/ "Link Webseite IT-Adviser mit Anleitung zur Maven-Installation") zu finden.
 
 Die .jar-Datei wird durch das Buildtool [Maven](https://maven.apache.org/ "Link zur Webseite des Apache-Maven Projektes") aus dem Kotlin-Code kompiliert. Erst durch das Kompilieren wird aus dem für das System nicht ausführbaren Kotlin-Code ein ausführbares Java-Programm.
 
