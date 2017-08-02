@@ -38,4 +38,4 @@ Das Projekt ist eine einfache Straßenverkehrs-Simulation. Fahrzeuge sind auf ei
 * parseOutput
 	- the simulations output of delays and not-delays are exported into a csv-file
 
-## truktur bei Block 3
+## Struktur bei Block 3
