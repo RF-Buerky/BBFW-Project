@@ -23,6 +23,20 @@ Als Betrachter und Ratgeber des Projektes tritt auch der Dozent auf:
 
 Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LICENSE.txt") zu lesen. Sie beinhaltet Informationen zu Nutzungsrecht, Schutz und Übertragbarkeit des Codes von diesem Projekt. Der Inhalt entspricht der allgemein geläufigen Lizenz des [Massachusetts Institute of Technology - MIT](https://de.wikipedia.org/wiki/MIT-Lizenz "Link zum Wikipedia-Artikel der MIT-Lizenz").
 
+## Ausführen des Programmes - How to launch the application
+
+Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
+
+Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter, im Ordner `target` befindet sich die .jar-Datei.
+
+
+In Windows PowerShell gibt man ein (der Ort andem man sich Befindet ist egal):  
+`java -jar ${Pfad zur .jar-Datei}`   
+Also zum Beispiel:   
+`java -jar ${C:\Users\Name\Documents\Studium\2_INFO\Session_3\Tutorial1\target\traffic_solution-1.0.jar}`
+
+Es sollte nun die Ausgabe des Programms in der Konsole erscheinen.
+
 ## Informationen für Mitwirkende
 
 ### Verhaltenskodex - Code of Conduct
@@ -45,6 +59,27 @@ Es gilt zu beachten:
 ### Merge-Regeln
 
 Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodieren. Das Projekt dient nicht nur als Prüfung sondern auch als Lehreinheit. Damit die Studierenden sich nichts durch einen Merge zerstören, ist ein Merge auf den master-Branch nur auszufügen, wenn der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog") sein OK gegeben hat. 
+
+### Erstellung der .jar-Datei zum Ausführen
+
+Zunächst ist noch die Voraussetzung einer Lauffährigen [Maven](https://maven.apache.org/ "Link zur Webseite des Apache-Maven Projektes")-Umgebung zu schaffen. Eine Erläuterung, wie Maven in Windows eingebunden wird, ist [hier]( http://www.it-adviser.net/apache-maven-installieren/ "Link Webseite IT-Adviser mit Anleitung zur Maven-Installation") zu finden.
+
+Die .jar-Datei wird durch das Buildtool [Maven](https://maven.apache.org/ "Link zur Webseite des Apache-Maven Projektes") aus dem Kotlin-Code kompiliert. Erst durch das Kompilieren wird aus dem für das System nicht ausführbaren Kotlin-Code ein ausführbares Java-Programm.
+
+Nachfolgend sind die auszuführenden Schritte aufgeführt.
+
+>Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispile habe man sich den Release 1.0 heruntergeladen.
+
+>Starten von Windows PowerShell und Wechsel bis in den Ordnerpfad der [pom.xml]( XXXXXXXXXXXXXXXXXX Link noch einfügen XXXXXXXXX "Link zur Datei pom.xml")  
+
+>>Den Orderpfad kann man wechseln durch Eingabe von  
+>> `cd "Orderpfad"`  
+>> Beispiel wenn eine pom.xml in dem Ordner "Turorial1" liegt:   
+>>`cd "C:\Users\Name\Documents\Studium\2_INFO\Session_3\Tutorial1"`
+
+> Eingabe in die Kommandozeile bei PowerShell von:  
+>`mvn clean install`
+>> Nun wird der Code in eine ausführbare Java-Datei kompiliert. Ist PowerShell mit der Ausführung des Befehls fertig und steht "BUILD SUCCESS" am Ende der PowerShell-Ausgabe, so entstand ein Order namens `target` in dem Verzeichnis der pom.xml. In diesen Ordner befindet sich eine dem heruntergeladenen Release entsprechend benannte .jar-Datei - in unserem eingehens genannten Beispiel hieße die Datei "traffic_solution-1.0.jar" XXXXXXXXXXXnamen überprüfenXXXXXXXXXXX.
 
 ## Zielsetzung / Aufgabenstellung
 
