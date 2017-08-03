@@ -1,7 +1,7 @@
 package traffic_simulation
 
-// Import for parsing library
-import com.univocity.parsers.CsvParser
+// Imports for parsing library
+import com.univocity.parsers.csv.CsvParser
 import com.univocity.parsers.csv.CsvParserSettings
 
 fun main (args: Array<String>){
