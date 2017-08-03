@@ -28,6 +28,7 @@ fun main (args: Array<String>) {
     // analyze (parse) of the readed csv
     val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
 
+    // insert the parsed information of csv-file in usable lists
     for (record in allRows) {
 
         val id_String : String = record.values.get(0)
@@ -37,7 +38,7 @@ fun main (args: Array<String>) {
         val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
 
         // This function is not yet implement in the class Vehicle
-        addVehicleToVehicles( id = id_Int , wannaDrive = wannaDrive_Boolean )
+        // adVehicleToVehicles( id = id_Int , wannaDrive = wannaDrive_Boolean )
 
     }
 
