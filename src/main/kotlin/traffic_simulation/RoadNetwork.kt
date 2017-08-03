@@ -11,9 +11,7 @@ class RoadNetwork(val capacity : Double){
         var capacityDemand : Double = 0.0
 
         for (vehicle in vehicles){
-            if(vehicle.wannaDrive){
                 capacityDemand = capacityDemand + vehicle.capacityFactor
-            }
         }
         return capacityDemand
     }
