@@ -25,6 +25,13 @@ class roadNetwork(val capacity : Double){
         }
         return false
     }
+
+    fun delayVehicles(vehicles: MutableList<vehicle>){
+        for(vehicle in vehicles){
+            vehicle.delayed = true
+        }
+    }
+
 }
 
 val testRoad:roadNetwork= roadNetwork(8.0)
