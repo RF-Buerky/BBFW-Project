@@ -32,7 +32,7 @@ Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu 
 In Windows PowerShell gibt man ein (der Pfad, an dem man sich Befindet ist egal):  
 `java -jar "PfadZurDatei"`   
 Also zum Beispiel:   
-`java -jar "C:\Users\Name\Documents\2_INFO\\Tutorial1\traffic_solution-1.0.jar"`
+`java -jar "C:\Users\Name\Documents\2_INFO\Tutorial1\traffic_solution-1.0.jar"`
 
 Alternativ kann man mit `cd "Pfad"` direkt in den Ordnerpfad der .jar-Datei gehen. Dann reicht `java -jar "Dateiname.jar"` als Eingabe, um das Programm auszuführen.
 
