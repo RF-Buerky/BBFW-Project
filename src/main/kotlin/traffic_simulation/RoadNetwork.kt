@@ -24,11 +24,6 @@ class RoadNetwork(val capacity : Double){
         return false
     }
 
-    fun delayVehicles(vehicles: List<Vehicle>){
-        for(vehicle in vehicles){
-            vehicle.delayed = true
-        }
-    }
 
 }
 
