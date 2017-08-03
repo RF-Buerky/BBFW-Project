@@ -18,6 +18,13 @@ class roadNetwork(val capacity : Double){
         return capacityDemand
     }
 
+
+    fun checkForTrafficJam (demand : Double):Boolean{
+        if (capacity<demand){
+            return true
+        }
+        return false
+    }
 }
 
 val testRoad:roadNetwork= roadNetwork(8.0)
