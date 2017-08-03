@@ -1,11 +1,12 @@
 package traffic_simulation
 
 // Imports for parsing library
+import com.univocity.parsers.common.record.Record
 import com.univocity.parsers.csv.CsvParser
 import com.univocity.parsers.csv.CsvParserSettings
 import java.io.*
 
-fun main (args: Array<String>){
+fun main (args: Array<String>) {
 
 
     // The information of vehicles and their interest to drive is given in a csv-file
@@ -16,7 +17,7 @@ fun main (args: Array<String>){
     val settings = CsvParserSettings()
     settings.format.setLineSeparator("\n")
     settings.isHeaderExtractionEnabled = true
-        // this is to make the parser ignoring the first line in the csv-file
+    // this is to make the parser ignoring the first line in the csv-file
 
     // creating a parser with the former made settings
     val csvParser = CsvParser(settings)
@@ -25,11 +26,20 @@ fun main (args: Array<String>){
     val reader = FileAccess().getReader("/driveInterest.csv")
 
     // analyze (parse) of the readed csv
-    val allRows: MutableList<Array<String>> = csvParser.parseAll(reader)
+    val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
 
-    for (record in allRows){
-        println(record)
+    for (record in allRows) {
+
+        val id_String : String = record.values.get(0)
+        val wannaDrive_String : String = record.values.get(1)
+
+        val id_Int : Int = id_String.toInt()
+        val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
+
+        addVehicleToVehicles( id_Int , wannaDrive_Boolean )
+
     }
+
 }
 
 // This class is needet for parsing
