@@ -22,7 +22,7 @@ fun main (args: Array<String>){
     val csvParser = CsvParser(settings)
 
     // reading of the csv-file
-    val reader = FileAccess().getReader("driveInterest.csv")
+    val reader = FileAccess().getReader("/driveInterest.csv")
 
     // analyze (parse) of the readed csv
     val allRows: MutableList<Array<String>> = csvParser.parseAll(reader)
