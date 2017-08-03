@@ -27,7 +27,7 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
 
-Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter. Im heruntergeladenen Ordner befindet sch die .jar-Datei.
+Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter. Im heruntergeladenen Ordner befindet sich die .jar-Datei.
 
 In Windows PowerShell gibt man ein (der Pfad, an dem man sich Befindet ist egal):  
 `java -jar "PfadZurDatei"`   
