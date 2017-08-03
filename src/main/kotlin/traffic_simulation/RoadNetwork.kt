@@ -1,11 +1,11 @@
 package traffic_simulation
 
-class roadNetwork(val capacity : Double){
+class RoadNetwork(val capacity : Double){
 
     //methods use lists of vehicles; the lists origin is not specified at the moment
-    //as the functions dont need to know the origin to work
+    //as the functions don´t need to know the origin to work
 
-    fun calculateDemand(vehicles:MutableList<vehicle>): Double{
+    fun calculateDemand(vehicles:List<Vehicle>): Double{
         // a list of vehicles given to the function gets screened for the capacityFactor attribute
         //and adds these Doubles to a total capacity demand for this scenario (=1 hour)
         var capacityDemand : Double = 0.0
@@ -26,7 +26,7 @@ class roadNetwork(val capacity : Double){
         return false
     }
 
-    fun delayVehicles(vehicles: MutableList<vehicle>){
+    fun delayVehicles(vehicles: List<Vehicle>){
         for(vehicle in vehicles){
             vehicle.delayed = true
         }
@@ -34,4 +34,4 @@ class roadNetwork(val capacity : Double){
 
 }
 
-val testRoad:roadNetwork= roadNetwork(8.0)
+val testRoad: RoadNetwork = RoadNetwork(8.0)
