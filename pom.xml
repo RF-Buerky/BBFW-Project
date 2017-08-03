@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 		xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
@@ -11,20 +10,16 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
-
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<kotlin.version>1.1.3-2</kotlin.version>
 		<main.class>HelloWorldKt</main.class>
-
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-stdlib</artifactId>
 			<version>${kotlin.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -34,16 +29,13 @@
 	</dependencies>
 
 	<build>
-
 		<sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
 		<testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
-
 		<plugins>
 			<plugin>
 				<artifactId>kotlin-maven-plugin</artifactId>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<version>${kotlin.version}</version>
-
 				<executions>
 					<execution>
 						<id>compile</id>
@@ -51,7 +43,6 @@
 							<goal>compile</goal>
 						</goals>
 					</execution>
-
 					<execution>
 						<id>test-compile</id>
 						<goals>
@@ -59,14 +50,11 @@
 						</goals>
 					</execution>
 				</executions>
-
 			</plugin>
 			<plugin>
-
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.0.0</version>
-
 				<executions>
 					<execution>
 						<id>make-assembly</id>
@@ -86,9 +74,7 @@
 						</configuration>
 					</execution>
 				</executions>
-
 			</plugin>
 		</plugins>
-
 	</build>
 </project>
