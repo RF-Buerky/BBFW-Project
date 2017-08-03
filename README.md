@@ -27,12 +27,14 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
 
-Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter, im Ordner `target` befindet sich die .jar-Datei.
+Lade ein [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter. Im heruntergeladenen Ordner befindet sch die .jar-Datei.
 
 In Windows PowerShell gibt man ein (der Pfad, an dem man sich Befindet ist egal):  
-`java -jar ${Pfad zur .jar-Datei}`   
+`java -jar "PfadZurDatei"`   
 Also zum Beispiel:   
-`java -jar ${C:\Users\Name\Documents\Studium\2_INFO\Session_3\Tutorial1\target\traffic_solution-1.0.jar}`
+`java -jar "C:\Users\Name\Documents\2_INFO\\Tutorial1\traffic_solution-1.0.jar}`
+
+Alternativ kann man mit `cd "Pfad"` direkt in den Ordnerpfad der .jar-Datei gehen. Dann reicht `java -jar "Dateiname.jar"` als Eingabe, um das Programm auszuführen.
 
 Es sollte nun die Ausgabe des Programms in der Konsole erscheinen.
 
