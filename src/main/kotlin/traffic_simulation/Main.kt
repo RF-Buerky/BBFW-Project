@@ -36,7 +36,8 @@ fun main (args: Array<String>) {
         val id_Int : Int = id_String.toInt()
         val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
 
-        addVehicleToVehicles( id_Int , wannaDrive_Boolean )
+        // This function is not yet implement in the class Vehicle
+        addVehicleToVehicles( id = id_Int , wannaDrive = wannaDrive_Boolean )
 
     }
 
