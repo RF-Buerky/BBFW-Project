@@ -70,7 +70,7 @@ Nachfolgend sind die auszuführenden Schritte aufgeführt.
 
 >Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispile habe man sich den Release 1.0 heruntergeladen.
 
->Starten von Windows PowerShell und Wechsel bis in den Ordnerpfad der [pom.xml]( XXXXXXXXXXXXXXXXXX Link noch einfügen XXXXXXXXX "Link zur Datei pom.xml")  
+>Starten von Windows PowerShell und Wechsel bis in den Ordnerpfad der [pom.xml]( https://github.com/RF-Buerky/BBFW-Project/blob/master/pom.xml "Link zur Datei pom.xml") (dorthin, wie diese Datei auf der lokalen Maschine liegt).  
 
 >>Den Orderpfad kann man wechseln durch Eingabe von  
 >> `cd "Orderpfad"`  
@@ -79,7 +79,7 @@ Nachfolgend sind die auszuführenden Schritte aufgeführt.
 
 > Eingabe in die Kommandozeile bei PowerShell von:  
 >`mvn clean install`
->> Nun wird der Code in eine ausführbare Java-Datei kompiliert. Ist PowerShell mit der Ausführung des Befehls fertig und steht "BUILD SUCCESS" am Ende der PowerShell-Ausgabe, so entstand ein Order namens `target` in dem Verzeichnis der pom.xml. In diesen Ordner befindet sich eine dem heruntergeladenen Release entsprechend benannte .jar-Datei - in unserem eingehens genannten Beispiel hieße die Datei "traffic_solution-1.0.jar" XXXXXXXXXXXnamen überprüfenXXXXXXXXXXX.
+>> Nun wird der Code in eine ausführbare Java-Datei kompiliert. Ist PowerShell mit der Ausführung des Befehls fertig und steht "BUILD SUCCESS" am Ende der PowerShell-Ausgabe, so entstand ein Order namens `target` in dem Verzeichnis der pom.xml. In diesen Ordner befindet sich eine dem heruntergeladenen Release entsprechend benannte .jar-Datei - in unserem eingehens genannten Beispiel hieße die Datei "traffic_solution-1.0.jar".
 
 ## Zielsetzung / Aufgabenstellung
 
