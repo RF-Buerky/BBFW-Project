@@ -1,4 +1,4 @@
-# BBFW-Project
+﻿# BBFW-Project
 
 ## Projektbeschreibung
 
@@ -42,7 +42,7 @@ Es sollte nun die Ausgabe des Programms in der Konsole erscheinen.
 
 ### Verhaltenskodex - Code of Conduct
 
-Unser Verhaltenskodex ist in der Datei [Code of Conduct](CODE_OF_CONDUCT.md "Link zur Datei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen. 
+Unser Verhaltenskodex ist in der Datei [Code of Conduct](CODE_OF_CONDUCT.md "Link zur Datei Code of Conduct") festgehalten. Vor der Mitwirkung beim Projekt wird diese Datei bitte durchgelesen.
 
 Der Verhaltenskodex beinhaltet eine Sammlung von Verhaltensweisen zur der sich alle Mitwirkenden selbstverpflichten. Verstöße gegen den Verhaltenskodex durch fremde Mitwirkende können einen Ausschluss aus der Mitarbeit zur Folge haben.
 
@@ -59,7 +59,7 @@ Es gilt zu beachten:
 
 ### Merge-Regeln
 
-Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodieren. Das Projekt dient nicht nur als Prüfung sondern auch als Lehreinheit. Damit die Studierenden sich nichts durch einen Merge zerstören, ist ein Merge auf den master-Branch nur auszufügen, wenn der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog") sein OK gegeben hat. 
+Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodieren. Das Projekt dient nicht nur als Prüfung sondern auch als Lehreinheit. Damit die Studierenden sich nichts durch einen Merge zerstören, ist ein Merge auf den master-Branch nur auszufügen, wenn der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog") sein OK gegeben hat.
 
 ### Erstellung der .jar-Datei zum Ausführen
 
