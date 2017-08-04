@@ -13,6 +13,7 @@ class RoadNetworkTest {
         val AUDI    : Vehicle = Vehicle(2, true)
         val VOLVO   : Vehicle = Vehicle(3, true)
 
+
         val cars : List<Vehicle> = listOf(BMW,AUDI,VOLVO)
 
         val calculated = road.calculateDemand(cars)
