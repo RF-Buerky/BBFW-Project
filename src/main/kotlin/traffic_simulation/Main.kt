@@ -8,10 +8,9 @@ import java.io.*
 
 fun main(args: Array<String>) {
 
-    val roadNetwork : RoadNetwork = RoadNetwork(capacity = 7.0)
+    val testRoad : RoadNetwork = RoadNetwork(capacity = 8.0)
 
-    val driveInterest : MutableList<Vehicle>
-    driveInterest = parseInputOfCSV(fileName = "driveInterest.csv")
+    val driveInterest : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
 
 
@@ -21,10 +20,6 @@ fun main(args: Array<String>) {
 fun scenario(vehicleList: List<Vehicle>, road: RoadNetwork){
     road.calculateTraffic(vehicleList)
 }
-
-
-val testRoad: RoadNetwork = RoadNetwork(8.0)
-
 
 
 
