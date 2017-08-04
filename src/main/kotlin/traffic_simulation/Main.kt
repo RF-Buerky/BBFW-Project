@@ -11,9 +11,11 @@ fun main(args: Array<String>) {
 
     val vehiclesInterests : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
-    testRoad.gatherPlansToDrive(vehiclesInterests)
+    val simulationResults : List<Vehicle> = testRoad.scenario(vehiclesInterests)
 
-    println()
+    for (result in simulationResults) {
+        println("Vehicle '${result.id}' is delayed: ${result.delayed}")
+    }
 
    testScenario(testRoad)
 }
