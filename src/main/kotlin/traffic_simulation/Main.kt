@@ -21,6 +21,20 @@ fun scenario(vehicleList: List<Vehicle>, road: RoadNetwork){
     road.calculateTraffic(vehicleList)
 }
 
+// Creation of sufficient cars for local testing without using CSV input for now
+val BMW1: Vehicle = Vehicle (id = 1 , wannaDrive = true )
+val BMW2 : Vehicle = Vehicle (id = 2 , wannaDrive = true )
+val BMW3 : Vehicle = Vehicle (id = 3 , wannaDrive = true )
+val BMW4 : Vehicle = Vehicle (id = 4 , wannaDrive = true )
+val BMW5 : Vehicle = Vehicle (id = 5 , wannaDrive = true )
+val BMW6 : Vehicle = Vehicle (id = 6 , wannaDrive = true )
+val BMW7 : Vehicle = Vehicle (id = 7 , wannaDrive = true )
+val BMW8 : Vehicle = Vehicle (id = 8 , wannaDrive = true )
+val BMW9 : Vehicle = Vehicle (id = 9 , wannaDrive = true )
+val BMW10 : Vehicle = Vehicle (id = 10 , wannaDrive = true )
+val BMW11 : Vehicle = Vehicle (id = 11 , wannaDrive = true )
+val BMW12 : Vehicle = Vehicle (id = 12 , wannaDrive = true )
+val testList : List<Vehicle> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
 
 
 // This class is needet for parsing
@@ -36,7 +50,7 @@ class FileAccess {
     }*/
     }
 
-fun parseInputOfCSV (fileName : String ): MutableList<Vehicle>{
+fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
 
     val driveInterest : MutableList<Vehicle> = mutableListOf()
 
