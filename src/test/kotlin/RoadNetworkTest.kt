@@ -50,7 +50,7 @@ class RoadNetworkTest {
 
     @Test
     fun doesCheckForTrafficJamWork3() {//Capacity equal to demand
-        val road = RoadNetwork(20.0)
+        val road = RoadNetwork(3.0)
 
         val BMW     : Vehicle = Vehicle(1.0)
         val AUDI    : Vehicle = Vehicle(1.0)
