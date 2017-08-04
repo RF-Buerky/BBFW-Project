@@ -8,6 +8,43 @@ import java.io.*
 
 fun main(args: Array<String>) {
 
+    val roadNetwork : RoadNetwork = RoadNetwork(capacity = 7.0)
+
+
+
+
+
+
+   // scenario(testList, testRoad)
+}
+
+fun scenario(vehicleList: List<Vehicle>, road: RoadNetwork){
+    road.calculateTraffic(vehicleList)
+}
+
+
+val testRoad: RoadNetwork = RoadNetwork(8.0)
+
+
+
+
+// This class is needet for parsing
+class FileAccess {
+
+        fun getReader(path: String):Reader {
+                return InputStreamReader(this.javaClass.getResourceAsStream(path), "UTF-8")
+            }
+
+    /*    fun getWriter(path: String): Writer {
+        val file = File(path)
+        return FileWriter(file)
+    }*/
+    }
+
+fun parseInputOfCSV (fileName : String ): MutableList<Vehicle>{
+
+    val driveInterest : MutableList<Vehicle> = mutableListOf()
+
     // The information of vehicles and their interest to drive is given in a csv-file
     // Therefore we use a library to parse
 
@@ -36,34 +73,9 @@ fun main(args: Array<String>) {
         val id_Int : Int = id_String.toInt()
         val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
 
-        // This function is not yet implement in the class Vehicle
-        // addInputToVehicles( id = id_Int , wannaDrive = wannaDrive_Boolean )
+        driveInterest.add ( Vehicle(id = id_Int , wannaDrive = wannaDrive_Boolean ) )
 
     }
 
-
-   // scenario(testList, testRoad)
+    return driveInterest
 }
-
-fun scenario(vehicleList: List<Vehicle>, road: RoadNetwork){
-    road.calculateTraffic(vehicleList)
-}
-
-
-val testRoad: RoadNetwork = RoadNetwork(8.0)
-
-
-
-
-// This class is needet for parsing
-class FileAccess {
-
-        fun getReader(path: String):Reader {
-                return InputStreamReader(this.javaClass.getResourceAsStream(path), "UTF-8")
-            }
-
-    /*    fun getWriter(path: String): Writer {
-        val file = File(path)
-        return FileWriter(file)
-    }*/
-    }
