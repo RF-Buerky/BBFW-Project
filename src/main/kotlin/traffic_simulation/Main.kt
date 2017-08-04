@@ -8,6 +8,9 @@ import java.io.*
 
 fun main(args: Array<String>) {
 
+
+
+
     scenario(testList, testRoad)
 }
 
@@ -33,3 +36,17 @@ val FORD    : Vehicle = Vehicle(1.0)
 val OPEL    : Vehicle = Vehicle(1.0)
 
 val testList : List<Vehicle> = listOf(BMW, AUDI, VOLVO, VW, TESLA, SUZUKI, HONDA, FERRARI, PORSCHE, DAIHATSU, FORD, OPEL)
+
+
+// This class is needet for parsing
+class FileAccess {
+
+        fun getReader(path: String):Reader {
+                return InputStreamReader(this.javaClass.getResourceAsStream(path), "UTF-8")
+            }
+    
+    /*    fun getWriter(path: String): Writer {
+        val file = File(path)
+        return FileWriter(file)
+    }*/
+    }
