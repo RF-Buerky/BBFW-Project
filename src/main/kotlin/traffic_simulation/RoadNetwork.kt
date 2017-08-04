@@ -25,6 +25,7 @@ class RoadNetwork(val capacity : Double){
     }
 
 
+
 }
 
-val testRoad: RoadNetwork = RoadNetwork(8.0)
+
