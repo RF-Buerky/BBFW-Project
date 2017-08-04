@@ -1,11 +1,10 @@
 package traffic_simulation
 
-import java.io.InputStreamReader
-import java.io.Reader
-
 /**
  * This class is just for parsing
  */
+import java.io.InputStreamReader
+import java.io.Reader
 
 class FileAccess {
 
