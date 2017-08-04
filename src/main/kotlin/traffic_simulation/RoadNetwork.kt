@@ -2,21 +2,21 @@ package traffic_simulation
 
 class RoadNetwork(val capacity : Int){
 
-    val CarsPlaningToDrive : MutableList<Car> = mutableListOf()
+    val vehiclesPlanningToDrive: MutableList<Vehicle> = mutableListOf()
     var capacityLoadByInterests : Int = 0
 
     //methods use lists of vehicles; the lists origin is not specified at the moment
     //as the functions don´t need to know the origin to work
 
 
-    fun gatherPlansToDrive (allVehiclesPlans : List<Car>): MutableList<Car> {
+    fun gatherPlansToDrive (allVehiclesPlans : List<Vehicle>): MutableList<Vehicle> {
 
-        val gatheredPlansToDrive : MutableList<Car> = mutableListOf()
+        val gatheredPlansToDrive : MutableList<Vehicle> = mutableListOf()
 
         for (vehicle in allVehiclesPlans){
             if (vehicle.wannaDrive()){
                 gatheredPlansToDrive.add(vehicle)
-                CarsPlaningToDrive.add(vehicle)
+                vehiclesPlanningToDrive.add(vehicle)
             }
         }
 
@@ -24,7 +24,7 @@ class RoadNetwork(val capacity : Int){
     }
 
 
-    fun calculateDemand(vehiclesDrivingPlans:List<Car>): Int{
+    fun calculateDemand(vehiclesDrivingPlans:List<Vehicle>): Int{
 
         // a list of vehicles given to the function gets screened for the capacityFactor attribute
         //and adds these Doubles to a total capacity demand for this scenario (=1 hour)
@@ -46,9 +46,10 @@ class RoadNetwork(val capacity : Int){
     }
 
 
-    fun calculateTraffic (vehicleList: List<Car>){
+    fun calculateTraffic (vehicleList: List<Vehicle>){
         if(checkForTrafficJam(calculateDemand(vehicleList))){
             println("All vehicles are being delayed")
+            // missing function like "setVehiclesDelayed"
 
         }else {
             println("No traffic jam - this is joyful driving")
