@@ -10,7 +10,8 @@ fun main(args: Array<String>) {
 
     val roadNetwork : RoadNetwork = RoadNetwork(capacity = 7.0)
 
-    parseInputOfCSV(fileName = "driveInterest.csv")
+    val driveInterest : MutableList<Vehicle>
+    driveInterest = parseInputOfCSV(fileName = "driveInterest.csv")
 
 
 
