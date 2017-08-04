@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
 
     println()
 
-//   testScenario(testRoad)
+   testScenario(testRoad)
 }
 
 fun testScenario(road: RoadNetwork) {
