@@ -46,7 +46,7 @@ class RoadNetwork(val capacity : Int){
     }
 
 
-    fun scanario (vehicleList: List<Vehicle>){
+    fun scenario(vehicleList: List<Vehicle>){
         val demand : Int = calculateDemand(vehicleList)
         if(checkForTrafficJam(demand)){
             println("All vehicles are being delayed")
