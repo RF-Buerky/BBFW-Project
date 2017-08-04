@@ -14,7 +14,8 @@ fun main(args: Array<String>) {
     testRoad.gatherPlansToDrive(vehiclesInterests)
 
     println()
-   // scenario(testList, testRoad)
+
+   scenario(testList, testRoad)
 }
 
 fun scenario(vehicleList: List<Car>, road: RoadNetwork){

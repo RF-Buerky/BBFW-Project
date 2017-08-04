@@ -2,8 +2,6 @@ package traffic_simulation
 
 class RoadNetwork(val capacity : Double){
 
-    val testRoad : RoadNetwork = RoadNetwork(capacity = 8.0)
-
     val CarsPlaningToDrive : MutableList<Car> = mutableListOf()
     var capacityLoadByInterests : Int = 0
 
@@ -41,7 +39,7 @@ class RoadNetwork(val capacity : Double){
 
 
     fun checkForTrafficJam (demand : Int):Boolean{
-        if (testRoad.capacity < demand){
+        if (capacity < demand){
             return true
         }
         return false
