@@ -10,5 +10,9 @@ class Vehicle(val id : Int, val wannaDrive : Boolean, var delayed : Boolean = fa
     fun wannaDrive (): Boolean {
         return wannaDrive
     }
+
+    fun delayed (): Vehicle {
+        return Vehicle (id , wannaDrive , true)
+    }
 }
 
