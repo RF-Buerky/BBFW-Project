@@ -1,6 +1,6 @@
 package traffic_simulation
 
-class RoadNetwork(val capacity : Double){
+class RoadNetwork(val capacity : Int){
 
     val CarsPlaningToDrive : MutableList<Car> = mutableListOf()
     var capacityLoadByInterests : Int = 0
