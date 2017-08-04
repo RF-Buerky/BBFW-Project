@@ -31,7 +31,7 @@ class RoadNetwork(val capacity : Int){
         var capacityDemand : Int = 0
 
         for (vehicle in vehiclesDrivingPlans){
-            capacityDemand = capacityDemand +1
+            capacityDemand = capacityDemand + 1
             capacityLoadByInterests = capacityLoadByInterests +1
             }
         return capacityDemand
@@ -47,7 +47,8 @@ class RoadNetwork(val capacity : Int){
 
 
     fun calculateTraffic (vehicleList: List<Vehicle>){
-        if(checkForTrafficJam(calculateDemand(vehicleList))){
+        val demand : Int = calculateDemand(vehicleList)
+        if(checkForTrafficJam(demand)){
             println("All vehicles are being delayed")
             // missing function like "setVehiclesDelayed"
 
