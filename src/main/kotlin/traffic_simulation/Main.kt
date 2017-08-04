@@ -9,10 +9,11 @@ fun main(args: Array<String>) {
 
     val testRoad : RoadNetwork = RoadNetwork(capacity = 8.0)
 
-    val driveInterest : MutableList<Car> = parseInputOfCSV(fileName = "driveInterest.csv")
+    val vehiclesInterests : MutableList<Car> = parseInputOfCSV(fileName = "driveInterest.csv")
 
+    testRoad.gatherPlansToDrive(vehiclesInterests)
 
-
+    println()
    // scenario(testList, testRoad)
 }
 
