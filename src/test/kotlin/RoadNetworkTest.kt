@@ -21,44 +21,26 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun doesCheckForTrafficJamWork1() {//Capacity bigger than demand
+    fun doesCheckForTrafficJamWorkForCapacityBiggerThanDemand() {
         val road = RoadNetwork(20.0)
 
-        val BMW     : Vehicle = Vehicle(1.0)
-        val AUDI    : Vehicle = Vehicle(1.0)
-        val VOLVO   : Vehicle = Vehicle(1.0)
-
-        val cars : List<Vehicle> = listOf(BMW,AUDI,VOLVO)
-        val calculated = road.calculateDemand(cars)
-        val trafficJam : Boolean = road.checkForTrafficJam(calculated)
+        val trafficJam : Boolean = road.checkForTrafficJam(3.0)
         assertEquals(false,trafficJam)
     }
 
     @Test
-    fun doesCheckForTrafficJamWork2() {//Capacity smaller than demand
+    fun doesCheckForTrafficJamWorkForCapacitySmallerThanDemand() {
         val road = RoadNetwork(2.0)
 
-        val BMW     : Vehicle = Vehicle(1.0)
-        val AUDI    : Vehicle = Vehicle(1.0)
-        val VOLVO   : Vehicle = Vehicle(1.0)
-
-        val cars : List<Vehicle> = listOf(BMW,AUDI,VOLVO)
-        val calculated = road.calculateDemand(cars)
-        val trafficJam : Boolean = road.checkForTrafficJam(calculated)
+        val trafficJam : Boolean = road.checkForTrafficJam(3.0)
         assertEquals(true,trafficJam)
     }
 
     @Test
-    fun doesCheckForTrafficJamWork3() {//Capacity equal to demand
+    fun doesCheckForTrafficJamWorkForCapacityEqualToDemand() {
         val road = RoadNetwork(3.0)
 
-        val BMW     : Vehicle = Vehicle(1.0)
-        val AUDI    : Vehicle = Vehicle(1.0)
-        val VOLVO   : Vehicle = Vehicle(1.0)
-
-        val cars : List<Vehicle> = listOf(BMW,AUDI,VOLVO)
-        val calculated = road.calculateDemand(cars)
-        val trafficJam : Boolean = road.checkForTrafficJam(calculated)
+        val trafficJam : Boolean = road.checkForTrafficJam(3.0)
         assertEquals(false,trafficJam)
     }
 
