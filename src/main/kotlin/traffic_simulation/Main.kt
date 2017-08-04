@@ -6,13 +6,10 @@ fun main(args: Array<String>) {
 }
 
 fun scenario(vehicleList: List<Vehicle>, road: RoadNetwork){
-    if(road.checkForTrafficJam(road.calculateDemand(vehicleList))){
-        println("All vehicles are being delayed")
-
-    }else {
-        println("No traffic jam - this is joyful driving")
-    }
+    road.calculateTraffic(vehicleList,road)    
 }
+
+
 val testRoad: RoadNetwork = RoadNetwork(8.0)
 
 // Creation of sufficient cars for local testing without using CSV input for now

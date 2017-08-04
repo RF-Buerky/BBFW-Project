@@ -24,7 +24,14 @@ class RoadNetwork(val capacity : Double){
         return false
     }
 
+    fun calculateTraffic (vehicleList: List<Vehicle>, road: RoadNetwork){
+        if(road.checkForTrafficJam(road.calculateDemand(vehicleList))){
+            println("All vehicles are being delayed")
 
+        }else {
+            println("No traffic jam - this is joyful driving")
+        }
+    }
 
 }
 
