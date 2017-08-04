@@ -10,37 +10,37 @@ fun main(args: Array<String>) {
 
     val testRoad : RoadNetwork = RoadNetwork(capacity = 8.0)
 
-    val driveInterest : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
+    val driveInterest : MutableList<Car> = parseInputOfCSV(fileName = "driveInterest.csv")
 
 
 
    // scenario(testList, testRoad)
 }
 
-fun scenario(vehicleList: List<Vehicle>, road: RoadNetwork){
+fun scenario(vehicleList: List<Car>, road: RoadNetwork){
     road.calculateTraffic(vehicleList)
 }
 
 // Creation of sufficient cars for local testing without using CSV input for now
-val BMW1: Vehicle = Vehicle (id = 1 , wannaDrive = true )
-val BMW2 : Vehicle = Vehicle (id = 2 , wannaDrive = true )
-val BMW3 : Vehicle = Vehicle (id = 3 , wannaDrive = true )
-val BMW4 : Vehicle = Vehicle (id = 4 , wannaDrive = true )
-val BMW5 : Vehicle = Vehicle (id = 5 , wannaDrive = true )
-val BMW6 : Vehicle = Vehicle (id = 6 , wannaDrive = true )
-val BMW7 : Vehicle = Vehicle (id = 7 , wannaDrive = true )
-val BMW8 : Vehicle = Vehicle (id = 8 , wannaDrive = true )
-val BMW9 : Vehicle = Vehicle (id = 9 , wannaDrive = true )
-val BMW10 : Vehicle = Vehicle (id = 10 , wannaDrive = true )
-val BMW11 : Vehicle = Vehicle (id = 11 , wannaDrive = true )
-val BMW12 : Vehicle = Vehicle (id = 12 , wannaDrive = true )
-val testList : List<Vehicle> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
+val BMW1: Car = Car (id = 1 , wannaDrive = true )
+val BMW2 : Car = Car (id = 2 , wannaDrive = true )
+val BMW3 : Car = Car (id = 3 , wannaDrive = true )
+val BMW4 : Car = Car (id = 4 , wannaDrive = true )
+val BMW5 : Car = Car (id = 5 , wannaDrive = true )
+val BMW6 : Car = Car (id = 6 , wannaDrive = true )
+val BMW7 : Car = Car (id = 7 , wannaDrive = true )
+val BMW8 : Car = Car (id = 8 , wannaDrive = true )
+val BMW9 : Car = Car (id = 9 , wannaDrive = true )
+val BMW10 : Car = Car (id = 10 , wannaDrive = true )
+val BMW11 : Car = Car (id = 11 , wannaDrive = true )
+val BMW12 : Car = Car (id = 12 , wannaDrive = true )
+val testList : List<Car> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
 
 
 
-fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
+fun parseInputOfCSV ( fileName : String ): MutableList<Car>{
 
-    val driveInterest : MutableList<Vehicle> = mutableListOf()
+    val driveInterest : MutableList<Car> = mutableListOf()
 
     // The information of vehicles and their interest to drive is given in a csv-file
     // Therefore we use a library to parse
@@ -70,7 +70,7 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
         val id_Int : Int = id_String.toInt()
         val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
 
-        driveInterest.add ( Vehicle(id = id_Int , wannaDrive = wannaDrive_Boolean ) )
+        driveInterest.add ( Car(id = id_Int , wannaDrive = wannaDrive_Boolean ) )
 
     }
 
