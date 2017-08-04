@@ -1,6 +1,6 @@
 package traffic_simulation
 
-class Vehicle(val id : Int, val wannaDrive : Boolean){
+class Vehicle(val id : Int, val wannaDrive : Boolean, var delayed : Boolean = false){
     //Methods to be added here soon
 
     fun newVehicle (id : Int , wannaDrive : Boolean) : Vehicle {
