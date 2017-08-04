@@ -6,7 +6,7 @@ fun main(args: Array<String>) {
 }
 
 fun scenario(vehicleList: List<Vehicle>, road: RoadNetwork){
-    road.calculateTraffic(vehicleList,road)    
+    road.calculateTraffic(vehicleList)
 }
 
 
