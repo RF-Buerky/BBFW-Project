@@ -10,8 +10,7 @@ fun main(args: Array<String>) {
 
     val roadNetwork : RoadNetwork = RoadNetwork(capacity = 7.0)
 
-
-
+    parseInputOfCSV(fileName = "driveInterest.csv")
 
 
 
@@ -59,7 +58,7 @@ fun parseInputOfCSV (fileName : String ): MutableList<Vehicle>{
     val csvParser = CsvParser(settings)
 
     // reading of the csv-file
-    val reader = FileAccess().getReader("/driveInterest.csv")
+    val reader = FileAccess().getReader("/" + fileName)
 
     // analyze (parse) of the readed csv
     val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
