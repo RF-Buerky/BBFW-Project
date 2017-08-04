@@ -3,8 +3,7 @@ package traffic_simulation
 // Imports for parsing library
 import com.univocity.parsers.common.record.Record
 import com.univocity.parsers.csv.CsvParser
-import com.univocity.parsers.csv.CsvParserSettings
-import java.io.*
+import com.univocity.parsers.csv.CsvParserSettingsg
 
 fun main(args: Array<String>) {
 
