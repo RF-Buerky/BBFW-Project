@@ -4,6 +4,8 @@ package traffic_simulation
 import com.univocity.parsers.common.record.Record
 import com.univocity.parsers.csv.CsvParser
 import com.univocity.parsers.csv.CsvParserSettings
+import com.univocity.parsers.csv.CsvWriter
+import com.univocity.parsers.csv.CsvWriterSettings
 
 fun main(args: Array<String>) {
 
@@ -17,7 +19,8 @@ fun main(args: Array<String>) {
         println("Vehicle '${result.id}' is delayed: ${result.delayed}")
     }
 
-   testScenario(testRoad)
+    testScenario(testRoad)
+    parseOutputToCSV(vehiclesInterests)
 }
 
 fun testScenario(road: RoadNetwork) {
@@ -73,4 +76,19 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
         driveInterest.add ( Vehicle(id = id_Int , wannaDrive = wannaDrive_Boolean ) )
     }
     return driveInterest
+}
+
+fun parseOutputToCSV (results : MutableList<Vehicle>) {
+    //not sure if this results in writing into the correct file by now
+    FileAccess().getWriter("/" + "results.csv")
+
+    val writer = CsvWriter(CsvWriterSettings())
+    // Write the record headers of this file
+    writer.writeHeaders("ID", "Wanted to Drive", "Delayed")
+
+    //problem with output: writer.write... seems not to offer any functions to print a (mutable)list to a csv;
+    //maybe transformation of list is necessary (to what? Array?)
+    val output = results
+
+    writer.writeRowsAndClose(output)
 }
