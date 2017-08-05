@@ -23,6 +23,23 @@ class VehicleTest {
     }
 
     @Test
+    fun otherVehicleDoesChangeAllVehiclesSize () {
+
+        Vehicle(7 , true).newVehicle( )
+        Vehicle(8 , true).newVehicle( )
+        Vehicle(9 , true).newVehicle( )
+
+        var vehicle : Vehicle = Vehicle (5 , true)
+
+        var i : Int = 0
+        for (veh in vehicle.allVehicles){
+            i = i + 1
+        }
+
+        assertEquals (4 , i )
+    }
+
+    @Test
     fun sameVehicleIdIsNotNewVehicle () {
 
         Vehicle(7 , true).newVehicle()
@@ -33,15 +50,25 @@ class VehicleTest {
 
         val result : Boolean = vehicle.isNewVehicle()
 
-        for (vehicle in vehicle.allVehicles){
-            print(vehicle.id)
-            println(vehicle.wannaDrive)
-        }
         assertEquals (false , result )
     }
 
     @Test
-    fun sameVehicleIsNotAddedToAllVehicles () {
+    fun otherVehicleIdIsNewVehicle () {
+
+        Vehicle(7 , true).newVehicle()
+        Vehicle(8 , true).newVehicle()
+        Vehicle(9 , true).newVehicle()
+
+        var vehicle : Vehicle = Vehicle (3 , true)
+
+        val result : Boolean = vehicle.isNewVehicle()
+
+        assertEquals (true , result )
+    }
+
+    @Test
+    fun sameVehicleIdCanBeFoundInAllVehiclesList () {
 
         Vehicle(7 , true).newVehicle()
         Vehicle(8 , true).newVehicle()
@@ -49,16 +76,37 @@ class VehicleTest {
 
         var vehicle : Vehicle = Vehicle (7 , false)
 
-        vehicle.newVehicle()
+        var test : Boolean = false
 
-        var i : Int = 0
-        for (vehicle in vehicle.allVehicles){
-            i = i + 1
+        for (veh in vehicle.allVehicles){
+            if(veh.id == vehicle.id){
+                test = true
+            }
         }
 
-        assertEquals (3 , i)
+        assertEquals (true , test)
 
     }
 
+    @Test
+    fun otherVehicleIdCanNotBeFoundInAllVehiclesList () {
+
+        Vehicle(7 , true).newVehicle()
+        Vehicle(8 , true).newVehicle()
+        Vehicle(9 , true).newVehicle()
+
+        var vehicle : Vehicle = Vehicle (4 , false)
+
+        var test : Boolean = false
+
+        for (veh in vehicle.allVehicles){
+            if(veh.id == vehicle.id){
+                test = true
+            }
+        }
+
+        assertEquals (false , test)
+
+    }
 
 }
