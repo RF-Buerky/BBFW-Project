@@ -12,6 +12,7 @@ class RoadNetwork(val capacity : Int){
         val gatheredPlansToDrive : MutableList<Vehicle> = mutableListOf()
 
         for (vehicle in allVehiclesPlans){
+            vehicle.newVehicle(vehicle)
             if (vehicle.wannaDrive()){
                 gatheredPlansToDrive.add(vehicle)
                 vehiclesPlanningToDrive.add(vehicle)
@@ -22,11 +23,12 @@ class RoadNetwork(val capacity : Int){
 
     fun calculateDemand(vehiclesDrivingPlans:List<Vehicle>): Int{
 
+        val safedVehiclesDrivingPlans : MutableList<Vehicle> = gatherPlansToDrive(vehiclesDrivingPlans)
         // a list of vehicles given to the function gets screened for the capacityFactor attribute
         //and adds these Doubles to a total capacity demand for this scenario (=1 hour)
         var capacityDemand : Int = 0
 
-        for (vehicle in vehiclesDrivingPlans){
+        for (vehicle in safedVehiclesDrivingPlans){
             capacityDemand = capacityDemand + 1
             capacityLoadByInterests = capacityLoadByInterests +1
             }
