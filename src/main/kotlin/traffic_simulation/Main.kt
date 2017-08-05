@@ -20,7 +20,7 @@ fun main(args: Array<String>) {
     }
 
     testScenario(testRoad)
-    parseOutputToCSV(vehiclesInterests)
+    parseOutputToCSV(vehiclesInterests, "results.csv")
 }
 
 fun testScenario(road: RoadNetwork) {
@@ -78,17 +78,18 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
     return driveInterest
 }
 
-fun parseOutputToCSV (results : MutableList<Vehicle>) {
+fun parseOutputToCSV (results : MutableList<Vehicle>, outputFile : String) {
     //not sure if this results in writing into the correct file by now
-    FileAccess().getWriter("/" + "results.csv")
+    FileAccess().getWriter("/" + outputFile)
 
-    val writer = CsvWriter(CsvWriterSettings())
+    val csvWriter = CsvWriter(CsvWriterSettings())
     // Write the record headers of this file
-    writer.writeHeaders("ID", "Wanted to Drive", "Delayed")
-
-    //problem with output: writer.write... seems not to offer any functions to print a (mutable)list to a csv;
-    //maybe transformation of list is necessary (to what? Array?)
-    val output = results
-
-    writer.writeRowsAndClose(output)
+    val customerRows: MutableList<Array<Any>> = mutableListOf()
+    for (result in results) {
+        val id = result.id.toString()
+        val delay = result.delayed.toString()
+        val row: Array<Any> = arrayOf(id, delay)
+        customerRows.add(row)
+    }
+    csvWriter.writeRowsAndClose(customerRows)
 }
