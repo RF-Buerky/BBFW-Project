@@ -4,10 +4,12 @@ package traffic_simulation
 import com.univocity.parsers.common.record.Record
 import com.univocity.parsers.csv.CsvParser
 import com.univocity.parsers.csv.CsvParserSettings
+import com.univocity.parsers.csv.CsvWriter
+import com.univocity.parsers.csv.CsvWriterSettings
 
 fun main(args: Array<String>) {
 
-    val testRoad : RoadNetwork = RoadNetwork(capacity = 8)
+    val testRoad : RoadNetwork = RoadNetwork(capacity = 2)
 
     val vehiclesInterests : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
@@ -17,7 +19,8 @@ fun main(args: Array<String>) {
         println("Vehicle '${result.id}' is delayed: ${result.delayed}")
     }
 
-   testScenario(testRoad)
+    testScenario(testRoad)
+    parseOutputToCSV(simulationResults, "results.csv")
 }
 
 fun testScenario(road: RoadNetwork) {
@@ -46,7 +49,6 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
 
     // The information of vehicles and their interest to drive is given in a csv-file
     // Therefore we use a library to parse
-
     // Setup of the parsing like symbol of separation etc.
     // in this case mostly the default settings so just a few things have to be set
     val settings = CsvParserSettings()
@@ -65,7 +67,6 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
 
     // insert the parsed information of csv-file in usable lists and use them in functions
     for (record in allRows) {
-
         val id_String : String = record.values[0]
         val wannaDrive_String : String = record.values[1]
 
@@ -73,8 +74,22 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
         val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
 
         driveInterest.add ( Vehicle(id = id_Int , wannaDrive = wannaDrive_Boolean ) )
-
     }
-
     return driveInterest
+}
+
+fun parseOutputToCSV (results : List<Vehicle>, outputFile : String) {
+    //not sure if this results in writing into the correct file by now
+    val writer = FileAccess().getWriter(outputFile)
+
+    val csvWriter = CsvWriter(writer, CsvWriterSettings())
+    // Write the record headers of this file
+    val customerRows: MutableList<Array<Any>> = mutableListOf()
+    for (result in results) {
+        val id = result.id.toString()
+        val delay = result.delayed.toString()
+        val row: Array<Any> = arrayOf(id, delay)
+        customerRows.add(row)
+    }
+    csvWriter.writeRowsAndClose(customerRows)
 }

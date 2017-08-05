@@ -8,9 +8,7 @@ class RoadNetwork(val capacity : Int){
     //methods use lists of vehicles; the lists origin is not specified at the moment
     //as the functions don´t need to know the origin to work
 
-
     fun gatherPlansToDrive (allVehiclesPlans : List<Vehicle>): MutableList<Vehicle> {
-
         val gatheredPlansToDrive : MutableList<Vehicle> = mutableListOf()
 
         for (vehicle in allVehiclesPlans){
@@ -19,10 +17,8 @@ class RoadNetwork(val capacity : Int){
                 vehiclesPlanningToDrive.add(vehicle)
             }
         }
-
         return gatheredPlansToDrive
     }
-
 
     fun calculateDemand(vehiclesDrivingPlans:List<Vehicle>): Int{
 
@@ -47,21 +43,18 @@ class RoadNetwork(val capacity : Int){
 
 
     fun scenario(vehicleList: List<Vehicle>): MutableList<Vehicle>{
-
         val vehiclesDriving : MutableList<Vehicle> = mutableListOf()
-
         val vehiclesPlanningToDrive: MutableList<Vehicle> = gatherPlansToDrive(vehicleList)
+
         val demand : Int = calculateDemand(vehiclesPlanningToDrive)
 
         for (vehicle in vehiclesPlanningToDrive){
-
             if (checkForTrafficJam(demand)) {
                 val vehicle : Vehicle = vehicle.delayed()
                 vehiclesDriving.add(vehicle)
             } else {
                 vehiclesDriving.add(vehicle)
             }
-
         }
         return vehiclesDriving
     }
