@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
 
     val vehiclesInterests : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
-    val simulationResults : MutableList<Vehicle> = testRoad.scenario(vehiclesInterests)
+    val simulationResults : List<Vehicle> = testRoad.scenario(vehiclesInterests)
 
     for (result in simulationResults) {
         println("Vehicle '${result.id}' is delayed: ${result.delayed}")
@@ -78,7 +78,7 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
     return driveInterest
 }
 
-fun parseOutputToCSV (results : MutableList<Vehicle>, outputFile : String) {
+fun parseOutputToCSV (results : List<Vehicle>, outputFile : String) {
     //not sure if this results in writing into the correct file by now
     val writer = FileAccess().getWriter(outputFile)
 
