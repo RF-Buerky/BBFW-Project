@@ -46,7 +46,6 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
 
     // The information of vehicles and their interest to drive is given in a csv-file
     // Therefore we use a library to parse
-
     // Setup of the parsing like symbol of separation etc.
     // in this case mostly the default settings so just a few things have to be set
     val settings = CsvParserSettings()
@@ -65,7 +64,6 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
 
     // insert the parsed information of csv-file in usable lists and use them in functions
     for (record in allRows) {
-
         val id_String : String = record.values[0]
         val wannaDrive_String : String = record.values[1]
 
@@ -73,8 +71,6 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
         val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
 
         driveInterest.add ( Vehicle(id = id_Int , wannaDrive = wannaDrive_Boolean ) )
-
     }
-
     return driveInterest
 }
