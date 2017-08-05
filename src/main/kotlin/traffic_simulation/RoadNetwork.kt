@@ -51,11 +51,16 @@ class RoadNetwork(val capacity : Int){
         val demand : Int = calculateDemand(vehiclesPlanningToDrive)
 
         for (vehicle in vehiclesPlanningToDrive){
+
+            vehicle.hasDriven = true
+
             if (checkForTrafficJam(demand)) {
                 val vehicle : Vehicle = vehicle.delayed()
                 vehiclesDriving.add(vehicle)
+                vehicle.vehiclesDrove.add(vehicle)
             } else {
                 vehiclesDriving.add(vehicle)
+                vehicle.vehiclesDrove.add(vehicle)
             }
         }
         return vehiclesDriving
