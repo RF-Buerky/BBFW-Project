@@ -11,9 +11,11 @@ fun main(args: Array<String>) {
 
     val vehiclesInterests : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
-    testRoad.gatherPlansToDrive(vehiclesInterests)
+    val simulationResults : List<Vehicle> = testRoad.scenario(vehiclesInterests)
 
-    println()
+    for (result in simulationResults) {
+        println("Vehicle '${result.id}' is delayed: ${result.delayed}")
+    }
 
    testScenario(testRoad)
 }
@@ -35,7 +37,7 @@ fun testScenario(road: RoadNetwork) {
     val BMW12: Vehicle = Vehicle(id = 12, wannaDrive = true)
     val testList: List<Vehicle> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
 
-    road.calculateTraffic(testList)
+    road.scenario(testList)
 }
 
 fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{

@@ -31,7 +31,7 @@ class RoadNetwork(val capacity : Int){
         var capacityDemand : Int = 0
 
         for (vehicle in vehiclesDrivingPlans){
-            capacityDemand = capacityDemand +1
+            capacityDemand = capacityDemand + 1
             capacityLoadByInterests = capacityLoadByInterests +1
             }
         return capacityDemand
@@ -46,14 +46,24 @@ class RoadNetwork(val capacity : Int){
     }
 
 
-    fun calculateTraffic (vehicleList: List<Vehicle>){
-        if(checkForTrafficJam(calculateDemand(vehicleList))){
-            println("All vehicles are being delayed")
-            // missing function like "setVehiclesDelayed"
+    fun scenario(vehicleList: List<Vehicle>): MutableList<Vehicle>{
 
-        }else {
-            println("No traffic jam - this is joyful driving")
+        val vehiclesDriving : MutableList<Vehicle> = mutableListOf()
+
+        val vehiclesPlanningToDrive: MutableList<Vehicle> = gatherPlansToDrive(vehicleList)
+        val demand : Int = calculateDemand(vehiclesPlanningToDrive)
+
+        for (vehicle in vehiclesPlanningToDrive){
+
+            if (checkForTrafficJam(demand)) {
+                val vehicle : Vehicle = vehicle.delayed()
+                vehiclesDriving.add(vehicle)
+            } else {
+                vehiclesDriving.add(vehicle)
+            }
+
         }
+        return vehiclesDriving
     }
 
 }

@@ -9,9 +9,10 @@ class RoadNetworkTest {
     fun doesCalculateDemandWork() {
         val road = RoadNetwork(20)
 
-        val BMW     : Vehicle = Vehicle(1 , true)
-        val AUDI    : Vehicle = Vehicle(1 , true)
-        val VOLVO   : Vehicle = Vehicle(1 , true)
+        val BMW     : Vehicle = Vehicle(1, true)
+        val AUDI    : Vehicle = Vehicle(2, true)
+        val VOLVO   : Vehicle = Vehicle(3, true)
+
 
         val cars : List<Vehicle> = listOf(BMW,AUDI,VOLVO)
 
