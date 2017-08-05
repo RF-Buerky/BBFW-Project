@@ -30,8 +30,5 @@ class Vehicle(val id : Int, val wannaDrive : Boolean, var delayed : Boolean = fa
         return Vehicle (id , wannaDrive , true)
     }
 
-    /*fun hasDriven () : Vehicle {
-        return Vehicle (id, wannaDrive, hasDriven = true)
-    }*/
 }
 
