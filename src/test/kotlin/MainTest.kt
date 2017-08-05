@@ -1,3 +1,10 @@
-/**
- * Created by Roman on 05.08.2017.
- */
+import org.junit.Test
+
+class MainTest {
+
+    @Test
+    fun sayHelloTests() {
+        println("Hello, Tests!")
+    }
+
+}
