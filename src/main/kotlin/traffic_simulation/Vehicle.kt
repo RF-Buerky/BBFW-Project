@@ -4,19 +4,19 @@ class Vehicle(val id : Int, val wannaDrive : Boolean, var delayed : Boolean = fa
 
     val allVehicles : MutableList<Vehicle> = mutableListOf()
 
-    fun isNewVehicle (newVehicle : Vehicle) : Boolean {
+    fun isNewVehicle (vehicles : List<Vehicle>) : Boolean {
         var isNew : Boolean = true
-        for (vehicle in allVehicles){
-            if (vehicle.id == newVehicle.id){
+        for (vehicle in vehicles){
+            if (this.id == vehicle.id){
                 isNew = false
             }
         }
         return isNew
     }
 
-    fun newVehicle (vehicle : Vehicle): Vehicle{
-        if (isNewVehicle(vehicle)) {
-            allVehicles.add(vehicle)
+    fun newVehicle (vehicles : List<Vehicle>): Vehicle{
+        if (isNewVehicle(vehicles)) {
+            allVehicles.add(this)
         }
 
         return Vehicle(id, wannaDrive)
