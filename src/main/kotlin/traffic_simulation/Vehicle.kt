@@ -3,7 +3,6 @@ package traffic_simulation
 class Vehicle(val id : Int, val wannaDrive : Boolean, var delayed : Boolean = false, var hasDriven : Boolean = false){
 
     val allVehicles : MutableList<Vehicle> = mutableListOf()
-    val vehiclesDrove : MutableList<Vehicle> = mutableListOf()
 
     fun isNewVehicle (newVehicle : Vehicle) : Boolean {
         var isNew : Boolean = true
