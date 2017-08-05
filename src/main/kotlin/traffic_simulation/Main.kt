@@ -9,7 +9,7 @@ import com.univocity.parsers.csv.CsvWriterSettings
 
 fun main(args: Array<String>) {
 
-    val testRoad : RoadNetwork = RoadNetwork(capacity = 8)
+    val testRoad : RoadNetwork = RoadNetwork(capacity = 2)
 
     val vehiclesInterests : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
@@ -80,9 +80,9 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
 
 fun parseOutputToCSV (results : MutableList<Vehicle>, outputFile : String) {
     //not sure if this results in writing into the correct file by now
-    FileAccess().getWriter("/" + outputFile)
+    val writer = FileAccess().getWriter(outputFile)
 
-    val csvWriter = CsvWriter(CsvWriterSettings())
+    val csvWriter = CsvWriter(writer, CsvWriterSettings())
     // Write the record headers of this file
     val customerRows: MutableList<Array<Any>> = mutableListOf()
     for (result in results) {
