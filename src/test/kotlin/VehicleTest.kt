@@ -8,9 +8,12 @@ class VehicleTest {
     @Test
     fun sameVehicleDoesNotChangeAllVehiclesSize () {
 
-        Vehicle(7 , true).newVehicle( )
-        Vehicle(8 , true).newVehicle( )
-        Vehicle(9 , true).newVehicle( )
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle( )
 
         var vehicle : Vehicle = Vehicle (7 , true)
 
@@ -25,9 +28,12 @@ class VehicleTest {
     @Test
     fun otherVehicleDoesChangeAllVehiclesSize () {
 
-        Vehicle(7 , true).newVehicle( )
-        Vehicle(8 , true).newVehicle( )
-        Vehicle(9 , true).newVehicle( )
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle( )
 
         var vehicle : Vehicle = Vehicle (5 , true)
 
@@ -42,9 +48,12 @@ class VehicleTest {
     @Test
     fun sameVehicleIdIsNotNewVehicle () {
 
-        Vehicle(7 , true).newVehicle()
-        Vehicle(8 , true).newVehicle()
-        Vehicle(9 , true).newVehicle()
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle( )
 
         var vehicle : Vehicle = Vehicle (7 , true)
 
@@ -56,9 +65,12 @@ class VehicleTest {
     @Test
     fun otherVehicleIdIsNewVehicle () {
 
-        Vehicle(7 , true).newVehicle()
-        Vehicle(8 , true).newVehicle()
-        Vehicle(9 , true).newVehicle()
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle( )
 
         var vehicle : Vehicle = Vehicle (3 , true)
 
@@ -70,9 +82,12 @@ class VehicleTest {
     @Test
     fun sameVehicleIdCanBeFoundInAllVehiclesList () {
 
-        Vehicle(7 , true).newVehicle()
-        Vehicle(8 , true).newVehicle()
-        Vehicle(9 , true).newVehicle()
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle( )
 
         var vehicle : Vehicle = Vehicle (7 , false)
 
@@ -91,9 +106,12 @@ class VehicleTest {
     @Test
     fun otherVehicleIdCanNotBeFoundInAllVehiclesList () {
 
-        Vehicle(7 , true).newVehicle()
-        Vehicle(8 , true).newVehicle()
-        Vehicle(9 , true).newVehicle()
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( )
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle( )
 
         var vehicle : Vehicle = Vehicle (4 , false)
 
