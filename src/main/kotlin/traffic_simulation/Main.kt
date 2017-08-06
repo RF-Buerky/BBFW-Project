@@ -8,7 +8,6 @@ import com.univocity.parsers.csv.CsvWriter
 import com.univocity.parsers.csv.CsvWriterSettings
 
 fun main(args: Array<String>) {
-
     val testRoad : RoadNetwork = RoadNetwork(capacity = 2)
 
     val vehiclesInterests : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
@@ -20,8 +19,9 @@ fun main(args: Array<String>) {
     }
 
     testScenario(testRoad)
-    parseOutputToCSV(simulationResults, "results.csv")
+    printOutputToCSV(simulationResults, "results.csv")
 }
+
 
 fun testScenario(road: RoadNetwork) {
 
@@ -44,7 +44,6 @@ fun testScenario(road: RoadNetwork) {
 }
 
 fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
-
     val driveInterest : MutableList<Vehicle> = mutableListOf()
 
     // The information of vehicles and their interest to drive is given in a csv-file
@@ -62,7 +61,7 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
     // reading of the csv-file
     val reader = FileAccess().getReader("/" + fileName)
 
-    // analyze (parse) of the readed csv
+    // analyze (parse) of the csv given
     val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
 
     // insert the parsed information of csv-file in usable lists and use them in functions
@@ -78,18 +77,17 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
     return driveInterest
 }
 
-fun parseOutputToCSV (results : List<Vehicle>, outputFile : String) {
-    //not sure if this results in writing into the correct file by now
+fun printOutputToCSV(results : List<Vehicle>, outputFile : String) {
     val writer = FileAccess().getWriter(outputFile)
 
     val csvWriter = CsvWriter(writer, CsvWriterSettings())
     // Write the record headers of this file
-    val customerRows: MutableList<Array<Any>> = mutableListOf()
+    val vehicleRows: MutableList<Array<Any>> = mutableListOf()
     for (result in results) {
         val id = result.id.toString()
         val delay = result.delayed.toString()
         val row: Array<Any> = arrayOf(id, delay)
-        customerRows.add(row)
+        vehicleRows.add(row)
     }
-    csvWriter.writeRowsAndClose(customerRows)
+    csvWriter.writeRowsAndClose(vehicleRows)
 }
