@@ -8,17 +8,19 @@ class VehicleTest {
     @Test
     fun sameVehicleDoesNotChangeAllVehiclesSize () {
 
-        var newVeh : Vehicle = Vehicle(7 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(8 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(9 , true)
-        newVeh.newVehicle( )
+        val vehicles : MutableList <Vehicle> = mutableListOf()
 
-        var vehicle : Vehicle = Vehicle (7 , true)
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle(vehicles )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( vehicles)
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle(vehicles )
+
+        val vehicle : Vehicle = Vehicle (7 , true)
 
         var i : Int = 0
-        for (veh in vehicle.allVehicles){
+        for (veh in vehicles){
             i = i + 1
         }
 
@@ -28,17 +30,14 @@ class VehicleTest {
     @Test
     fun otherVehicleDoesChangeAllVehiclesSize () {
 
-        var newVeh : Vehicle = Vehicle(7 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(8 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(9 , true)
-        newVeh.newVehicle( )
+        val vehicles : MutableList <Vehicle> = mutableListOf(Vehicle(7 , true) , Vehicle(8 , true) , Vehicle(9 , true))
 
-        var vehicle : Vehicle = Vehicle (5 , true)
+        val vehicle : Vehicle = Vehicle (5 , true)
+
+        vehicle.newVehicle(vehicles)
 
         var i : Int = 0
-        for (veh in vehicle.allVehicles){
+        for (veh in vehicles){
             i = i + 1
         }
 
@@ -48,16 +47,11 @@ class VehicleTest {
     @Test
     fun sameVehicleIdIsNotNewVehicle () {
 
-        var newVeh : Vehicle = Vehicle(7 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(8 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(9 , true)
-        newVeh.newVehicle( )
+        val vehicles : MutableList <Vehicle> = mutableListOf(Vehicle(7 , true) , Vehicle(8 , true) , Vehicle(9 , true))
 
-        var vehicle : Vehicle = Vehicle (7 , true)
+        val vehicle : Vehicle = Vehicle (7 , true)
 
-        val result : Boolean = vehicle.isNewVehicle()
+        val result : Boolean = vehicle.isNewVehicle(vehicles)
 
         assertEquals (false , result )
     }
@@ -65,16 +59,18 @@ class VehicleTest {
     @Test
     fun otherVehicleIdIsNewVehicle () {
 
+        val vehicles : MutableList <Vehicle> = mutableListOf()
+
         var newVeh : Vehicle = Vehicle(7 , true)
-        newVeh.newVehicle( )
+        newVeh.newVehicle( vehicles)
         newVeh = Vehicle(8 , true)
-        newVeh.newVehicle( )
+        newVeh.newVehicle(vehicles )
         newVeh = Vehicle(9 , true)
-        newVeh.newVehicle( )
+        newVeh.newVehicle( vehicles)
 
-        var vehicle : Vehicle = Vehicle (3 , true)
+        val vehicle : Vehicle = Vehicle (3 , true)
 
-        val result : Boolean = vehicle.isNewVehicle()
+        val result : Boolean = vehicle.isNewVehicle(vehicles)
 
         assertEquals (true , result )
     }
@@ -82,18 +78,20 @@ class VehicleTest {
     @Test
     fun sameVehicleIdCanBeFoundInAllVehiclesList () {
 
-        var newVeh : Vehicle = Vehicle(7 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(8 , true)
-        newVeh.newVehicle( )
-        newVeh = Vehicle(9 , true)
-        newVeh.newVehicle( )
+        val vehicles : MutableList <Vehicle> = mutableListOf()
 
-        var vehicle : Vehicle = Vehicle (7 , false)
+        var newVeh : Vehicle = Vehicle(7 , true)
+        newVeh.newVehicle(vehicles )
+        newVeh = Vehicle(8 , true)
+        newVeh.newVehicle( vehicles)
+        newVeh = Vehicle(9 , true)
+        newVeh.newVehicle( vehicles)
+
+        val vehicle : Vehicle = Vehicle (7 , false)
 
         var test : Boolean = false
 
-        for (veh in vehicle.allVehicles){
+        for (veh in vehicles){
             if(veh.id == vehicle.id){
                 test = true
             }
@@ -104,21 +102,23 @@ class VehicleTest {
     }
 
     @Test
-    fun otherVehicleIdCanNotBeFoundInAllVehiclesList () {
+    fun otherVehicleIdCanNotBeFoundInVehiclesList () {
+
+        val vehicles : MutableList <Vehicle> = mutableListOf()
 
         var newVeh : Vehicle = Vehicle(7 , true)
-        newVeh.newVehicle( )
+        newVeh.newVehicle(vehicles )
         newVeh = Vehicle(8 , true)
-        newVeh.newVehicle( )
+        newVeh.newVehicle(vehicles )
         newVeh = Vehicle(9 , true)
-        newVeh.newVehicle( )
+        newVeh.newVehicle( vehicles)
 
-        var vehicle : Vehicle = Vehicle (4 , false)
+        val otherVehicle : Vehicle = Vehicle (4 , false)
 
         var test : Boolean = false
 
-        for (veh in vehicle.allVehicles){
-            if(veh.id == vehicle.id){
+        for (veh in vehicles){
+            if(veh.id == otherVehicle.id){
                 test = true
             }
         }
