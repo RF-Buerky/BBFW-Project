@@ -3,6 +3,7 @@ package traffic_simulation
 class RoadNetwork(val capacity : Int){
 
     val vehiclesPlanningToDrive: MutableList<Vehicle> = mutableListOf()
+    val vehiclesDrove : MutableList<Vehicle> = mutableListOf()
     var capacityLoadByInterests : Int = 0
 
     //methods use lists of vehicles; the lists origin is not specified at the moment
@@ -51,14 +52,20 @@ class RoadNetwork(val capacity : Int){
         val demand : Int = calculateDemand(vehiclesPlanningToDrive)
 
         for (vehicle in vehiclesPlanningToDrive){
+
+            vehicle.hasDriven = true
+
             if (checkForTrafficJam(demand)) {
                 val vehicle : Vehicle = vehicle.delayed()
                 vehiclesDriving.add(vehicle)
+                vehiclesDrove.add(vehicle)
             } else {
                 vehiclesDriving.add(vehicle)
+                vehiclesDrove.add(vehicle)
             }
         }
         return vehiclesDriving
+        println(vehiclesDrove)
     }
 
 }
