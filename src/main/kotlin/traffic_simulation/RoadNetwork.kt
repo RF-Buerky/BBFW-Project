@@ -13,8 +13,8 @@ class RoadNetwork(val capacity : Int){
 
         for (vehicle in allVehiclesPlans){
             if (vehicle.wannaDrive()){
-                gatheredPlansToDrive.add(vehicle)
-                vehiclesPlanningToDrive.add(vehicle)
+                vehicle.newVehicle(gatheredPlansToDrive)
+                vehicle.newVehicle(vehiclesPlanningToDrive)
             }
         }
         return gatheredPlansToDrive
