@@ -7,7 +7,6 @@ class VehicleTest {
 
     @Test
     fun sameVehicleDoesNotChangeAllVehiclesSize () {
-
         val vehicles : MutableList <Vehicle> = mutableListOf()
 
         var newVeh : Vehicle = Vehicle(7 , true)
@@ -23,13 +22,11 @@ class VehicleTest {
         for (veh in vehicles){
             i = i + 1
         }
-
         assertEquals (3 , i )
     }
 
     @Test
     fun otherVehicleDoesChangeAllVehiclesSize () {
-
         val vehicles : MutableList <Vehicle> = mutableListOf(Vehicle(7 , true) , Vehicle(8 , true) , Vehicle(9 , true))
 
         val vehicle : Vehicle = Vehicle (5 , true)
@@ -40,13 +37,11 @@ class VehicleTest {
         for (veh in vehicles){
             i = i + 1
         }
-
         assertEquals (4 , i )
     }
 
     @Test
     fun sameVehicleIdIsNotNewVehicle () {
-
         val vehicles : MutableList <Vehicle> = mutableListOf(Vehicle(7 , true) , Vehicle(8 , true) , Vehicle(9 , true))
 
         val vehicle : Vehicle = Vehicle (7 , true)
@@ -58,7 +53,6 @@ class VehicleTest {
 
     @Test
     fun otherVehicleIdIsNewVehicle () {
-
         val vehicles : MutableList <Vehicle> = mutableListOf()
 
         var newVeh : Vehicle = Vehicle(7 , true)
@@ -77,7 +71,6 @@ class VehicleTest {
 
     @Test
     fun sameVehicleIdCanBeFoundInAllVehiclesList () {
-
         val vehicles : MutableList <Vehicle> = mutableListOf()
 
         var newVeh : Vehicle = Vehicle(7 , true)
@@ -96,14 +89,11 @@ class VehicleTest {
                 test = true
             }
         }
-
         assertEquals (true , test)
-
     }
 
     @Test
     fun otherVehicleIdCanNotBeFoundInVehiclesList () {
-
         val vehicles : MutableList <Vehicle> = mutableListOf()
 
         var newVeh : Vehicle = Vehicle(7 , true)
@@ -122,9 +112,6 @@ class VehicleTest {
                 test = true
             }
         }
-
         assertEquals (false , test)
-
     }
-
 }

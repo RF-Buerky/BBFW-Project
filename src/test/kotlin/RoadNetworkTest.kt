@@ -7,7 +7,6 @@ class RoadNetworkTest {
 
     @Test
     fun gatherPlansToDriveGathersJustTrueDriveplans (){
-
         val road = RoadNetwork(20)
 
         val car1 : Vehicle = Vehicle(1, true)
@@ -26,13 +25,11 @@ class RoadNetworkTest {
         for (plan in gatheredPlansToDrive){
             i = i + 1
         }
-
         assertEquals(2, i)
     }
 
     @Test
     fun gatherPlansToDriveGathersJustTrueDriveplans2 (){
-
         val road = RoadNetwork(20)
 
         val car1 : Vehicle = Vehicle(1, false)
@@ -55,7 +52,6 @@ class RoadNetworkTest {
 
     @Test
     fun doesCalculateDemandWork() {
-
         val road = RoadNetwork(20)
 
         val BMW     : Vehicle = Vehicle(1, true)
@@ -71,7 +67,6 @@ class RoadNetworkTest {
 
     @Test
     fun calculateDemandCalculatesJustWannaDriveCars() {
-
         val road = RoadNetwork(20)
 
         val BMW     : Vehicle = Vehicle(1, true)
@@ -111,7 +106,6 @@ class RoadNetworkTest {
 
     @Test
     fun doesScenarioGiveRightAmountOfOutput(){
-
         val road = RoadNetwork(10)
 
         val car1 : Vehicle = Vehicle (1, true)
@@ -136,7 +130,6 @@ class RoadNetworkTest {
 
     @Test
     fun doesScenarioGiveRightAmountOfDelays(){
-
         val road = RoadNetwork(3)
 
         val car1 : Vehicle = Vehicle (1, true)
@@ -163,7 +156,6 @@ class RoadNetworkTest {
 
     @Test
     fun doesScenarioGiveRightAmountOfNotDelays(){
-
         val road = RoadNetwork(5)
 
         val car1 : Vehicle = Vehicle (1, true)
