@@ -25,18 +25,23 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 ## Ausführen des Programmes - How to launch the application
 
-Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
+0.) Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
 
 Lade eines der [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter. Im heruntergeladenen Ordner befindet sich die .jar-Datei.
 
-In Windows PowerShell gibt man ein (der Pfad, an dem man sich Befindet ist egal):  
+1.) Ausführen mit Windows PowerShell
+PowerShell können Sie etwa unter Windows 8/10+ über die Suchfunktion (Windowstaste + S) leicht finden und mit einem Klick darauf aufrufen.
+In Windows PowerShell gibt man fogenden `Code` in der Konsole ein (der Pfad, an dem man sich Befindet ist egal):  
 `java -jar "PfadZurDatei"`   
-Also zum Beispiel:   
-`java -jar "C:\Users\Name\Documents\2_INFO\Tutorial1\traffic_solution-1.0.jar"`
+Hier ein Beispiel zu Version 2.0:   
+`java -jar "C:\Users\Name\Documents\traffic_solution-2.0.jar"`
 
-Alternativ kann man mit `cd "Pfad"` direkt in den Ordnerpfad der .jar-Datei gehen. Dann reicht `java -jar "Dateiname.jar"` als Eingabe, um das Programm auszuführen.
+Alternativ kann man mit `cd "Pfad"` direkt in den Ordnerpfad der .jar-Datei gehen. Daraufhin genügt `java -jar "Dateiname.jar"` als Eingabe, um das Programm auszuführen.
+Beispiel-Code für den Pfad:
+`cd C:\Users\Name\Documents\`
 
-Es sollte nun die Ausgabe des Programms in der Konsole erscheinen.
+Es sollte nun die Ausgabe des Programms in der Konsole erscheinen:
+Die Ausgabe entspricht dem Inhalt der .csv-Datei "result.csv". In dieser Datei sind jene Fahrzeuge gelistet die sich bei ihrer Fahrt aufgrund von Stau verspäten.
 
 ## Informationen für Mitwirkende
 
@@ -69,7 +74,7 @@ Die .jar-Datei wird durch das Buildtool [Maven](https://maven.apache.org/ "Link 
 
 Nachfolgend sind die auszuführenden Schritte aufgeführt.
 
->Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispiel habe man sich den Release 1.0 heruntergeladen.
+>Download der neuesten veröffentlichten Version - zu finden unter [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Zum Beispiel habe man sich den Release 2.0 heruntergeladen.
 
 >Starten von Windows PowerShell und Wechsel bis in den Ordnerpfad der [pom.xml]( https://github.com/RF-Buerky/BBFW-Project/blob/master/pom.xml "Link zur Datei pom.xml") (dorthin, wie diese Datei auf der lokalen Maschine liegt).  
 
@@ -80,7 +85,7 @@ Nachfolgend sind die auszuführenden Schritte aufgeführt.
 
 > Eingabe in die Kommandozeile bei PowerShell von:  
 >`mvn clean install`
->> Nun wird der Code in eine ausführbare Java-Datei kompiliert. Ist PowerShell mit der Ausführung des Befehls fertig und steht "BUILD SUCCESS" am Ende der PowerShell-Ausgabe, so entstand ein Order namens `target` in dem Verzeichnis der pom.xml. In diesen Ordner befindet sich eine dem heruntergeladenen Release entsprechend benannte .jar-Datei - in unserem eingehens genannten Beispiel hieße die Datei "traffic_solution-1.0.jar".
+>> Nun wird der Code in eine ausführbare Java-Datei kompiliert. Ist PowerShell mit der Ausführung des Befehls fertig und steht "BUILD SUCCESS" am Ende der PowerShell-Ausgabe, so entstand ein Order namens `target` in dem Verzeichnis der pom.xml. In diesen Ordner befindet sich eine dem heruntergeladenen Release entsprechend benannte .jar-Datei - in unserem eingehens genannten Beispiel hieße die Datei "traffic_solution-2.0.jar".
 
 ## Zielsetzung / Aufgabenstellung
 
