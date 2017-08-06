@@ -12,7 +12,6 @@ class RoadNetwork(val capacity : Int){
         val gatheredPlansToDrive : MutableList<Vehicle> = mutableListOf()
 
         for (vehicle in allVehiclesPlans){
-            vehicle.newVehicle()
             if (vehicle.wannaDrive()){
                 gatheredPlansToDrive.add(vehicle)
                 vehiclesPlanningToDrive.add(vehicle)
