@@ -139,7 +139,6 @@ class RoadNetworkTest {
                 i = i + 1
             }
         }
-        println(i)
         assertEquals(6, i)
     }
 
@@ -165,7 +164,6 @@ class RoadNetworkTest {
                 i = i + 1
             }
         }
-        println(i)
         assertEquals(6, i)
     }
 }
