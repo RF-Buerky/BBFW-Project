@@ -21,18 +21,18 @@ fun main(args: Array<String>) {
 fun testScenarioWithInternList() {
     val road: RoadNetwork = RoadNetwork(capacity = 2)
     // Creation of sufficient cars for local testing without using CSV input for now
-    val BMW1: Vehicle = Vehicle(id = 1, wannaDrive = true)
-    val BMW2: Vehicle = Vehicle(id = 2, wannaDrive = true)
-    val BMW3: Vehicle = Vehicle(id = 3, wannaDrive = true)
-    val BMW4: Vehicle = Vehicle(id = 4, wannaDrive = true)
-    val BMW5: Vehicle = Vehicle(id = 5, wannaDrive = true)
-    val BMW6: Vehicle = Vehicle(id = 6, wannaDrive = true)
-    val BMW7: Vehicle = Vehicle(id = 7, wannaDrive = true)
-    val BMW8: Vehicle = Vehicle(id = 8, wannaDrive = true)
-    val BMW9: Vehicle = Vehicle(id = 9, wannaDrive = true)
-    val BMW10: Vehicle = Vehicle(id = 10, wannaDrive = true)
-    val BMW11: Vehicle = Vehicle(id = 11, wannaDrive = true)
-    val BMW12: Vehicle = Vehicle(id = 12, wannaDrive = true)
+    val BMW1: Vehicle = Vehicle(id = 1, wannaDriveInHours = true)
+    val BMW2: Vehicle = Vehicle(id = 2, wannaDriveInHours = true)
+    val BMW3: Vehicle = Vehicle(id = 3, wannaDriveInHours = true)
+    val BMW4: Vehicle = Vehicle(id = 4, wannaDriveInHours = true)
+    val BMW5: Vehicle = Vehicle(id = 5, wannaDriveInHours = true)
+    val BMW6: Vehicle = Vehicle(id = 6, wannaDriveInHours = true)
+    val BMW7: Vehicle = Vehicle(id = 7, wannaDriveInHours = true)
+    val BMW8: Vehicle = Vehicle(id = 8, wannaDriveInHours = true)
+    val BMW9: Vehicle = Vehicle(id = 9, wannaDriveInHours = true)
+    val BMW10: Vehicle = Vehicle(id = 10, wannaDriveInHours = true)
+    val BMW11: Vehicle = Vehicle(id = 11, wannaDriveInHours = true)
+    val BMW12: Vehicle = Vehicle(id = 12, wannaDriveInHours = true)
     val testList: List<Vehicle> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
 
     for (vehicle in road.simulateScenario(testList)) {
@@ -82,7 +82,7 @@ fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
         }
 
         wannaDrive_List.sort()
-        vehicleListCSV.add(Vehicle(id = id_Int, wannaDrive = wannaDrive_List))
+        vehicleListCSV.add(Vehicle(id = id_Int, wannaDriveInHours = wannaDrive_List))
     }
     return vehicleListCSV
 }

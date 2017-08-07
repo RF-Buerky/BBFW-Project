@@ -6,7 +6,7 @@ class RoadNetwork(val capacity: Int) {
         var capacityDemand: Int = 0
 
         for (vehicle in vehicles) {
-            if (vehicle.wannaDrive)
+            if (vehicle.wannaDriveInHours)
                 capacityDemand = capacityDemand + 1
         }
         return capacityDemand
@@ -27,7 +27,7 @@ class RoadNetwork(val capacity: Int) {
 
         if (trafficJam) {
             for (vehicle in vehicleList) {
-                if (vehicle.wannaDrive) {//A vehicle standing around with no desire to drive cannot be delayed
+                if (vehicle.wannaDriveInHours) {//A vehicle standing around with no desire to drive cannot be delayed
                     vehicle.gettingDelayed()
                 }
             }
