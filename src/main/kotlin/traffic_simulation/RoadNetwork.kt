@@ -14,10 +14,10 @@ class RoadNetwork(val capacity: Int) {
 
         for (vehicle in vehicles) {
             // We add 1 capacity demand in the hour if the vehicles wannaDriveInHours-list contains the hour
-            for (hour in capacityDemand){
-                if (vehicle.wannaDriveInHours.contains(hour.key)){
-                    val newDemand : Int = hour.value + 1
-                    capacityDemand.replace(hour.key , newDemand)
+            for ((key, value) in capacityDemand){
+                if (vehicle.wannaDriveInHours.contains(key)){
+                    val newDemand : Int = value + 1
+                    capacityDemand.replace(key, newDemand)
                 }
             }
 
