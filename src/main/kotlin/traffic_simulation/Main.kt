@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
 }
 
 fun testScenarioWithInternList() {
-    val road : RoadNetwork = RoadNetwork(capacity = 2)
+    val road: RoadNetwork = RoadNetwork(capacity = 2)
     // Creation of sufficient cars for local testing without using CSV input for now
     val BMW1: Vehicle = Vehicle(id = 1, wannaDrive = true)
     val BMW2: Vehicle = Vehicle(id = 2, wannaDrive = true)
@@ -40,8 +40,8 @@ fun testScenarioWithInternList() {
     }
 }
 
-fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
-    val vehicleListCSV : MutableList<Vehicle> = mutableListOf()
+fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
+    val vehicleListCSV: MutableList<Vehicle> = mutableListOf()
 
     // The information of vehicles and their interest to drive is given in a csv-file
     // Therefore we use a library to parse
@@ -63,18 +63,18 @@ fun parseInputOfCSV ( fileName : String ): MutableList<Vehicle>{
 
     // insert the parsed information of csv-file in usable lists and use them in functions
     for (record in allRows) {
-        val id_String : String = record.values[0]
-        val wannaDrive_String : String = record.values[1]
+        val id_String: String = record.values[0]
+        val wannaDrive_String: String = record.values[1]
 
-        val id_Int : Int = id_String.toInt()
-        val wannaDrive_Boolean : Boolean = wannaDrive_String.toBoolean()
+        val id_Int: Int = id_String.toInt()
+        val wannaDrive_Boolean: Boolean = wannaDrive_String.toBoolean()
 
-        vehicleListCSV.add ( Vehicle(id = id_Int , wannaDrive = wannaDrive_Boolean ) )
+        vehicleListCSV.add(Vehicle(id = id_Int, wannaDrive = wannaDrive_Boolean))
     }
     return vehicleListCSV
 }
 
-fun printResultsToCSV(results : List<Vehicle>, outputFile :String = "results.csv") {
+fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv") {
     val writer = FileAccess().getWriter(outputFile)
 
     val csvWriter = CsvWriter(writer, CsvWriterSettings())
@@ -95,9 +95,9 @@ fun printResultsToCSV(results : List<Vehicle>, outputFile :String = "results.csv
     csvWriter.writeRowsAndClose(vehicleRows)
 }
 
-fun simulateCSV(){
-    val road : RoadNetwork = RoadNetwork(capacity = 2)
-    val vehiclesFromCSV : List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
+fun simulateCSV() {
+    val road: RoadNetwork = RoadNetwork(capacity = 2)
+    val vehiclesFromCSV: List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
     printResultsToCSV(road.simulateScenario(vehiclesFromCSV))
 }
