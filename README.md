@@ -31,7 +31,7 @@ Lade eines der [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Li
 
 1.) Ausführen mit Windows PowerShell
 PowerShell können Sie etwa unter Windows 8/10+ über die Suchfunktion (Windowstaste + S) leicht finden und mit einem Klick darauf aufrufen.
-In Windows PowerShell gibt man fogenden `Code` in der Konsole ein (der Pfad, an dem man sich Befindet ist egal):  
+In Windows PowerShell gibt man fogenden `Befehl` in der Konsole ein (der Pfad, an dem man sich Befindet ist egal):  
 `java -jar "PfadZurDatei"`   
 Hier ein Beispiel zu Version 2.0:   
 `java -jar "C:\Users\Name\Documents\traffic_solution-2.0.jar"`
