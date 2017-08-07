@@ -32,10 +32,6 @@ class RoadNetwork(val capacity : Int){
                 }
             }
         }
-        /*Activate following lines for additional output in console
-        for (vehicle in vehicleList) {
-            println("Vehicle '${vehicle.id}' is delayed: ${vehicle.delayed}")
-        } */
         return vehicleList
     }
 
