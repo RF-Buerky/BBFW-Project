@@ -6,6 +6,17 @@ import traffic_simulation.Vehicle
 class VehicleTest {
 
     @Test
+
+    fun doesDelayingVehicleWork(){
+        val trafficJam : Boolean =true
+        val BMW : Vehicle = Vehicle(1 ,true)
+        BMW.delayed=false
+        BMW.gettingDelayed()
+
+        assertEquals(trafficJam,BMW.delayed)
+    }
+
+  /*  @Test
     fun sameVehicleDoesNotChangeAllVehiclesSize () {
         val vehicles : MutableList <Vehicle> = mutableListOf()
 
@@ -113,5 +124,5 @@ class VehicleTest {
             }
         }
         assertEquals (false , test)
-    }
+    }*/
 }

@@ -5,7 +5,7 @@ import traffic_simulation.Vehicle
 
 class RoadNetworkTest {
 
-    @Test
+    /*@Test
     fun gatherPlansToDriveGathersJustTrueDriveplans (){
         val road = RoadNetwork(20)
 
@@ -178,5 +178,5 @@ class RoadNetworkTest {
         }
         println(i)
         assertEquals (4, i)
-    }
+    }*/
 }
