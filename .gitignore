@@ -2,4 +2,5 @@
 lib/
 out/
 *.iml
+results.csv
 target/
