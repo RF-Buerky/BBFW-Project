@@ -67,9 +67,20 @@ fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
         val wannaDrive_String: String = record.values[1]
 
         val id_Int: Int = id_String.toInt()
-        val wannaDrive_Boolean: Boolean = wannaDrive_String.toBoolean()
+        val wannaDrive_List: MutableList<Int> = mutableListOf()
 
-        vehicleListCSV.add(Vehicle(id = id_Int, wannaDrive = wannaDrive_Boolean))
+        val numberOfSeparators : Int
+        val separator : Char = '/'
+        numberOfSeparators = wannaDrive_String.count({ch -> ch == separator})
+
+        for (i in 0..numberOfSeparators){
+
+            val newHoursToAd_String : String = wannaDrive_String.split("/")[i]
+            val newHour_Int : Int = newHoursToAd_String.toInt()
+            wannaDrive_List.add(newHour_Int)
+
+        }
+        vehicleListCSV.add(Vehicle(id = id_Int, wannaDrive = wannaDrive_List))
     }
     return vehicleListCSV
 }
