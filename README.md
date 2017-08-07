@@ -25,13 +25,13 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 ## Ausführen des Programmes - How to launch the application
 
-0.) Das Programm wird ausgeführt indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
+0.) Das Programm wird ausgeführt, indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
 
 Lade eines der [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter. Im heruntergeladenen Ordner befindet sich die .jar-Datei.
 
 1.) Ausführen mit Windows PowerShell
 PowerShell können Sie etwa unter Windows 8/10+ über die Suchfunktion (Windowstaste + S) leicht finden und mit einem Klick darauf aufrufen.
-In Windows PowerShell gibt man fogenden `Befehl` in der Konsole ein (der Pfad, an dem man sich Befindet ist egal):  
+In Windows PowerShell gibt man folgenden `Befehl` in der Konsole ein (der Pfad, an dem man sich Befindet ist egal):  
 `java -jar "PfadZurDatei"`   
 Hier ein Beispiel zu Version 2.0:   
 `java -jar "C:\Users\Name\Documents\traffic_solution-2.0.jar"`
