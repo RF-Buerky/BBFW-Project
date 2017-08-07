@@ -3,7 +3,7 @@ package traffic_simulation
 class RoadNetwork(val capacity: Int) {
 
     fun calculateDemandFor24Hours(vehicles: List<Vehicle>): MutableMap<Int , Int> {
-        var capacityDemand: MutableMap<Int, Int> = mutableMapOf()
+        var capacityDemand: MutableMap <Int , Int> = mutableMapOf()
 
         // At the beginning the capacity demand in every hour is 0
         // We start with an empty map and put every 24 hours with 0 demands in
