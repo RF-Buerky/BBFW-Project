@@ -21,18 +21,22 @@ class RoadNetwork(val capacity : Int){
     }
 
 
-    fun simulateInternScenarioAndPrintToConsole(vehicleList: List<Vehicle>){
+    fun simulateScenario(vehicleList: List<Vehicle>):List<Vehicle>{
         val demand : Int = calculateDemand(vehicleList)
         val trafficJam:Boolean =  checkForTrafficJam(demand)
 
-        if(trafficJam){
-            for(vehicle in vehicleList){
-                vehicle.gettingDelayed()
+        if(trafficJam) {
+            for (vehicle in vehicleList) {
+                if(vehicle.wannaDrive) {//A vehicle standing around with no desire to drive cannot be delayed
+                    vehicle.gettingDelayed()
+                }
             }
         }
+        /*Activate following lines for additional output in console
         for (vehicle in vehicleList) {
             println("Vehicle '${vehicle.id}' is delayed: ${vehicle.delayed}")
-        }
+        } */
+        return vehicleList
     }
 
 }
