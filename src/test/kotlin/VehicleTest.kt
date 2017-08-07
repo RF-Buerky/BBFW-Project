@@ -6,7 +6,6 @@ import traffic_simulation.Vehicle
 class VehicleTest {
 
     @Test
-
     fun doesDelayingVehicleWork() {
         val BMW: Vehicle = Vehicle(1, true)
         BMW.delayed = false
