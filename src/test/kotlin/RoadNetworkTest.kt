@@ -6,51 +6,6 @@ import traffic_simulation.Vehicle
 class RoadNetworkTest {
 
     @Test
-    fun gatherPlansToDriveGathersJustTrueDriveplans (){
-        val road = RoadNetwork(20)
-
-        val car1 : Vehicle = Vehicle(1, true)
-        val car2 : Vehicle = Vehicle(2, false)
-        val car3 : Vehicle = Vehicle(3, true)
-        val car4 : Vehicle = Vehicle(4, false)
-        val car5 : Vehicle = Vehicle(5, false)
-        val car6 : Vehicle = Vehicle(6, false)
-
-        val allVehicles : List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-
-        val gatheredPlansToDrive : List<Vehicle> = road.gatherPlansToDrive(allVehicles)
-
-        var i : Int = 0
-
-        for (plan in gatheredPlansToDrive){
-            i = i + 1
-        }
-        assertEquals(2, i)
-    }
-
-    @Test
-    fun gatherPlansToDriveGathersJustTrueDriveplans2 (){
-        val road = RoadNetwork(20)
-
-        val car1 : Vehicle = Vehicle(1, false)
-        val car2 : Vehicle = Vehicle(2, false)
-        val car3 : Vehicle = Vehicle(3, false)
-        val car4 : Vehicle = Vehicle(4, false)
-
-        val allVehicles : List<Vehicle> = listOf(car1, car2, car3, car4)
-
-        val gatheredPlansToDrive : List<Vehicle> = road.gatherPlansToDrive(allVehicles)
-
-        var i : Int = 0
-
-        for (plan in gatheredPlansToDrive){
-            i = i + 1
-        }
-
-        assertEquals(0, i)
-    }
-
-    @Test
     fun doesCalculateDemandWork() {
         val road = RoadNetwork(20)
 
@@ -104,29 +59,6 @@ class RoadNetworkTest {
         assertEquals(false,trafficJam)
     }
 
-    @Test
-    fun doesScenarioGiveRightAmountOfOutput(){
-        val road = RoadNetwork(10)
-
-        val car1 : Vehicle = Vehicle (1, true)
-        val car2 : Vehicle = Vehicle (2, false)
-        val car3 : Vehicle = Vehicle (3, true)
-        val car4 : Vehicle = Vehicle (4, false)
-        val car5 : Vehicle = Vehicle (5, false)
-        val car6 : Vehicle = Vehicle (6, false)
-
-        val allVehicles : List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-
-        val output : List<Vehicle> = road.scenario(allVehicles)
-
-        var i : Int = 0
-
-        for (plan in output){
-            i = i + 1
-        }
-
-        assertEquals(2, i)
-    }
 
     @Test
     fun doesScenarioGiveRightAmountOfDelays(){
@@ -141,7 +73,7 @@ class RoadNetworkTest {
 
         val allVehicles : List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
 
-        val output : List<Vehicle> = road.scenario(allVehicles)
+        val output : List<Vehicle> = road.simulateScenario(allVehicles)
 
         var i : Int = 0
 
@@ -167,7 +99,7 @@ class RoadNetworkTest {
 
         val allVehicles : List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
 
-        val output : List<Vehicle> = road.scenario(allVehicles)
+        val output : List<Vehicle> = road.simulateScenario(allVehicles)
 
         var i : Int = 0
 
@@ -177,6 +109,6 @@ class RoadNetworkTest {
             }
         }
         println(i)
-        assertEquals (4, i)
+        assertEquals (6, i)
     }
 }

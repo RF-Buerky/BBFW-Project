@@ -2,31 +2,12 @@ package traffic_simulation
 
 class RoadNetwork(val capacity : Int){
 
-    val vehiclesPlanningToDrive: MutableList<Vehicle> = mutableListOf()
-    val vehiclesDrove : MutableList<Vehicle> = mutableListOf()
-    var capacityLoadByInterests : Int = 0
-
-    fun gatherPlansToDrive (allVehiclesPlans : List<Vehicle>): MutableList<Vehicle> {
-        val gatheredPlansToDrive : MutableList<Vehicle> = mutableListOf()
-
-        for (vehicle in allVehiclesPlans){
-            if (vehicle.wannaDrive()){
-                vehicle.newVehicle(gatheredPlansToDrive)
-                vehicle.newVehicle(vehiclesPlanningToDrive)
-            }
-        }
-        return gatheredPlansToDrive
-    }
-
-    fun calculateDemand(vehiclesDrivingPlans:List<Vehicle>): Int{
-        val safedVehiclesDrivingPlans : MutableList<Vehicle> = gatherPlansToDrive(vehiclesDrivingPlans)
-        // a list of vehicles given to the function gets screened for the capacityFactor attribute
-        //and adds these Doubles to a total capacity demand for this scenario (=1 hour)
+    fun calculateDemand(vehicles:List<Vehicle>): Int{
         var capacityDemand : Int = 0
 
-        for (vehicle in safedVehiclesDrivingPlans){
+        for (vehicle in vehicles){
+            if(vehicle.wannaDrive)
             capacityDemand = capacityDemand + 1
-            capacityLoadByInterests = capacityLoadByInterests +1
             }
         return capacityDemand
     }
@@ -40,28 +21,18 @@ class RoadNetwork(val capacity : Int){
     }
 
 
-    fun scenario(vehicleList: List<Vehicle>): MutableList<Vehicle>{
-        val vehiclesDriving : MutableList<Vehicle> = mutableListOf()
+    fun simulateScenario(vehicleList: List<Vehicle>):List<Vehicle>{
+        val demand : Int = calculateDemand(vehicleList)
+        val trafficJam:Boolean =  checkForTrafficJam(demand)
 
-        val vehiclesPlanningToDrive: MutableList<Vehicle> = gatherPlansToDrive(vehicleList)
-
-        val demand : Int = calculateDemand(vehiclesPlanningToDrive)
-
-        for (vehicle in vehiclesPlanningToDrive){
-
-            vehicle.hasDriven = true
-
-            if (checkForTrafficJam(demand)) {
-                val vehicle : Vehicle = vehicle.delayed()
-                vehiclesDriving.add(vehicle)
-                vehiclesDrove.add(vehicle)
-            } else {
-                vehiclesDriving.add(vehicle)
-                vehiclesDrove.add(vehicle)
+        if(trafficJam) {
+            for (vehicle in vehicleList) {
+                if(vehicle.wannaDrive) {//A vehicle standing around with no desire to drive cannot be delayed
+                    vehicle.gettingDelayed()
+                }
             }
         }
-        return vehiclesDriving
-        println(vehiclesDrove)
+        return vehicleList
     }
 
 }
