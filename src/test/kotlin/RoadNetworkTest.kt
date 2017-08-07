@@ -15,7 +15,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf(BMW, AUDI, VOLVO)
 
-        val calculated = road.calculateDemand(cars)
+        val calculated = road.calculateDemandFor24Hours(cars)
 
         assertEquals(3, calculated)
     }
@@ -30,7 +30,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf(BMW, AUDI, VOLVO)
 
-        val calculated = road.calculateDemand(cars)
+        val calculated = road.calculateDemandFor24Hours(cars)
 
         assertEquals(1, calculated)
     }
@@ -45,7 +45,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf(BMW, AUDI, VOLVO)
 
-        val calculated = road.calculateDemand(cars)
+        val calculated = road.calculateDemandFor24Hours(cars)
 
         assertEquals(0, calculated)
     }
