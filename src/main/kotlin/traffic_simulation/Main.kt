@@ -80,6 +80,8 @@ fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
             wannaDrive_List.add(newHour_Int)
 
         }
+
+        wannaDrive_List.sort()
         vehicleListCSV.add(Vehicle(id = id_Int, wannaDrive = wannaDrive_List))
     }
     return vehicleListCSV
