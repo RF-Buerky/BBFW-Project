@@ -2,21 +2,6 @@ package traffic_simulation
 
 class RoadNetwork(val capacity : Int){
 
-    //The following // lines are no longer needed but are kept due to possible restoring issues
-    //val vehiclesPlanningToDrive: MutableList<Vehicle> = mutableListOf()
-    //val vehiclesDrove : MutableList<Vehicle> = mutableListOf()
-    /*fun gatherPlansToDrive (allVehiclesPlans : List<Vehicle>): MutableList<Vehicle> {
-        val gatheredPlansToDrive : MutableList<Vehicle> = mutableListOf()
-
-        for (vehicle in allVehiclesPlans){
-            if (vehicle.wannaDrive()){
-                vehicle.newVehicle(gatheredPlansToDrive)
-                vehicle.newVehicle(vehiclesPlanningToDrive)
-            }
-        }
-        return gatheredPlansToDrive
-    }*/
-
     fun calculateDemand(vehicles:List<Vehicle>): Int{
         var capacityDemand : Int = 0
 
@@ -50,11 +35,6 @@ class RoadNetwork(val capacity : Int){
         }
     }
 
-    /*fun delayVehicles(vehicleList: List<Vehicle>){
-        for (vehicle in vehicleList){
-            vehicle.delayed=true
-        }
-    }*/
 }
 
 

@@ -8,27 +8,20 @@ import com.univocity.parsers.csv.CsvWriter
 import com.univocity.parsers.csv.CsvWriterSettings
 
 fun main(args: Array<String>) {
-    val testRoad : RoadNetwork = RoadNetwork(capacity = 20)
+
 
     //The following line simulates traffic from an intern list
-    testScenarioWithInternList(testRoad)
+    testScenarioWithInternList()
 
     //The following lines simulates a complete scenario with the testRoad as road;
     // in next release (or as NP says) i want to enable feeding in road data, so a user can simulate more than the test road,
     //but can choose from a bunch of roads
-    simulateCSV(testRoad)
+    simulateCSV()
 
-
-    //The following lines are not needed, but kept here in case of restoring needs occurring
-    //val vehiclesInterests : MutableList<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
-    //val simulationResults : List<Vehicle> = testRoad.simulateInternScenarioAndPrintToConsole(vehiclesInterests)
-    //for (result in simulationResults) {
-    //    println("Vehicle '${result.id}' is delayed: ${result.delayed}")
-   // printResultsToCSV(simulationResults, "results.csv")
 }
 
-fun testScenarioWithInternList(road: RoadNetwork) {
-
+fun testScenarioWithInternList() {
+    val road : RoadNetwork = RoadNetwork(capacity = 20)
     // Creation of sufficient cars for local testing without using CSV input for now
     val BMW1: Vehicle = Vehicle(id = 1, wannaDrive = true)
     val BMW2: Vehicle = Vehicle(id = 2, wannaDrive = true)
@@ -102,7 +95,8 @@ fun printResultsToCSV(results : List<Vehicle>, outputFile :String = "results.csv
     csvWriter.writeRowsAndClose(vehicleRows)
 }
 
-fun simulateCSV(road: RoadNetwork){
+fun simulateCSV(){
+    val road : RoadNetwork = RoadNetwork(capacity = 20)
     val vehiclesFromCSV : List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
     val capacityDemand = road.calculateDemand(vehiclesFromCSV)
     val trafficJam = road.checkForTrafficJam(capacityDemand)
