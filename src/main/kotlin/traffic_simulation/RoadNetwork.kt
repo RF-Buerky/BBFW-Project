@@ -37,12 +37,15 @@ class RoadNetwork(val capacity: Int) {
 
     fun simulateScenario(vehicleList: List<Vehicle>): List<Vehicle> {
         val demand: MutableMap<Int , Int> = calculateDemandFor24Hours(vehicleList)
-        val trafficJam: Boolean = checkForTrafficJam(demand)
 
-        if (trafficJam) {
-            for (vehicle in vehicleList) {
-                if (vehicle.wannaDriveInHours) {//A vehicle standing around with no desire to drive cannot be delayed
-                    vehicle.gettingDelayed()
+        for (hour in 1..24){
+            val trafficJam: Boolean = checkForTrafficJam(demand, hour)
+
+            if (trafficJam) {
+                for (vehicle in vehicleList) {
+                    if (vehicle.wannaDriveInHours.contains(hour)) {//A vehicle standing around with no desire to drive cannot be delayed
+                        vehicle.gettingDelayed(hour)
+                    }
                 }
             }
         }
