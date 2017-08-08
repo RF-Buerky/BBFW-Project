@@ -36,117 +36,117 @@ class RoadNetwork(val capacity: Int) {
                     vehicle.gettingDelayedInSpecialHour(i)
                     if (vehicle.delayedInHours.contains(i)) {
                         if(!!vehicle.wannaDriveInHours.contains(i+1)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+1]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+2)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+2]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+3)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+3]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+4)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+4]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+5)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+5]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+6)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+6]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+7)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+7]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+8)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+8]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+9)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+9]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+10)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+10]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+11)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+11]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+12)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+12]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+13)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+13]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+14)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+14]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+15)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+15]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+16)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+16]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+17)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+17]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+18)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+18]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+19)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+19]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+20)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+20]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+21)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+21]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+22)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+22]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
                         if(!!vehicle.wannaDriveInHours.contains(i+23)) {
-                            var nextStepDemand = capacityDemand[i]
+                            var nextStepDemand = capacityDemand[i+23]
                             nextStepDemand = nextStepDemand!! + 1
                             capacityDemand.replace(i + 1, nextStepDemand)
                         }
