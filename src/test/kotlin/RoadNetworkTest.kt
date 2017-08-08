@@ -4,7 +4,7 @@ import traffic_simulation.RoadNetwork
 import traffic_simulation.Vehicle
 
 class RoadNetworkTest {
-
+/*
     @Test
     fun calculateDemand_DemandOfOneVehicle_demandIsTheVehiclesDemand() {
         val road = RoadNetwork(20)
@@ -190,4 +190,5 @@ class RoadNetworkTest {
         }
         assertEquals(0, i)
     }
+    */
 }
