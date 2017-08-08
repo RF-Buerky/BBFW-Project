@@ -28,15 +28,128 @@ class RoadNetwork(val capacity: Int) {
                 }
             }
         }
-        //Adjusting demand by traffic jams
+        //Adjusting demand by traffic jams; when a vehicle is getting delayed, but plans to drive in the next hours the
+        //desire to drive is extended to the first timestep the vehicle has no desire to drive
         for (i in 1..24) {
             if (checkForTrafficJamInSingleHour(capacityDemand, i)) {
                 for (vehicle in vehicles) {
                     vehicle.gettingDelayedInSpecialHour(i)
                     if (vehicle.delayedInHours.contains(i)) {
+                        if(!!vehicle.wannaDriveInHours.contains(i+1)) {
                             var nextStepDemand = capacityDemand[i]
-                            nextStepDemand = nextStepDemand !!+ 1
-                            capacityDemand.replace(i+1, nextStepDemand)
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+2)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+3)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+4)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+5)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+6)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+7)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+8)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+9)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+10)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+11)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+12)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+13)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+14)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+15)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+16)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+17)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+18)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+19)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+20)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+21)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+22)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
+                        if(!!vehicle.wannaDriveInHours.contains(i+23)) {
+                            var nextStepDemand = capacityDemand[i]
+                            nextStepDemand = nextStepDemand!! + 1
+                            capacityDemand.replace(i + 1, nextStepDemand)
+                        }
                     }
                 }
             }
