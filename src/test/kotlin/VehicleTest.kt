@@ -28,6 +28,16 @@ class VehicleTest {
     }
 
     @Test
+    fun gettingDelayed_trafficJamInCriticalHour24_vehicleGetsDelayed() {
+        val BMW: Vehicle = Vehicle(1, mutableListOf(23,24))
+
+        BMW.gettingDelayed(24)
+
+        val correctList : MutableList <Int> = mutableListOf(24)
+        assertEquals(correctList, BMW.delayedInHours)
+    }
+
+    @Test
     fun gettingDelayed_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
 
