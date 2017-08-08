@@ -95,13 +95,13 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
     // Write the record headers of this file
     val vehicleRows: MutableList<Array<Any>> = mutableListOf()
     val id = "VehicleID"
-    val delay = "Delayed?"
+    val delay = "Delayed in hours"
     val row: Array<Any> = arrayOf(id, delay)
     vehicleRows.add(row)
 
     for (result in results) {
         val id = result.id.toString()
-        val delay = result.delayed.toString()
+        val delay = result.delayedInHours.toString()
         val row: Array<Any> = arrayOf(id, delay)
         vehicleRows.add(row)
     }
@@ -109,7 +109,7 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
 }
 
 fun simulateCSV() {
-    val road: RoadNetwork = RoadNetwork(capacity = 2)
+    val road: RoadNetwork = RoadNetwork(capacity = 7)
     val vehiclesFromCSV: List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
     printResultsToCSV(road.simulateScenario(vehiclesFromCSV))
