@@ -10,13 +10,15 @@ import com.univocity.parsers.csv.CsvWriterSettings
 fun main(args: Array<String>) {
     //The following line simulates traffic from an intern list and prints it to console
 
-    testScenarioWithInternList()
+    //testScenarioWithInternList()
 
     //The following lines simulates a complete scenario and prints into results.csv;
     // in next release (or as NP says) i want to enable feeding in road data, so a user can simulate more than the test road,
     //but can choose from a bunch of roads
     simulateCSV()
+
 }
+
 
 fun testScenarioWithInternList() {
     val road: RoadNetwork = RoadNetwork(capacity = 7)
@@ -105,7 +107,7 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
 }
 
 fun simulateCSV() {
-    val road: RoadNetwork = RoadNetwork(capacity = 7)
+    val road: RoadNetwork = RoadNetwork(capacity = 10)
     val vehiclesFromCSV: List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
     printResultsToCSV(road.simulateScenario(vehiclesFromCSV))
