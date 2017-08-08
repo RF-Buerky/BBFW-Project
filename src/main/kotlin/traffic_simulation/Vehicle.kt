@@ -2,6 +2,7 @@ package traffic_simulation
 
 class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
 
+    val delayedInHours : MutableList<Int> = mutableListOf()
     var delay = 0
 
     fun vehicleWantsToDriveAt(timestep :Int):Boolean{
@@ -15,6 +16,7 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
         // (otherwise it just waited an hour, not reducing its delay)
         if (wannaDriveInHours.contains(timestep)) {
             delay += 1
+            this.delayedInHours.add(timestep)
         }
     }
 
