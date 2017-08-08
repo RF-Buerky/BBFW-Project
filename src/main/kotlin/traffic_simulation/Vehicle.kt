@@ -17,6 +17,7 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
         if (wannaDriveInHours.contains(timestep)) {
             delay += 1
             this.delayedInHours.add(timestep)
+            this.delayedInHours.sort()
         }
     }
 
