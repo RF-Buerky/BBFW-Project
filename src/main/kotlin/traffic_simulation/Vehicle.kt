@@ -5,6 +5,7 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
 
     fun gettingDelayed(hour : Int) {
         this.delayedInHours.add(hour)
+        delayedInHours.sort()
     }
 
 }
