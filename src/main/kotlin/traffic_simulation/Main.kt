@@ -69,16 +69,12 @@ fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
         val id_Int: Int = id_String.toInt()
         val wannaDrive_List: MutableList<Int> = mutableListOf()
 
-        val numberOfSeparators : Int
         val separator : Char = '/'
-        numberOfSeparators = wannaDrive_String.count({ch -> ch == separator})
+        val splittedWannaDrive : List<String> = wannaDrive_String.split(separator)
 
-        for (i in 0..numberOfSeparators){
-
-            val newHoursToAd_String : String = wannaDrive_String.split("/")[i]
-            val newHour_Int : Int = newHoursToAd_String.toInt()
+        for (hour in splittedWannaDrive){
+            val newHour_Int : Int = hour.toInt()
             wannaDrive_List.add(newHour_Int)
-
         }
 
         wannaDrive_List.sort()
