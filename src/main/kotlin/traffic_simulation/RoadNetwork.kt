@@ -26,7 +26,7 @@ class RoadNetwork(val capacity: Int) {
     }
 
 
-    fun checkForTrafficJam(demand: MutableMap<Int , Int> , hour : Int): Boolean {
+    fun checkForTrafficJamInSingleHour(demand: MutableMap<Int , Int>, hour : Int): Boolean {
         val needetInt : Int = demand.get(hour)!! // The two !! made intelliJ by himselt to be shure there comes in Int
         if (capacity < needetInt) {
             return true
@@ -39,7 +39,7 @@ class RoadNetwork(val capacity: Int) {
         val demand: MutableMap<Int , Int> = calculateDemandFor24Hours(vehicleList)
 
         for (hour in 1..24){
-            val trafficJam: Boolean = checkForTrafficJam(demand, hour)
+            val trafficJam: Boolean = checkForTrafficJamInSingleHour(demand, hour)
 
             if (trafficJam) {
                 for (vehicle in vehicleList) {

@@ -80,7 +80,7 @@ class RoadNetworkTest {
     fun doesCheckForTrafficJamWorkForCapacityBiggerThanDemand() {
         val road = RoadNetwork(20)
 
-        val trafficJam: Boolean = road.checkForTrafficJam(mutableMapOf(Pair(3, 5)), 3)
+        val trafficJam: Boolean = road.checkForTrafficJamInSingleHour(mutableMapOf(Pair(3, 5)), 3)
         assertEquals(false, trafficJam)
     }
 
@@ -88,7 +88,7 @@ class RoadNetworkTest {
     fun doesCheckForTrafficJamWorkForCapacitySmallerThanDemand() {
         val road = RoadNetwork(2)
 
-        val trafficJam: Boolean = road.checkForTrafficJam(mutableMapOf(Pair(3, 5)), 3)
+        val trafficJam: Boolean = road.checkForTrafficJamInSingleHour(mutableMapOf(Pair(3, 5)), 3)
         assertEquals(true, trafficJam)
     }
 
@@ -96,7 +96,7 @@ class RoadNetworkTest {
     fun doesCheckForTrafficJamWorkForCapacityEqualToDemand() {
         val road = RoadNetwork(5)
 
-        val trafficJam: Boolean = road.checkForTrafficJam(mutableMapOf(Pair(3, 5)), 3)
+        val trafficJam: Boolean = road.checkForTrafficJamInSingleHour(mutableMapOf(Pair(3, 5)), 3)
         assertEquals(false, trafficJam)
     }
 
@@ -104,7 +104,7 @@ class RoadNetworkTest {
     fun roadNetworkWithZeroCapacityDelaysAlwaysCars() {
         val road = RoadNetwork(0)
 
-        val trafficJam: Boolean = road.checkForTrafficJam(mutableMapOf(Pair(3, 5)), 3)
+        val trafficJam: Boolean = road.checkForTrafficJamInSingleHour(mutableMapOf(Pair(3, 5)), 3)
         assertEquals(true, trafficJam)
     }
 
@@ -112,7 +112,7 @@ class RoadNetworkTest {
     fun noTrafficJamIfNoCapacityNeedetDespideNoCapacityThere() {
         val road = RoadNetwork(0)
 
-        val trafficJam: Boolean = road.checkForTrafficJam(mutableMapOf(Pair(3, 0)), 3)
+        val trafficJam: Boolean = road.checkForTrafficJamInSingleHour(mutableMapOf(Pair(3, 0)), 3)
         assertEquals(false, trafficJam)
     }
 
