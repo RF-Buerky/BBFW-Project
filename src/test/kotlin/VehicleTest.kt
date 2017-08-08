@@ -1,6 +1,5 @@
 import org.junit.Test
 import org.junit.Assert.assertEquals
-import traffic_simulation.RoadNetwork
 import traffic_simulation.Vehicle
 
 class VehicleTest {
