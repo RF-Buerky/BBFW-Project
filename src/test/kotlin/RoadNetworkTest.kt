@@ -13,7 +13,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf(BMW)
 
-        val calculated = road.calculateDemandAtTimestep(cars , 1)
+        val calculated = road.calculateDemandAtTimestep(cars, 1)
 
         assertEquals(1, calculated)
     }
@@ -26,7 +26,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf(BMW)
 
-        val calculated = road.calculateDemandAtTimestep(cars , 24)
+        val calculated = road.calculateDemandAtTimestep(cars, 24)
 
         assertEquals(1, calculated)
     }
@@ -37,7 +37,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf()
 
-        val calculated = road.calculateDemandAtTimestep(cars , 5)
+        val calculated = road.calculateDemandAtTimestep(cars, 5)
 
         assertEquals(0, calculated)
     }
@@ -52,7 +52,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf(BMW, AUDI, VOLVO)
 
-        val calculated = road.calculateDemandAtTimestep(cars , 5)
+        val calculated = road.calculateDemandAtTimestep(cars, 5)
 
         assertEquals(3, calculated)
     }
@@ -67,7 +67,7 @@ class RoadNetworkTest {
 
         val cars: List<Vehicle> = listOf(BMW, AUDI, VOLVO)
 
-        val calculated = road.calculateDemandAtTimestep(cars , 5)
+        val calculated = road.calculateDemandAtTimestep(cars, 5)
 
         assertEquals(3, calculated)
     }
@@ -131,6 +131,47 @@ class RoadNetworkTest {
     }
 
     @Test
+    fun delayVehiclesInTimestep_someVehiclesThere_allVehiclesGetingDelayed() {
+        val road = RoadNetwork(0)
+
+        val car1: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car2: Vehicle = Vehicle(2, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car3: Vehicle = Vehicle(3, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car4: Vehicle = Vehicle(4, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car5: Vehicle = Vehicle(5, mutableListOf(3, 4, 5, 8))
+        val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
+
+        val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
+
+        road.delayVehiclesInTimestep(allVehicles, 8)
+
+        var i: Int = 0
+        for (vehicle in allVehicles) {
+            if (vehicle.delayedInHours.contains(8)) {
+                i = i + 1
+            }
+        }
+        assertEquals(6, i)
+    }
+
+    @Test
+    fun delayVehiclesInTimestep_noVehiclesThere_notASingleDelay() {
+        val road = RoadNetwork(50)
+
+        val allVehicles: List<Vehicle> = listOf()
+
+        road.delayVehiclesInTimestep(allVehicles, 8)
+
+        var i: Int = 0
+        for (vehicle in allVehicles) {
+            if (vehicle.delayedInHours.contains(8)) {
+                i = i + 1
+            }
+        }
+        assertEquals(0, i)
+    }
+
+    @Test
     fun calculateDemandForTimestepAndCauseTrafficJam_RoadWithoutCapacity_everyDemandDelaysVehicle() {
         val road = RoadNetwork(0)
         val timestep = 8
@@ -144,10 +185,10 @@ class RoadNetworkTest {
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
 
-        road.calculateDemandForTimestepAndCauseTrafficJam(timestep , allVehicles)
+        road.calculateDemandForTimestepAndCauseTrafficJam(timestep, allVehicles)
 
-        for (vehicle in allVehicles){
-            val test : Boolean = vehicle.delayedInHours.contains(8)
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(8)
             assertEquals(true, test)
         }
     }
@@ -164,7 +205,7 @@ class RoadNetworkTest {
         val car6: Vehicle = Vehicle(6, mutableListOf(24))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-        val output : List<Vehicle> = road.simulateScenario(allVehicles)
+        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
         var i: Int = 0
 
@@ -185,7 +226,7 @@ class RoadNetworkTest {
         val car3: Vehicle = Vehicle(3, mutableListOf(19))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3)
-        val output : List<Vehicle> = road.simulateScenario(allVehicles)
+        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
         var i: Int = 0
 
@@ -209,7 +250,7 @@ class RoadNetworkTest {
         val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-        val output : List<Vehicle> = road.simulateScenario(allVehicles)
+        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
         var i: Int = 0
 
@@ -233,7 +274,7 @@ class RoadNetworkTest {
         val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-        val output : List<Vehicle> = road.simulateScenario(allVehicles)
+        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
         var i: Int = 0
 
@@ -255,11 +296,11 @@ class RoadNetworkTest {
         val car4: Vehicle = Vehicle(4, mutableListOf(3, 4, 5, 8, 9, 10, 11))
         val car5: Vehicle = Vehicle(5, mutableListOf(3, 4, 5, 8))
         val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
-        val car7: Vehicle = Vehicle(6, mutableListOf(9,10,11))
-        val car8: Vehicle = Vehicle(6, mutableListOf(9,10,11))
+        val car7: Vehicle = Vehicle(6, mutableListOf(9, 10, 11))
+        val car8: Vehicle = Vehicle(6, mutableListOf(9, 10, 11))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6, car7, car8)
-        val output : List<Vehicle> = road.simulateScenario(allVehicles)
+        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
         var i: Int = 0
 
