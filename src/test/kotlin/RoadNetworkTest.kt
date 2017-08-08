@@ -115,7 +115,7 @@ class RoadNetworkTest {
         val trafficJam: Boolean = road.checkForTrafficJamInSingleHour(mutableMapOf(Pair(3, 0)), 3)
         assertEquals(false, trafficJam)
     }
-*/
+
 
     @Test
     fun simulateScenario_someVehiclesGettingDelayed_NumberOfDelaysIsCorrect() {
@@ -190,4 +190,5 @@ class RoadNetworkTest {
         }
         assertEquals(0, i)
     }
+    */
 }
