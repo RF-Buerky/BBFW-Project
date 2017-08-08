@@ -12,7 +12,11 @@ class RoadNetwork(val capacity: Int) {
         }
         if(demandAtTimestep>capacity){
             for(vehicle in vehicleList){
-                vehicle.gettingDelayedInSpecialHour(timestep)
+                vehicle.getDelayedAtHour(timestep)
+            }
+        } else {
+            for(vehicle in vehicleList){
+                vehicle.driveAtHour(timestep)
             }
         }
        return demandAtTimestep
