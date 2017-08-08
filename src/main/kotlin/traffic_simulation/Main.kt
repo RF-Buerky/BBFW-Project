@@ -35,10 +35,10 @@ fun testScenarioWithInternList() {
     val BMW12: Vehicle = Vehicle(id = 12, wannaDriveInHours = mutableListOf(1,2,3,4,11,12,13,14,15,19,20,21,22,23,24))
     val testList: List<Vehicle> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
 
-    for (vehicle in road.simulateScenario(testList)) {
-        println("Vehicle '${vehicle.id}' is delayed: ${vehicle.delayedInHours}")
-    }
+    //for (vehicle in road.simulateScenario(testList)) {
+    //    println("Vehicle '${vehicle.id}' is delayed: ${vehicle.delayedInHours}")
 }
+
 
 fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
     val vehicleListCSV: MutableList<Vehicle> = mutableListOf()
