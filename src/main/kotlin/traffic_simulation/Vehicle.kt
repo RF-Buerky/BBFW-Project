@@ -1,11 +1,11 @@
 package traffic_simulation
 
-class Vehicle(val id: Int, val wannaDrive: Boolean) {
-    var delayed: Boolean = false //no vehicle is delayed by default
+class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
+    var delayedInHours: MutableList<Int> = mutableListOf() //no vehicle is delayedInHours by default
 
-    fun gettingDelayed() {
-        this.delayed = true
+    fun gettingDelayedInSpecialHour(hour : Int) {
+        this.delayedInHours.add(hour)
+        delayedInHours.sort()
     }
 
 }
-
