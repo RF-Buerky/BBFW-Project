@@ -45,74 +45,74 @@ fun testScenarioWithInternList() {
 
 
 fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
-        val vehicleListCSV: MutableList<Vehicle> = mutableListOf()
+    val vehicleListCSV: MutableList<Vehicle> = mutableListOf()
 
-        // The information of vehicles and their interest to drive is given in a csv-file
-        // Therefore we use a library to parse
-        // Setup of the parsing like symbol of separation etc.
-        // in this case mostly the default settings so just a few things have to be set
-        val settings = CsvParserSettings()
-        settings.format.setLineSeparator("\n")
-        settings.isHeaderExtractionEnabled = true
-        // this is to make the parser ignoring the first line in the csv-file
+    // The information of vehicles and their interest to drive is given in a csv-file
+    // Therefore we use a library to parse
+    // Setup of the parsing like symbol of separation etc.
+    // in this case mostly the default settings so just a few things have to be set
+    val settings = CsvParserSettings()
+    settings.format.setLineSeparator("\n")
+    settings.isHeaderExtractionEnabled = true
+    // this is to make the parser ignoring the first line in the csv-file
 
-        // creating a parser with the former made settings
-        val csvParser = CsvParser(settings)
+    // creating a parser with the former made settings
+    val csvParser = CsvParser(settings)
 
-        // reading of the csv-file
-        val reader = FileAccess().getReader("/" + fileName)
+    // reading of the csv-file
+    val reader = FileAccess().getReader("/" + fileName)
 
-        // analyze (parse) of the csv given
-        val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
+    // analyze (parse) of the csv given
+    val allRows: MutableList<Record> = csvParser.parseAllRecords(reader)
 
-        // insert the parsed information of csv-file in usable lists and use them in functions
-        for (record in allRows) {
-            val id_String: String = record.values[0]
-            val wannaDrive_String: String = record.values[1]
+    // insert the parsed information of csv-file in usable lists and use them in functions
+    for (record in allRows) {
+        val id_String: String = record.values[0]
+        val wannaDrive_String: String = record.values[1]
 
-            val id_Int: Int = id_String.toInt()
-            val wannaDrive_List: MutableList<Int> = mutableListOf()
+        val id_Int: Int = id_String.toInt()
+        val wannaDrive_List: MutableList<Int> = mutableListOf()
 
-            val separator: Char = '/'
-            val splittedWannaDrive: List<String> = wannaDrive_String.split(separator)
+        val separator: Char = '/'
+        val splittedWannaDrive: List<String> = wannaDrive_String.split(separator)
 
-            for (hour in splittedWannaDrive) {
-                val newHour_Int: Int = hour.toInt()
-                wannaDrive_List.add(newHour_Int)
-            }
-
-            wannaDrive_List.sort()
-            vehicleListCSV.add(Vehicle(id = id_Int, wannaDriveInHours = wannaDrive_List))
+        for (hour in splittedWannaDrive) {
+            val newHour_Int: Int = hour.toInt()
+            wannaDrive_List.add(newHour_Int)
         }
-        return vehicleListCSV
+
+        wannaDrive_List.sort()
+        vehicleListCSV.add(Vehicle(id = id_Int, wannaDriveInHours = wannaDrive_List))
     }
+    return vehicleListCSV
+}
 
 fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv") {
-        val writer = FileAccess().getWriter(outputFile)
+    val writer = FileAccess().getWriter(outputFile)
 
-        val csvWriter = CsvWriter(writer, CsvWriterSettings())
+    val csvWriter = CsvWriter(writer, CsvWriterSettings())
 
-        // Write the record headers of this file
-        val vehicleRows: MutableList<Array<Any>> = mutableListOf()
-        val id = "VehicleID"
-        val delay = "Delayed in hours"
-        val notDelay = "Driven without delay in hours"
+    // Write the record headers of this file
+    val vehicleRows: MutableList<Array<Any>> = mutableListOf()
+    val id = "VehicleID"
+    val delay = "Delayed in hours"
+    val notDelay = "Driven without delay in hours"
+    val row: Array<Any> = arrayOf(id, delay, notDelay)
+    vehicleRows.add(row)
+
+    for (result in results) {
+        val id = result.id.toString()
+        val delay = result.delayedInHours.toString()
+        val notDelay = result.droveWithoutDelayInHours.toString()
         val row: Array<Any> = arrayOf(id, delay, notDelay)
         vehicleRows.add(row)
-
-        for (result in results) {
-            val id = result.id.toString()
-            val delay = result.delayedInHours.toString()
-            val notDelay = result.droveWithoutDelayInHours.toString()
-            val row: Array<Any> = arrayOf(id, delay, notDelay)
-            vehicleRows.add(row)
-        }
-        csvWriter.writeRowsAndClose(vehicleRows)
     }
+    csvWriter.writeRowsAndClose(vehicleRows)
+}
 
 fun simulateCSV() {
-        val road: RoadNetwork = RoadNetwork(capacity = 10)
-        val vehiclesFromCSV: List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
+    val road: RoadNetwork = RoadNetwork(capacity = 10)
+    val vehiclesFromCSV: List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
-        printResultsToCSV(road.simulateScenario(vehiclesFromCSV))
-    }
+    printResultsToCSV(road.simulateScenario(vehiclesFromCSV))
+}
