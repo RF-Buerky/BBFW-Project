@@ -8,7 +8,7 @@ class VehicleTest {
     fun gettingDelayed_trafficJamInOneHour_vehicleGetDelayed() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3))
 
-        BMW.gettingDelayed(1)
+        BMW.gettingDelayedInSpecialHour(1)
 
         val correctList : MutableList <Int> = mutableListOf(1)
         assertEquals(correctList, BMW.delayedInHours)
@@ -18,10 +18,10 @@ class VehicleTest {
     fun gettingDelayed_trafficJamInSeveralHours_vehicleGetsOftenDelayed() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
 
-        BMW.gettingDelayed(1)
-        BMW.gettingDelayed(3)
-        BMW.gettingDelayed(4)
-        BMW.gettingDelayed(5)
+        BMW.gettingDelayedInSpecialHour(1)
+        BMW.gettingDelayedInSpecialHour(3)
+        BMW.gettingDelayedInSpecialHour(4)
+        BMW.gettingDelayedInSpecialHour(5)
 
         val correctList : MutableList <Int> = mutableListOf(1,3,4,5)
         assertEquals(correctList, BMW.delayedInHours)
@@ -31,7 +31,7 @@ class VehicleTest {
     fun gettingDelayed_trafficJamInCriticalHour24_vehicleGetsDelayed() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(23,24))
 
-        BMW.gettingDelayed(24)
+        BMW.gettingDelayedInSpecialHour(24)
 
         val correctList : MutableList <Int> = mutableListOf(24)
         assertEquals(correctList, BMW.delayedInHours)
@@ -41,10 +41,10 @@ class VehicleTest {
     fun gettingDelayed_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
 
-        BMW.gettingDelayed(1)
-        BMW.gettingDelayed(5)
-        BMW.gettingDelayed(3)
-        BMW.gettingDelayed(4)
+        BMW.gettingDelayedInSpecialHour(1)
+        BMW.gettingDelayedInSpecialHour(5)
+        BMW.gettingDelayedInSpecialHour(3)
+        BMW.gettingDelayedInSpecialHour(4)
 
         val correctList : MutableList <Int> = mutableListOf(1,3,4,5)
         assertEquals(correctList, BMW.delayedInHours)

@@ -44,7 +44,7 @@ class RoadNetwork(val capacity: Int) {
             if (trafficJam) {
                 for (vehicle in vehicleList) {
                     if (vehicle.wannaDriveInHours.contains(hour)) {//A vehicle standing around with no desire to drive cannot be delayed
-                        vehicle.gettingDelayed(hour)
+                        vehicle.gettingDelayedInSpecialHour(hour)
                     }
                 }
             }
