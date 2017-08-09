@@ -3,7 +3,7 @@ package traffic_simulation
 class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
 
     val delayedInHours : MutableList<Int> = mutableListOf()
-    val droveWithoutDelayInHours : MutableList<Int> = mutableListOf()
+    val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
     var delay = 0
 
     fun vehicleWantsToDriveAt(timestep :Int):Boolean{
@@ -30,7 +30,7 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
         }
 
         if (delay <= 0 && wannaDriveInHours.contains(timestep)){
-            droveWithoutDelayInHours.add(timestep)
+            droveWithoutNewDelayInHours.add(timestep)
         }
     }
 
