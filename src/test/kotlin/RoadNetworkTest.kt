@@ -145,13 +145,63 @@ class RoadNetworkTest {
 
         road.delayVehiclesInTimestep(allVehicles, 8)
 
-        var i: Int = 0
         for (vehicle in allVehicles) {
-            if (vehicle.delayedInHours.contains(8)) {
-                i = i + 1
-            }
+            val test: Boolean = vehicle.delayedInHours.contains(8)
+            assertEquals(true, test)
         }
-        assertEquals(6, i)
+
+    }
+
+    @Test
+    fun delayVehiclesInTimestep_someVehiclesThere_delayedInHoursContainsOnlyTimestepWithTrafficJam() {
+        val road = RoadNetwork(0)
+
+        val car1: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car2: Vehicle = Vehicle(2, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car3: Vehicle = Vehicle(3, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car4: Vehicle = Vehicle(4, mutableListOf(3, 4, 5, 8, 9, 10, 11))
+        val car5: Vehicle = Vehicle(5, mutableListOf(3, 4, 5, 8))
+        val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
+
+        val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
+
+        road.delayVehiclesInTimestep(allVehicles, 8)
+
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(8)
+            assertEquals(true, test)
+        }
+
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(3)
+            assertEquals(false, test)
+        }
+
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(4)
+            assertEquals(false, test)
+        }
+
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(5)
+            assertEquals(false, test)
+        }
+
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(9)
+            assertEquals(false, test)
+        }
+
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(10)
+            assertEquals(false, test)
+        }
+
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(11)
+            assertEquals(false, test)
+        }
+
     }
 
     @Test
@@ -162,13 +212,10 @@ class RoadNetworkTest {
 
         road.delayVehiclesInTimestep(allVehicles, 8)
 
-        var i: Int = 0
         for (vehicle in allVehicles) {
-            if (vehicle.delayedInHours.contains(8)) {
-                i = i + 1
-            }
+            val test: Boolean = vehicle.delayedInHours.contains(8)
+            assertEquals(false, test)
         }
-        assertEquals(0, i)
     }
 
     @Test
@@ -205,20 +252,17 @@ class RoadNetworkTest {
         val car6: Vehicle = Vehicle(6, mutableListOf(24))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
-        var i: Int = 0
+        road.simulateScenario(allVehicles)
 
-        for (car in output) {
-            for (hour in car.delayedInHours) {
-                i = i + 1
-            }
+        for (vehicle in allVehicles) {
+            val test: Boolean = vehicle.delayedInHours.contains(24)
+            assertEquals(true, test)
         }
-        assertEquals(6, i)
     }
 
     @Test
-    fun simulateScenario_vehiclesDemandTooMuchCapacityInOneTimestep_delaysGoThroughAllTimestepsSinceThen() {
+    fun simulateScenario_vehiclesDemandTooMuchCapacityInOneTimestep_newDelaysJustInThisTimestep() {
         val road = RoadNetwork(2)
 
         val car1: Vehicle = Vehicle(1, mutableListOf(19))
@@ -226,20 +270,25 @@ class RoadNetworkTest {
         val car3: Vehicle = Vehicle(3, mutableListOf(19))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3)
-        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
-        var i: Int = 0
+        road.simulateScenario(allVehicles)
 
-        for (car in output) {
-            for (hour in car.delayedInHours) {
-                i = i + 1
+        for (vehicle in allVehicles) {
+            for (timestep in 1..18){
+                val test : Boolean = vehicle.delayedInHours.contains(timestep)
+                assertEquals(false , test)
+            }
+            val test: Boolean = vehicle.delayedInHours.contains(19)
+            assertEquals(true, test)
+            for (timestep in 20..24){
+                val test : Boolean = vehicle.delayedInHours.contains(timestep)
+                assertEquals(false, test)
             }
         }
-        assertEquals(3, i)
     }
 
     @Test
-    fun simulateScenario_vehiclesDemandTooMuchCapacityInSeveralTimesteps_delaysGoThroughAllTimestepsSinceThen() {
+    fun simulateScenario_vehiclesDemandTooMuchCapacityInSeveralTimesteps_vehiclesDalyGoThroughAllTimestepsSinceThen() {
         val road = RoadNetwork(3)
 
         val car1: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 9, 10, 11))
@@ -250,20 +299,17 @@ class RoadNetworkTest {
         val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-        val output: List<Vehicle> = road.simulateScenario(allVehicles)
 
-        var i: Int = 0
+        road.simulateScenario(allVehicles)
 
-        for (car in output) {
-            for (hour in car.delayedInHours) {
-                i = i + 1
-            }
+        for (vehicle in allVehicles) {
+            val test: Boolean = ( vehicle.delay > 0 )
+            assertEquals(true, test)
         }
-        assertEquals(36, i)
     }
 
     @Test
-    fun simulateScenario_noVehiclesGettingDelayed_NumberOfDelaysIsCorrect() {
+    fun simulateScenario_networksCapacityAlwaysHigherDemand_notASingleDelay() {
         val road = RoadNetwork(50)
 
         val car1: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 9, 10, 11))
@@ -274,20 +320,20 @@ class RoadNetworkTest {
         val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-        val output: List<Vehicle> = road.simulateScenario(allVehicles)
+        road.simulateScenario(allVehicles)
 
-        var i: Int = 0
+        for (timestep in 1..24) {
 
-        for (car in output) {
-            for (hour in car.delayedInHours) {
-                i = i + 1
+            for (vehicle in allVehicles) {
+                val test: Boolean = (vehicle.delayedInHours.contains(timestep))
+                assertEquals(false, test)
             }
         }
-        assertEquals(0, i)
+
     }
 
     @Test
-    fun simulateScenario_demandMatchesCapacity_noDelays() {
+    fun simulateScenario_demandMatchesCapacity_notASingleDelay() {
         val road = RoadNetwork(6)
 
         val car1: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 9, 10, 11))
@@ -300,15 +346,14 @@ class RoadNetworkTest {
         val car8: Vehicle = Vehicle(6, mutableListOf(9, 10, 11))
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6, car7, car8)
-        val output: List<Vehicle> = road.simulateScenario(allVehicles)
+        road.simulateScenario(allVehicles)
 
-        var i: Int = 0
+        for (timestep in 1..24) {
 
-        for (car in output) {
-            for (hour in car.delayedInHours) {
-                i = i + 1
+            for (vehicle in allVehicles) {
+                val test: Boolean = (vehicle.delayedInHours.contains(timestep))
+                assertEquals(false, test)
             }
         }
-        assertEquals(0, i)
     }
 }
