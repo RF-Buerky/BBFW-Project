@@ -26,7 +26,7 @@ class RoadNetwork(val capacity: Int) {
             in 150..Int.MAX_VALUE -> probabilityOfDelay = 90
         }
 
-        val delayed: Boolean = Random().nextInt(100) <= probabilityOfDelay
+        val delayed: Boolean = Random().nextInt(100) + 1 <= probabilityOfDelay
 
         if (demandAtTimestep > capacity && delayed) {
             for (vehicle in vehicleList) {
