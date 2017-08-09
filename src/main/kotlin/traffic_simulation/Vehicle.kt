@@ -29,9 +29,7 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
             delay -= 1
         }
 
-        if (delay <= 0 && wannaDriveInHours.contains(timestep)){
-            droveWithoutNewDelayInHours.add(timestep)
-        }
+        droveWithoutNewDelayInHours.add(timestep)
     }
 
 }
