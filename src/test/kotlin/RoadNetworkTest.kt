@@ -235,7 +235,7 @@ class RoadNetworkTest {
                 i = i + 1
             }
         }
-        assertEquals(18, i)
+        assertEquals(3, i)
     }
 
     @Test
@@ -259,7 +259,7 @@ class RoadNetworkTest {
                 i = i + 1
             }
         }
-        assertEquals(132, i)
+        assertEquals(36, i)
     }
 
     @Test
