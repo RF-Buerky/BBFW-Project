@@ -13,7 +13,7 @@ class RoadNetwork(val capacity: Int) {
             }
         }
 
-        val probabilityOfDelay: Int
+        var probabilityOfDelay: Int = 0
         val percentOfCapacityUsage: Int = (demandAtTimestep / capacity) * 100
         when (percentOfCapacityUsage) {
             !in Int.MIN_VALUE..Int.MAX_VALUE -> println("insane road")
@@ -26,18 +26,9 @@ class RoadNetwork(val capacity: Int) {
             in 150..Int.MAX_VALUE -> probabilityOfDelay = 90
         }
 
-        fun DelayedByProbability(probability: Int): Boolean {
-            val result: Boolean
-            val probabilityList: MutableList<Int> = mutableListOf()
-            for (r in 1..probability) {
-                probabilityList.add(r)
-            }
-            val randomNumber = Random().nextInt(100) + 1
-            result = probabilityList.contains(randomNumber)
-            return result
-        }
+        val delayed: Boolean = Random().nextInt(100)+1 <= probabilityOfDelay
 
-        if (demandAtTimestep > capacity) {
+        if (demandAtTimestep > capacity && delayed) {
             for (vehicle in vehicleList) {
                 vehicle.getDelayedAtHour(timestep)
             }
