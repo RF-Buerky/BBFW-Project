@@ -11,7 +11,7 @@ class VehicleTest {
         BMW.getDelayedAtHour(1)
 
         val correctList : MutableList <Int> = mutableListOf(1)
-        assertEquals(correctList, BMW.delayedInHours)
+        assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
@@ -24,7 +24,7 @@ class VehicleTest {
         BMW.getDelayedAtHour(5)
 
         val correctList : MutableList <Int> = mutableListOf(1,3,4,5)
-        assertEquals(correctList, BMW.delayedInHours)
+        assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
@@ -34,7 +34,7 @@ class VehicleTest {
         BMW.getDelayedAtHour(24)
 
         val correctList : MutableList <Int> = mutableListOf(24)
-        assertEquals(correctList, BMW.delayedInHours)
+        assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
@@ -47,7 +47,7 @@ class VehicleTest {
         BMW.getDelayedAtHour(4)
 
         val correctList : MutableList <Int> = mutableListOf(1,3,4,5)
-        assertEquals(correctList, BMW.delayedInHours)
+        assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
@@ -56,6 +56,6 @@ class VehicleTest {
 
         val correctList : MutableList <Int> = mutableListOf()
 
-        assertEquals(correctList, BMW.delayedInHours)
+        assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 }
