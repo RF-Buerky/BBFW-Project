@@ -38,7 +38,7 @@ fun testScenarioWithInternList() {
     val testList: List<Vehicle> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
 
     for (vehicle in road.simulateScenario(testList)) {
-        println("Vehicle '${vehicle.id}' is delayed: ${vehicle.delayedInHours}")
+        println("Vehicle '${vehicle.id}' is delayed: ${vehicle.gotNewDelayInHours}")
     }
 }
 
@@ -100,7 +100,7 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
 
         for (result in results) {
             val id = result.id.toString()
-            val delay = result.delayedInHours.toString()
+            val delay = result.gotNewDelayInHours.toString()
             val row: Array<Any> = arrayOf(id, delay)
             vehicleRows.add(row)
         }

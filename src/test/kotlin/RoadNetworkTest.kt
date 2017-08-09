@@ -146,7 +146,7 @@ class RoadNetworkTest {
         road.delayVehiclesInTimestep(allVehicles, 8)
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(8)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
             assertEquals(true, test)
         }
 
@@ -168,37 +168,37 @@ class RoadNetworkTest {
         road.delayVehiclesInTimestep(allVehicles, 8)
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(8)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
             assertEquals(true, test)
         }
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(3)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(3)
             assertEquals(false, test)
         }
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(4)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(4)
             assertEquals(false, test)
         }
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(5)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(5)
             assertEquals(false, test)
         }
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(9)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(9)
             assertEquals(false, test)
         }
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(10)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(10)
             assertEquals(false, test)
         }
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(11)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(11)
             assertEquals(false, test)
         }
 
@@ -213,7 +213,7 @@ class RoadNetworkTest {
         road.delayVehiclesInTimestep(allVehicles, 8)
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(8)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
             assertEquals(false, test)
         }
     }
@@ -235,7 +235,7 @@ class RoadNetworkTest {
         road.calculateDemandForTimestepAndCauseTrafficJam(timestep, allVehicles)
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(8)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
             assertEquals(true, test)
         }
     }
@@ -256,7 +256,7 @@ class RoadNetworkTest {
         road.simulateScenario(allVehicles)
 
         for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.delayedInHours.contains(24)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(24)
             assertEquals(true, test)
         }
     }
@@ -275,13 +275,13 @@ class RoadNetworkTest {
 
         for (vehicle in allVehicles) {
             for (timestep in 1..18){
-                val test : Boolean = vehicle.delayedInHours.contains(timestep)
+                val test : Boolean = vehicle.gotNewDelayInHours.contains(timestep)
                 assertEquals(false , test)
             }
-            val test: Boolean = vehicle.delayedInHours.contains(19)
+            val test: Boolean = vehicle.gotNewDelayInHours.contains(19)
             assertEquals(true, test)
             for (timestep in 20..24){
-                val test : Boolean = vehicle.delayedInHours.contains(timestep)
+                val test : Boolean = vehicle.gotNewDelayInHours.contains(timestep)
                 assertEquals(false, test)
             }
         }
@@ -325,7 +325,7 @@ class RoadNetworkTest {
         for (timestep in 1..24) {
 
             for (vehicle in allVehicles) {
-                val test: Boolean = (vehicle.delayedInHours.contains(timestep))
+                val test: Boolean = (vehicle.gotNewDelayInHours.contains(timestep))
                 assertEquals(false, test)
             }
         }
@@ -351,7 +351,7 @@ class RoadNetworkTest {
         for (timestep in 1..24) {
 
             for (vehicle in allVehicles) {
-                val test: Boolean = (vehicle.delayedInHours.contains(timestep))
+                val test: Boolean = (vehicle.gotNewDelayInHours.contains(timestep))
                 assertEquals(false, test)
             }
         }
