@@ -95,8 +95,8 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
     // Write the record headers of this file
     val vehicleRows: MutableList<Array<Any>> = mutableListOf()
     val id = "VehicleID"
-    val delay = "Delayed in hours"
-    val notDelay = "Driven without delay in hours"
+    val delay = "Got a new delay in hours because of traffic jam"
+    val notDelay = "Driven without a new delay in hours (no traffic jam)"
     val row: Array<Any> = arrayOf(id, delay, notDelay)
     vehicleRows.add(row)
 
