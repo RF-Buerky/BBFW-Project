@@ -29,7 +29,9 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
             delay -= 1
         }
 
-        droveWithoutNewDelayInHours.add(timestep)
+        this.droveWithoutNewDelayInHours.add(timestep)
+        this.droveWithoutNewDelayInHours.sort()
+
     }
 
 }
