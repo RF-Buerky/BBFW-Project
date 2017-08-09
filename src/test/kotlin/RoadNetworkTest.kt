@@ -134,7 +134,7 @@ class RoadNetworkTest {
         var i: Int = 0
 
         for (car in output) {
-            for (hour in car.delayedInHours) {
+            for (hour in car.gotNewDelayInHours) {
                 i = i + 1
             }
         }
@@ -158,7 +158,7 @@ class RoadNetworkTest {
         var i: Int = 0
 
         for (car in output) {
-            for (hour in car.delayedInHours) {
+            for (hour in car.gotNewDelayInHours) {
                 i = i + 1
             }
         }
@@ -184,7 +184,7 @@ class RoadNetworkTest {
         var i: Int = 0
 
         for (car in output) {
-            for (hour in car.delayedInHours) {
+            for (hour in car.gotNewDelayInHours) {
                 i = i + 1
             }
         }
