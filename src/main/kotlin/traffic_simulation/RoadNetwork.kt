@@ -28,12 +28,6 @@ class RoadNetwork(val capacity: Int) {
         return demandAtTimestep
     }
 
-    fun vehiclesDrivingInTimestep(vehicleList: List<Vehicle>, timestep: Int) {
-        for (vehicle in vehicleList) {
-            vehicle.driveAtHour(timestep)
-        }
-    }
-
     fun simulateScenario(vehicleList: List<Vehicle>): List<Vehicle> {
         for (timestep in 1..24) {
             calculateDemandForTimestepAndCauseRandomDelays(timestep, vehicleList)
