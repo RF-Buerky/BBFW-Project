@@ -197,7 +197,7 @@ class RoadNetworkTest {
         }
     }
 
-    @Test
+/*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInLastTimestep_NumberOfDelaysIsCorrect() {
         val road = RoadNetwork(2)
 
@@ -216,7 +216,7 @@ class RoadNetworkTest {
             val test: Boolean = vehicle.gotNewDelayInHours.contains(24)
             assertEquals(true, test)
         }
-    }
+    }*/
 
 /*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInOneTimestep_newDelaysJustInThisTimestep() {
