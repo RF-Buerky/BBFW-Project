@@ -36,9 +36,10 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
 
     }
 
-    fun probability(demandX: Int, capacity: Int): Boolean{
+    fun randomDelayByCapacityAndDemand(demandX: Int, capacity: Int): Boolean{
         var probabilityOfDelay: Int = 0
-        val percentOfCapacityUsage: Int = ((demandX.toDouble() / capacity.toDouble()) * 100).toInt()
+        val percentOfCapacityUsage_Double : Double = ( demandX.toDouble() / capacity.toDouble() ) *100
+        val percentOfCapacityUsage : Int = percentOfCapacityUsage_Double.toInt()
         when (percentOfCapacityUsage) {
             in 0..49 -> probabilityOfDelay = 5
             in 50..69 -> probabilityOfDelay = 10
