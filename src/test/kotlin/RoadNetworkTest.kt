@@ -88,49 +88,6 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun isTrafficJam_capacityBiggerThanDemand_noTrafficJam() {
-        val road = RoadNetwork(20)
-
-        val trafficJam: Boolean = road.isTrafficJam(3)
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_noCapacityCemand_noTrafficJam() {
-        val road = RoadNetwork(20)
-
-        val trafficJam: Boolean = road.isTrafficJam(0)
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_capacitySmallerThanDemand_trafficJamdHappens() {
-        val road = RoadNetwork(2)
-
-        val trafficJam: Boolean = road.isTrafficJam(3)
-
-        assertEquals(true, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_capacityEqualsDemand_noTrafficJam() {
-        val road = RoadNetwork(5)
-
-        val trafficJam: Boolean = road.isTrafficJam(5)
-
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_capacityAndDemandZero_noTrafficJam() {
-        val road = RoadNetwork(0)
-
-        val trafficJam: Boolean = road.isTrafficJam(0)
-
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
     fun delayVehiclesInTimestep_someVehiclesThere_allVehiclesGetingDelayed() {
         val road = RoadNetwork(0)
 

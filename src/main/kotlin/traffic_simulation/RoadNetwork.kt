@@ -6,12 +6,16 @@ class RoadNetwork(val capacity: Int) {
 
         val demandAtTimestep :Int = calculateDemandAtTimestep(vehicleList , timestep)
 
-        val trafficJam : Boolean = isTrafficJam(demandAtTimestep)
-        if(trafficJam){
-            delayVehiclesInTimestep(vehicleList , timestep)
-        } else {
-            vehiclesDrivingInTimestep(vehicleList , timestep)
+
+        for(vehicle in vehicleList){
+            val randomDelay : Boolean = vehicle.probability(demandAtTimestep, capacity)
+                    if(randomDelay){
+                        delayVehiclesInTimestep(vehicleList , timestep)
+                    } else {
+                        vehiclesDrivingInTimestep(vehicleList , timestep)
+                }
         }
+
     }
 
     fun calculateDemandAtTimestep (vehicleList : List<Vehicle> , timestep : Int):Int{
@@ -22,10 +26,6 @@ class RoadNetwork(val capacity: Int) {
             }
         }
         return demandAtTimestep
-    }
-
-    fun isTrafficJam (demandAtTimestep : Int): Boolean{
-        return (demandAtTimestep > capacity)
     }
 
     fun delayVehiclesInTimestep (vehicleList : List<Vehicle> , timestep : Int){
