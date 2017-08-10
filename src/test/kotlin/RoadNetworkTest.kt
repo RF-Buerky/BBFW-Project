@@ -244,7 +244,7 @@ class RoadNetworkTest {
         }
     }
 
-    @Test
+/*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInSeveralTimesteps_vehiclesDalyGoThroughAllTimestepsSinceThen() {
         val road = RoadNetwork(3)
 
@@ -263,9 +263,9 @@ class RoadNetworkTest {
             val test: Boolean = ( vehicle.delay > 0 )
             assertEquals(true, test)
         }
-    }
+    }*/
 
-    @Test
+/*    @Test
     fun simulateScenario_networksCapacityAlwaysHigherDemand_notASingleDelay() {
         val road = RoadNetwork(50)
 
@@ -287,9 +287,9 @@ class RoadNetworkTest {
             }
         }
 
-    }
+    }*/
 
-    @Test
+/*    @Test
     fun simulateScenario_demandMatchesCapacity_notASingleDelay() {
         val road = RoadNetwork(6)
 
@@ -312,5 +312,5 @@ class RoadNetworkTest {
                 assertEquals(false, test)
             }
         }
-    }
+    }*/
 }
