@@ -4,7 +4,7 @@ import java.util.*
 
 class RoadNetwork(val capacity: Int) {
 
-    fun calculateDemandForTimestepAndCauseTrafficJam(timestep: Int, vehicleList: List<Vehicle>): Int {
+    fun calculateDemandForTimestepAndCauseTrafficJam(timestep: Int , vehicleList: List<Vehicle>): Int {
         var demandAtTimestep: Int = 0
 
         for (vehicle in vehicleList) {
