@@ -189,7 +189,7 @@ class RoadNetworkTest {
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
 
-        road.calculateDemandForTimestepAndCauserDelays(timestep, allVehicles)
+        road.calculateDemandForTimestepAndCauseRandomDelays(timestep, allVehicles)
 
         for (vehicle in allVehicles) {
             val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
