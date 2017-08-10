@@ -38,6 +38,7 @@ fun testScenarioWithInternList() {
     val testList: List<Vehicle> = listOf(BMW1, BMW2, BMW3, BMW4, BMW5, BMW6, BMW7, BMW8, BMW9, BMW10, BMW11, BMW12)
 
     for (vehicle in road.simulateScenario(testList)) {
+
         println("Vehicle '${vehicle.id}' got a delay cause of traffic jam in hours: ${vehicle.gotNewDelayInHours} " +
                 "drove without new delays in hours (no traffic jam): ${vehicle.droveWithoutNewDelayInHours}")
     }
