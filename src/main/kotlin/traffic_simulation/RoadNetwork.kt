@@ -10,9 +10,9 @@ class RoadNetwork(val capacity: Int) {
         for (vehicle in vehicleList) {
             val randomDelay: Boolean = vehicle.randomDelayByCapacityAndDemand(demandAtTimestep, capacity)
             if (randomDelay) {
-                delayVehiclesInTimestep(vehicleList, timestep)
+                vehicle.getDelayedAtHour(timestep)
             } else {
-                vehiclesDrivingInTimestep(vehicleList, timestep)
+                vehicle.driveAtHour(timestep)
             }
         }
 
