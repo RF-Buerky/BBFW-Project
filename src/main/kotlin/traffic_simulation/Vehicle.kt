@@ -49,6 +49,7 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
             in 125..149 -> probabilityOfDelay = 70
             in 150..Int.MAX_VALUE -> probabilityOfDelay = 90
         }
+        if (capacity == 0) {probabilityOfDelay = 100}
         val delayed: Boolean = Random().nextInt(100) + 1 <= probabilityOfDelay
         return delayed
     }
