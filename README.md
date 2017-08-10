@@ -25,11 +25,14 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 ## Ausführen des Programmes - How to launch the application
 
-0.) Das Programm wird ausgeführt, indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt.
+1.) Das Programm wird ausgeführt, indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt. Durch die Ausführung dieser .jar-Datei wird die Lösung der Verkehrssimulatin in eine CSV-Datei ausgegeben. Diese CSV-Datei wird lokal auf Ihrer Maschine erstellt und Trägt den Namen `results.csv`. Öffnen Sie die Datei um das Ergebnis zu betrachten.
 
-Lade eines der [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") herunter. Im heruntergeladenen Ordner befindet sich die .jar-Datei.
+Wie kommt man zu der .jar-Datei?    
+Bei den [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") finden sich am Ende deren beschreibung herunterladbare Dateien bzw. Ordner. Laden Sie dort die Datei mit der Endung `.jar` herunter (die Ordner brauchen Sie nicht - dort ist der Source-Code drin).
 
-1.) Ausführen mit Windows PowerShell
+Die Datenbasis, auf welcher das Programm läuft kann angepasst werden. Lesen Sie hierfür den Abschnitt "Datengrundlage anpassen" in der Rubrik "Informationen für Mitwirkende.
+
+2.) Ausführen mit Windows PowerShell   
 PowerShell können Sie etwa unter Windows 8/10+ über die Suchfunktion (Windowstaste + S) leicht finden und mit einem Klick darauf aufrufen.
 In Windows PowerShell gibt man folgenden `Befehl` in der Konsole ein (der Pfad, an dem man sich Befindet ist egal):  
 `java -jar "PfadZurDatei"`   
@@ -65,6 +68,21 @@ Es gilt zu beachten:
 ### Merge-Regeln
 
 Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodieren. Das Projekt dient nicht nur als Prüfung sondern auch als Lehreinheit. Damit die Studierenden sich nichts durch einen Merge zerstören, ist ein Merge auf den master-Branch nur auszufügen, wenn der Dozent [Nicolai Parlog](https://github.com/nicolaiparlog "Link zum GitHub-Profil von Nicolai Parlog") sein OK gegeben hat. Merging kann jedoch in Ausnahmefällen durch separate, regulierte (keine Merge-Konflikte, Travis meldet keine Fehler) Gestattung des Dozenten in Zeiten der spärlicher Betreuung durchgeführt werden.
+
+### Datengrundlage anpassen
+
+Um die Datengrundlage des Programmes zu ändern, müssen Sie den src-Ordner eines Releases herunterladen. Die Releases finden Sie [hier](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu Releases"). Laden Sie den Ordner `Source code (zip)`eines Release herunter. Nach dem entpacken finden Sie in dem Ordnerpfad `...\BBFW-Project-3.0\src\main\resources` eine CSV-Datei namens `driveInterest.csv`. Diese Datei beinhaltet die Datengrundlage.
+
+Öffnen Sie die Datei mit einem Editor. Fügen Sie neue Fahrzeuge hinzu/löschen Sie unerwünschte Fahrzeuge heraus. Die Eingabe muss zwingend folgenden Syntax haben:
+    `{eindeutige Fahrzeugkennung als Ganzzahl}, {Stunden in denen das Fahrzeug plant zu fahren, getrennt durch /}`    
+Zum Beispiel: `6,	7/19/12/23`    
+Wenn das Fahrzeug die Kennung "6" hat und in den Stunden "7, 19, 12, 23" zu fahren plant (die Reihenfolge der Stunden darf wie in diesem Beispiel ungeordnet sein).
+
+Speichern Sie nach den Änderungen die Datei ab und erstellen Sie die .jar-Datei.
+
+Alternativ können Sie eine andere Datengrundlage im Source-Code des Projektes öffnen. Von diesem Eingriff ist jedoch  abzuraten, dies sollten nur Experten vornehmen. Aus diesen Gründen wird das Vorgehen hier nicht erläutert.
+
+
 
 ### Erstellung der .jar-Datei zum Ausführen
 
