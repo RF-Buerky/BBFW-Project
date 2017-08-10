@@ -2,7 +2,7 @@ package traffic_simulation
 
 class RoadNetwork(val capacity: Int) {
 
-    fun calculateDemandForTimestepAndCauseTrafficJam(timestep :Int, vehicleList: List<Vehicle>){
+    fun calculateDemandForTimestepAndCauseRandomDelays(timestep :Int, vehicleList: List<Vehicle>){
 
         val demandAtTimestep :Int = calculateDemandAtTimestep(vehicleList , timestep)
 
@@ -42,7 +42,7 @@ class RoadNetwork(val capacity: Int) {
 
     fun simulateScenario(vehicleList: List<Vehicle>): List<Vehicle> {
         for(timestep in 1..24){
-            calculateDemandForTimestepAndCauseTrafficJam(timestep, vehicleList)
+            calculateDemandForTimestepAndCauseRandomDelays(timestep, vehicleList)
         }
         return vehicleList
     }
