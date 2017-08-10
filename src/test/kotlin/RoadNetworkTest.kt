@@ -43,7 +43,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun calculateDemand_DemandOfSeveralVehicles_demandIsTheSummedVehiclesDemand() {
+    fun calculateDemandAtTimestep_DemandOfSeveralVehicles_demandIsTheSummedVehiclesDemand() {
         val road = RoadNetwork(20)
 
         val BMW: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 24))
@@ -58,7 +58,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun calculateDemand_DemandOfSeveralVehiclesNotInOrder_demandIsTheSummedVehiclesDemand() {
+    fun calculateDemandAtTimestep_DemandOfSeveralVehiclesNotInOrder_demandIsTheSummedVehiclesDemand() {
         val road = RoadNetwork(20)
 
         val BMW: Vehicle = Vehicle(1, mutableListOf(5, 8, 24, 3))
@@ -73,7 +73,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun calculateDemand_SeveralCarsWithoutDemands_NoDemand() {
+    fun calculateDemandAtTimestep_SeveralCarsWithoutDemands_NoDemand() {
         val road = RoadNetwork(20)
 
         val BMW: Vehicle = Vehicle(1, mutableListOf())
@@ -176,7 +176,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun calculateDemandForTimestepAndCauseTrafficJam_RoadWithoutCapacity_everyDemandDelaysVehicle() {
+    fun calculateDemandForTimestepAndCauseRandomDelays_RoadWithoutCapacity_everyDemandDelaysVehicle() {
         val road = RoadNetwork(0)
         val timestep = 8
 
@@ -218,7 +218,7 @@ class RoadNetworkTest {
         }
     }
 
-    @Test
+/*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInOneTimestep_newDelaysJustInThisTimestep() {
         val road = RoadNetwork(2)
 
@@ -242,7 +242,7 @@ class RoadNetworkTest {
                 assertEquals(false, test)
             }
         }
-    }
+    }*/
 
 /*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInSeveralTimesteps_vehiclesDalyGoThroughAllTimestepsSinceThen() {
