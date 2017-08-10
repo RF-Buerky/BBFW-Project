@@ -43,7 +43,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun calculateDemand_DemandOfSeveralVehicles_demandIsTheSummedVehiclesDemand() {
+    fun calculateDemandAtTimestep_DemandOfSeveralVehicles_demandIsTheSummedVehiclesDemand() {
         val road = RoadNetwork(20)
 
         val BMW: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 24))
@@ -58,7 +58,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun calculateDemand_DemandOfSeveralVehiclesNotInOrder_demandIsTheSummedVehiclesDemand() {
+    fun calculateDemandAtTimestep_DemandOfSeveralVehiclesNotInOrder_demandIsTheSummedVehiclesDemand() {
         val road = RoadNetwork(20)
 
         val BMW: Vehicle = Vehicle(1, mutableListOf(5, 8, 24, 3))
@@ -73,7 +73,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun calculateDemand_SeveralCarsWithoutDemands_NoDemand() {
+    fun calculateDemandAtTimestep_SeveralCarsWithoutDemands_NoDemand() {
         val road = RoadNetwork(20)
 
         val BMW: Vehicle = Vehicle(1, mutableListOf())
@@ -88,138 +88,7 @@ class RoadNetworkTest {
     }
 
     @Test
-    fun isTrafficJam_capacityBiggerThanDemand_noTrafficJam() {
-        val road = RoadNetwork(20)
-
-        val trafficJam: Boolean = road.isTrafficJam(3)
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_noCapacityCemand_noTrafficJam() {
-        val road = RoadNetwork(20)
-
-        val trafficJam: Boolean = road.isTrafficJam(0)
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_capacitySmallerThanDemand_trafficJamdHappens() {
-        val road = RoadNetwork(2)
-
-        val trafficJam: Boolean = road.isTrafficJam(3)
-
-        assertEquals(true, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_capacityEqualsDemand_noTrafficJam() {
-        val road = RoadNetwork(5)
-
-        val trafficJam: Boolean = road.isTrafficJam(5)
-
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
-    fun isTrafficJam_capacityAndDemandZero_noTrafficJam() {
-        val road = RoadNetwork(0)
-
-        val trafficJam: Boolean = road.isTrafficJam(0)
-
-        assertEquals(false, trafficJam)
-    }
-
-    @Test
-    fun delayVehiclesInTimestep_someVehiclesThere_allVehiclesGetingDelayed() {
-        val road = RoadNetwork(0)
-
-        val car1: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car2: Vehicle = Vehicle(2, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car3: Vehicle = Vehicle(3, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car4: Vehicle = Vehicle(4, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car5: Vehicle = Vehicle(5, mutableListOf(3, 4, 5, 8))
-        val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
-
-        val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-
-        road.delayVehiclesInTimestep(allVehicles, 8)
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
-            assertEquals(true, test)
-        }
-
-    }
-
-    @Test
-    fun delayVehiclesInTimestep_someVehiclesThere_delayedInHoursContainsOnlyTimestepWithTrafficJam() {
-        val road = RoadNetwork(0)
-
-        val car1: Vehicle = Vehicle(1, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car2: Vehicle = Vehicle(2, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car3: Vehicle = Vehicle(3, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car4: Vehicle = Vehicle(4, mutableListOf(3, 4, 5, 8, 9, 10, 11))
-        val car5: Vehicle = Vehicle(5, mutableListOf(3, 4, 5, 8))
-        val car6: Vehicle = Vehicle(6, mutableListOf(3, 4, 5, 8))
-
-        val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
-
-        road.delayVehiclesInTimestep(allVehicles, 8)
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
-            assertEquals(true, test)
-        }
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(3)
-            assertEquals(false, test)
-        }
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(4)
-            assertEquals(false, test)
-        }
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(5)
-            assertEquals(false, test)
-        }
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(9)
-            assertEquals(false, test)
-        }
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(10)
-            assertEquals(false, test)
-        }
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(11)
-            assertEquals(false, test)
-        }
-
-    }
-
-    @Test
-    fun delayVehiclesInTimestep_noVehiclesThere_notASingleDelay() {
-        val road = RoadNetwork(50)
-
-        val allVehicles: List<Vehicle> = listOf()
-
-        road.delayVehiclesInTimestep(allVehicles, 8)
-
-        for (vehicle in allVehicles) {
-            val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
-            assertEquals(false, test)
-        }
-    }
-
-    @Test
-    fun calculateDemandForTimestepAndCauseTrafficJam_RoadWithoutCapacity_everyDemandDelaysVehicle() {
+    fun calculateDemandForTimestepAndCauseRandomDelays_RoadWithoutCapacity_everyDemandDelaysVehicle() {
         val road = RoadNetwork(0)
         val timestep = 8
 
@@ -232,7 +101,7 @@ class RoadNetworkTest {
 
         val allVehicles: List<Vehicle> = listOf(car1, car2, car3, car4, car5, car6)
 
-        road.calculateDemandForTimestepAndCauseTrafficJam(timestep, allVehicles)
+        road.calculateDemandForTimestepAndCauseRandomDelays(timestep, allVehicles)
 
         for (vehicle in allVehicles) {
             val test: Boolean = vehicle.gotNewDelayInHours.contains(8)
@@ -240,7 +109,7 @@ class RoadNetworkTest {
         }
     }
 
-    @Test
+/*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInLastTimestep_NumberOfDelaysIsCorrect() {
         val road = RoadNetwork(2)
 
@@ -259,9 +128,9 @@ class RoadNetworkTest {
             val test: Boolean = vehicle.gotNewDelayInHours.contains(24)
             assertEquals(true, test)
         }
-    }
+    }*/
 
-    @Test
+/*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInOneTimestep_newDelaysJustInThisTimestep() {
         val road = RoadNetwork(2)
 
@@ -285,9 +154,9 @@ class RoadNetworkTest {
                 assertEquals(false, test)
             }
         }
-    }
+    }*/
 
-    @Test
+/*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInSeveralTimesteps_vehiclesDalyGoThroughAllTimestepsSinceThen() {
         val road = RoadNetwork(3)
 
@@ -306,9 +175,9 @@ class RoadNetworkTest {
             val test: Boolean = ( vehicle.delay > 0 )
             assertEquals(true, test)
         }
-    }
+    }*/
 
-    @Test
+/*    @Test
     fun simulateScenario_networksCapacityAlwaysHigherDemand_notASingleDelay() {
         val road = RoadNetwork(50)
 
@@ -330,9 +199,9 @@ class RoadNetworkTest {
             }
         }
 
-    }
+    }*/
 
-    @Test
+/*    @Test
     fun simulateScenario_demandMatchesCapacity_notASingleDelay() {
         val road = RoadNetwork(6)
 
@@ -355,5 +224,5 @@ class RoadNetworkTest {
                 assertEquals(false, test)
             }
         }
-    }
+    }*/
 }

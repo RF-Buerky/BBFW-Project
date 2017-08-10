@@ -7,7 +7,7 @@ import traffic_simulation.Vehicle
 class VehicleTest {
 
     @Test
-    fun gettingDelayed_trafficJamInOneHour_vehicleGetDelayed() {
+    fun getDelayedAtHour_trafficJamInOneHour_vehicleGetDelayed() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3))
 
         BMW.getDelayedAtHour(1)
@@ -17,7 +17,7 @@ class VehicleTest {
     }
 
     @Test
-    fun gettingDelayed_trafficJamInSeveralHours_vehicleGetsOftenDelayed() {
+    fun getDelayedAtHour_trafficJamInSeveralHours_vehicleGetsOftenDelayed() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
 
         BMW.getDelayedAtHour(1)
@@ -30,7 +30,7 @@ class VehicleTest {
     }
 
     @Test
-    fun gettingDelayed_trafficJamInCriticalHour24_vehicleGetsDelayed() {
+    fun getDelayedAtHour_trafficJamInCriticalHour24_vehicleGetsDelayed() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(23,24))
 
         BMW.getDelayedAtHour(24)
@@ -40,7 +40,7 @@ class VehicleTest {
     }
 
     @Test
-    fun gettingDelayed_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
+    fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
 
         BMW.getDelayedAtHour(1)
