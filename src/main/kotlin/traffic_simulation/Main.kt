@@ -118,11 +118,11 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
     vehicleRows.add(row)
 
     for (result in results) {
-        val vehicleClass = "##missing##"
+        val vehicleClass = result.getClass()
         val id = result.id.toString()
         val delay = result.gotNewDelayInHours.toString()
         val notDelay = result.droveWithoutNewDelayInHours.toString()
-        val row: Array<Any> = arrayOf(id, delay, notDelay)
+        val row: Array<Any> = arrayOf(vehicleClass, id, delay, notDelay)
         vehicleRows.add(row)
     }
     csvWriter.writeRowsAndClose(vehicleRows)
