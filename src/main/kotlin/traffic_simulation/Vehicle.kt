@@ -4,6 +4,7 @@ import java.util.*
 
 interface Vehicle {
     fun getClass(): String
+    fun getID(): Int
     fun vehicleWantsToDriveAt(timestep :Int):Boolean
     fun getDelayedAtHour (timestep : Int)
     fun driveAtHour(timestep: Int)
@@ -18,6 +19,10 @@ class Car (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
     override fun getClass(): String {
         return "Car"
+    }
+
+    override fun getID(): Int {
+        return id
     }
 
         override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
@@ -78,6 +83,10 @@ class Tram (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         return "Tram"
     }
 
+    override fun getID(): Int {
+        return id
+    }
+
     override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
@@ -134,6 +143,10 @@ class Truck (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
     override fun getClass(): String {
         return "Truck"
+    }
+
+    override fun getID(): Int {
+        return id
     }
 
     override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
@@ -193,6 +206,11 @@ class Bike (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override fun getClass(): String {
         return "Bike"
     }
+
+    override fun getID(): Int {
+        return id
+    }
+
     override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
