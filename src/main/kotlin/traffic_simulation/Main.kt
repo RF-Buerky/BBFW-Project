@@ -82,7 +82,7 @@ fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
 
     // insert the parsed information of csv-file in usable lists and use them in functions
     for (record in allRows) {
-        val class_String : String = record.values[0]
+        val class_String: String = record.values[0]
         val id_String: String = record.values[1]
         val wannaDrive_String: String = record.values[2]
 
