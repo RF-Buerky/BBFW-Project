@@ -3,7 +3,7 @@ package traffic_simulation
 import java.util.*
 
 class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
-
+    val capacityFactor : Int = 1
     val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
     var delay = 0
@@ -41,6 +41,7 @@ class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
         val percentOfCapacityUsage_Double : Double = ( demandX.toDouble() / capacity.toDouble() ) *100
         val percentOfCapacityUsage : Int = percentOfCapacityUsage_Double.toInt()
         when (percentOfCapacityUsage) {
+            !in 0..Int.MAX_VALUE -> println("Weird capacity!")
             in 0..49 -> probabilityOfDelay = 5
             in 50..69 -> probabilityOfDelay = 10
             in 70..89 -> probabilityOfDelay = 20
