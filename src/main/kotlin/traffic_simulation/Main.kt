@@ -98,13 +98,13 @@ fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
         }
 
         wannaDrive_List.sort()
-        if (class_String == "Car"){
+        if (class_String == "Car") {
             vehicleListCSV.add(Car(id = id_Int, wannaDriveInHours = wannaDrive_List))
-        } else if (class_String == "Truck"){
+        } else if (class_String == "Truck") {
             vehicleListCSV.add(Truck(id = id_Int, wannaDriveInHours = wannaDrive_List))
-        } else if (class_String == "Tram"){
+        } else if (class_String == "Tram") {
             vehicleListCSV.add(Tram(id = id_Int, wannaDriveInHours = wannaDrive_List))
-        } else if (class_String == "Bike"){
+        } else if (class_String == "Bike") {
             vehicleListCSV.add(Bike(id = id_Int, wannaDriveInHours = wannaDrive_List))
         } else {
             println("There is at least one wrong vehicle class in CSV-Input")
