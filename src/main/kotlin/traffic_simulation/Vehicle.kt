@@ -16,6 +16,10 @@ class Car (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
         var delay = 0
 
+    override fun getClass(): String {
+        return "Car"
+    }
+
         override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
             // the vehicle wants to drive if its drive plan says so
             // or if it got previously delayed
@@ -69,6 +73,10 @@ class Tram (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
     var delay = 0
+
+    override fun getClass(): String {
+        return "Tram"
+    }
 
     override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
         // the vehicle wants to drive if its drive plan says so
@@ -124,6 +132,10 @@ class Truck (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
     var delay = 0
 
+    override fun getClass(): String {
+        return "Truck"
+    }
+
     override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
@@ -178,6 +190,9 @@ class Bike (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
     var delay = 0
 
+    override fun getClass(): String {
+        return "Bike"
+    }
     override fun vehicleWantsToDriveAt(timestep :Int):Boolean{
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
