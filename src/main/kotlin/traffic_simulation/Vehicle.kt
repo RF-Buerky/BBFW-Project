@@ -3,6 +3,11 @@ package traffic_simulation
 import java.util.*
 
 interface Vehicle {
+
+    val gotNewDelayInHours: MutableList<Int>
+    val droveWithoutNewDelayInHours: MutableList<Int>
+    var delay : Int
+
     fun getClass(): String
     fun getID(): Int
     fun vehicleWantsToDriveAt(timestep :Int):Boolean
@@ -13,9 +18,9 @@ interface Vehicle {
 
 class Car (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
-        val gotNewDelayInHours: MutableList<Int> = mutableListOf()
-        val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-        var delay = 0
+        override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
+        override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
+        override var delay = 0
 
     override fun getClass(): String {
         return "Car"
@@ -75,9 +80,9 @@ class Car (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
 class Tram (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
-    val gotNewDelayInHours: MutableList<Int> = mutableListOf()
-    val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
+    override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
+    override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
+    override var delay = 0
 
     override fun getClass(): String {
         return "Tram"
@@ -137,9 +142,9 @@ class Tram (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
 class Truck (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
-    val gotNewDelayInHours: MutableList<Int> = mutableListOf()
-    val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
+    override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
+    override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
+    override var delay = 0
 
     override fun getClass(): String {
         return "Truck"
@@ -199,9 +204,9 @@ class Truck (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
 class Bike (val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
-    val gotNewDelayInHours: MutableList<Int> = mutableListOf()
-    val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
+    override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
+    override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
+    override var delay = 0
 
     override fun getClass(): String {
         return "Bike"
