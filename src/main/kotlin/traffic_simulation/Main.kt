@@ -68,8 +68,9 @@ fun parseInputOfCSV(fileName: String): MutableList<Vehicle> {
 
     // insert the parsed information of csv-file in usable lists and use them in functions
     for (record in allRows) {
-        val id_String: String = record.values[0]
-        val wannaDrive_String: String = record.values[1]
+        val class_String : String = record.values[0]
+        val id_String: String = record.values[1]
+        val wannaDrive_String: String = record.values[2]
 
         val id_Int: Int = id_String.toInt()
         val wannaDrive_List: MutableList<Int> = mutableListOf()
@@ -95,13 +96,15 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
 
     // Write the record headers of this file
     val vehicleRows: MutableList<Array<Any>> = mutableListOf()
+    val vehicleClass = "Vehicle class"
     val id = "VehicleID"
     val delay = "Got a new delay in hours because of traffic jam"
     val notDelay = "Driven without a new delay in hours (no traffic jam)"
-    val row: Array<Any> = arrayOf(id, delay, notDelay)
+    val row: Array<Any> = arrayOf(vehicleClass, id, delay, notDelay)
     vehicleRows.add(row)
 
     for (result in results) {
+        val vehicleClass = "##missing##"
         val id = result.id.toString()
         val delay = result.gotNewDelayInHours.toString()
         val notDelay = result.droveWithoutNewDelayInHours.toString()
