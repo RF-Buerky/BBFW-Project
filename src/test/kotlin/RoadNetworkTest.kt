@@ -1,3 +1,4 @@
+/*
 import org.junit.Test
 import org.junit.Assert.assertEquals
 import traffic_simulation.RoadNetwork
@@ -109,6 +110,7 @@ class RoadNetworkTest {
         }
     }
 
+*/
 /*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInLastTimestep_NumberOfDelaysIsCorrect() {
         val road = RoadNetwork(2)
@@ -128,8 +130,10 @@ class RoadNetworkTest {
             val test: Boolean = vehicle.gotNewDelayInHours.contains(24)
             assertEquals(true, test)
         }
-    }*/
+    }*//*
 
+
+*/
 /*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInOneTimestep_newDelaysJustInThisTimestep() {
         val road = RoadNetwork(2)
@@ -154,8 +158,10 @@ class RoadNetworkTest {
                 assertEquals(false, test)
             }
         }
-    }*/
+    }*//*
 
+
+*/
 /*    @Test
     fun simulateScenario_vehiclesDemandTooMuchCapacityInSeveralTimesteps_vehiclesDalyGoThroughAllTimestepsSinceThen() {
         val road = RoadNetwork(3)
@@ -175,8 +181,10 @@ class RoadNetworkTest {
             val test: Boolean = ( vehicle.delay > 0 )
             assertEquals(true, test)
         }
-    }*/
+    }*//*
 
+
+*/
 /*    @Test
     fun simulateScenario_networksCapacityAlwaysHigherDemand_notASingleDelay() {
         val road = RoadNetwork(50)
@@ -199,8 +207,10 @@ class RoadNetworkTest {
             }
         }
 
-    }*/
+    }*//*
 
+
+*/
 /*    @Test
     fun simulateScenario_demandMatchesCapacity_notASingleDelay() {
         val road = RoadNetwork(6)
@@ -224,5 +234,7 @@ class RoadNetworkTest {
                 assertEquals(false, test)
             }
         }
-    }*/
+    }*//*
+
 }
+*/
