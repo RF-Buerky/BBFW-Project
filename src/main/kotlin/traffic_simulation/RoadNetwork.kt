@@ -20,7 +20,7 @@ class RoadNetwork(val capacity: Int) {
         var demandAtTimestep: Int = 0
         for (vehicle in vehicleList) {
             if (vehicle.vehicleWantsToDriveAt(timestep)) {
-                demandAtTimestep = demandAtTimestep + vehicle.capacityFactor
+                demandAtTimestep = demandAtTimestep + vehicle.getCapacityFactor()
             }
         }
         return demandAtTimestep

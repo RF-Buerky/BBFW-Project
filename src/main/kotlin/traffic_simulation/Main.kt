@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
 
 
 fun testScenarioWithInternList() {
-    val road: RoadNetwork = RoadNetwork(capacity = 7)
+    val road: RoadNetwork = RoadNetwork(capacity = 70)
     // Creation of sufficient cars for local testing without using CSV input for now
     val BMW1: Vehicle = Car(id = 1, wannaDriveInHours = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21, 22, 23, 24))
     val BMW2: Vehicle = Car(id = 2, wannaDriveInHours = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 19, 20, 21, 22, 23, 24))
@@ -139,7 +139,7 @@ fun printResultsToCSV(results: List<Vehicle>, outputFile: String = "results.csv"
 }
 
 fun simulateCSV() {
-    val road: RoadNetwork = RoadNetwork(capacity = 10)
+    val road: RoadNetwork = RoadNetwork(capacity = 100)
     val vehiclesFromCSV: List<Vehicle> = parseInputOfCSV(fileName = "driveInterest.csv")
 
     printResultsToCSV(road.simulateScenario(vehiclesFromCSV))

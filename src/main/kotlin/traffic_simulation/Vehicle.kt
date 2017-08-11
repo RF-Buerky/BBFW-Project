@@ -2,19 +2,19 @@ package traffic_simulation
 
 import java.util.*
 
-<<<<<<< HEAD
-class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
+//<<<<<<< HEAD
+/*class Vehicle(val id: Int, val wannaDriveInHours: MutableList<Int>) {
     val capacityFactor : Int = 1
     val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
-=======
+    var delay = 0 */
+//=======
 interface Vehicle {
 
     val gotNewDelayInHours: MutableList<Int>
     val droveWithoutNewDelayInHours: MutableList<Int>
     var delay: Int
->>>>>>> 0e32e30412264812adbead12cf8a64195d89da89
+//>>>>>>> 0e32e30412264812adbead12cf8a64195d89da89
 
     fun getClass(): String
     fun getID(): Int
@@ -22,9 +22,14 @@ interface Vehicle {
     fun getDelayedAtHour(timestep: Int)
     fun driveAtHour(timestep: Int)
     fun randomDelayByCapacityAndDemand(demandX: Int, capacity: Int): Boolean
+    fun getCapacityFactor():Int //given capacities have been multiplied by 10 to continue with the use of Integers, relative scales remain the same
 }
 
 class Car(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
+    override fun getCapacityFactor(): Int {
+        val capacityFactor = 10
+        return capacityFactor
+    }
 
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
@@ -89,6 +94,10 @@ class Car(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 }
 
 class Tram(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
+    override fun getCapacityFactor(): Int {
+        val capacityFactor = 50
+        return capacityFactor
+    }
 
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
@@ -153,6 +162,10 @@ class Tram(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 }
 
 class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
+    override fun getCapacityFactor(): Int {
+        val capacityFactor = 30
+        return capacityFactor
+    }
 
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
@@ -218,6 +231,10 @@ class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 }
 
 class Bike(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
+    override fun getCapacityFactor(): Int {
+        val capacityFactor = 1
+        return capacityFactor
+    }
 
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
@@ -278,5 +295,4 @@ class Bike(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         val delayed: Boolean = Random().nextInt(100) + 1 <= probabilityOfDelay
         return delayed
     }
-
 }
