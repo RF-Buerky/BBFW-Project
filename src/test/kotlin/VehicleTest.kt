@@ -1,3 +1,4 @@
+/*
 import org.junit.Test
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -8,55 +9,55 @@ class VehicleTest {
 
     @Test
     fun getDelayedAtHour_trafficJamInOneHour_vehicleGetDelayed() {
-        val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3))
+        val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3))
 
         BMW.getDelayedAtHour(1)
 
-        val correctList : MutableList <Int> = mutableListOf(1)
+        val correctList: MutableList <Int> = mutableListOf(1)
         assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
     fun getDelayedAtHour_trafficJamInSeveralHours_vehicleGetsOftenDelayed() {
-        val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
+        val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
 
         BMW.getDelayedAtHour(1)
         BMW.getDelayedAtHour(3)
         BMW.getDelayedAtHour(4)
         BMW.getDelayedAtHour(5)
 
-        val correctList : MutableList <Int> = mutableListOf(1,3,4,5)
+        val correctList: MutableList <Int> = mutableListOf(1, 3, 4, 5)
         assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
     fun getDelayedAtHour_trafficJamInCriticalHour24_vehicleGetsDelayed() {
-        val BMW: Vehicle = Vehicle(1, mutableListOf(23,24))
+        val BMW: Vehicle = Vehicle(1, mutableListOf(23, 24))
 
         BMW.getDelayedAtHour(24)
 
-        val correctList : MutableList <Int> = mutableListOf(24)
+        val correctList: MutableList <Int> = mutableListOf(24)
         assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
-        val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
+        val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
 
         BMW.getDelayedAtHour(1)
         BMW.getDelayedAtHour(5)
         BMW.getDelayedAtHour(3)
         BMW.getDelayedAtHour(4)
 
-        val correctList : MutableList <Int> = mutableListOf(1,3,4,5)
+        val correctList: MutableList <Int> = mutableListOf(1, 3, 4, 5)
         assertEquals(correctList, BMW.gotNewDelayInHours)
     }
 
     @Test
     fun defaultOfVehicleIsNotDelayed() {
-        val BMW: Vehicle = Vehicle(1, mutableListOf(1,2,3,4,5,6))
+        val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
 
-        val correctList : MutableList <Int> = mutableListOf()
+        val correctList: MutableList <Int> = mutableListOf()
 
         assertEquals(correctList, BMW.gotNewDelayInHours)
     }
@@ -108,3 +109,4 @@ class VehicleTest {
         assertFalse(tesla.vehicleWantsToDriveAt(6))
     }
 }
+*/
