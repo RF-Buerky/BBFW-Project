@@ -1,6 +1,6 @@
 package traffic_simulation
 
-class RoadNetwork(val capacity: Int) {
+class RoadNetwork(var capacity: Int) {
 
     fun calculateDemandForTimestepAndCauseRandomDelays(timestep: Int, vehicleList: List<Vehicle>) {
 
@@ -20,7 +20,7 @@ class RoadNetwork(val capacity: Int) {
         var demandAtTimestep: Int = 0
         for (vehicle in vehicleList) {
             if (vehicle.vehicleWantsToDriveAt(timestep)) {
-                demandAtTimestep = demandAtTimestep + vehicle.getCapacityFactor()
+                demandAtTimestep = demandAtTimestep + vehicle.capacityFactor
             }
         }
         return demandAtTimestep
@@ -31,5 +31,9 @@ class RoadNetwork(val capacity: Int) {
             calculateDemandForTimestepAndCauseRandomDelays(timestep, vehicleList)
         }
         return vehicleList
+    }
+
+    fun setRoadCapacityTo(newCapacity :Int){
+        capacity = newCapacity
     }
 }

@@ -9,7 +9,6 @@ import com.univocity.parsers.csv.CsvWriterSettings
 
 fun main(args: Array<String>) {
     //The following line simulates traffic from an intern list and prints it to console
-
     testScenarioWithInternList()
 
     //The following lines simulates a complete scenario and prints into results.csv;
