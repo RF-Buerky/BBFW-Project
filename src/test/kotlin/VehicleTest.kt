@@ -132,6 +132,41 @@ class VehicleTest {
         assertEquals ( true , result2)
     }
 
+    // Tests if the function getClass works correctly for every Vehicle
+    // __________________________________________________________________________________________
+
+    @Test
+    fun getClass_getClassOfCar_givesStringCar(){
+        val testCar : Car = Car (5 , mutableListOf(1,2))
+
+        val result : String = testCar.getClass()
+        assertEquals ( "Car" , result)
+    }
+
+    @Test
+    fun getClass_getClassOfTram_givesStringTram(){
+        val testTram : Tram = Tram (5 , mutableListOf(1,2))
+
+        val result : String = testTram.getClass()
+        assertEquals ( "Tram" , result)
+    }
+
+    @Test
+    fun getClass_getClassOfTruck_givesStringTruck(){
+        val testTruck : Truck = Truck (5 , mutableListOf(1,2))
+
+        val result : String = testTruck.getClass()
+        assertEquals ( "Truck" , result)
+    }
+
+    @Test
+    fun getClass_getClassOfBike_givesStringBike(){
+        val testBike : Bike = Bike (5 , mutableListOf(1,2))
+
+        val result : String = testBike.getClass()
+        assertEquals ( "Bike" , result)
+    }
+
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
