@@ -32,8 +32,5 @@ class RoadNetwork(var capacity: Int) {
         }
         return vehicleList
     }
-
-    fun setRoadCapacityTo(newCapacity :Int){
-        capacity = newCapacity
-    }
+    
 }
