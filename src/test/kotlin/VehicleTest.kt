@@ -3,9 +3,48 @@ import org.junit.Test
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Assert.assertFalse
+
+import traffic_simulation.Car
+import traffic_simulation.Tram
+import traffic_simulation.Truck
 import traffic_simulation.Vehicle
 
 class VehicleTest {
+
+    // Tests for the different capacity Factors
+    // __________________________________________________________________________________________
+
+    @Test
+    fun capacityFactor_Car_capacityFactorIsCorrect(){
+        val testCar : Car = Car (5 , mutableListOf(1,2))
+
+        val result : Int = testCar.capacityFactor
+        assertEquals ( 10 , result)
+    }
+
+    @Test
+    fun capacityFactor_Tram_capacityFactorIsCorrect(){
+        val testTram : Tram = Tram (5 , mutableListOf(1,2))
+
+        val result : Int = testTram.capacityFactor
+        assertEquals ( 50 , result)
+    }
+
+    @Test
+    fun capacityFactor_Truck_capacityFactorIsCorrect(){
+        val testTruck : Truck = Truck (5 , mutableListOf(1,2))
+
+        val result : Int = testTruck.capacityFactor
+        assertEquals ( 30 , result)
+    }
+
+    @Test
+    fun capacityFactor_Bike_capacityFactorIsCorrect(){
+        val testBike : Car = Car (5 , mutableListOf(1,2))
+
+        val result : Int = testBike.capacityFactor
+        assertEquals ( 1 , result)
+    }
 
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
