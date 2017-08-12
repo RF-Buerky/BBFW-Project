@@ -341,15 +341,6 @@ class VehicleTest {
 */
 
     @Test
-    fun defaultOfVehicleIsNotDelayed() {
-        val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
-
-        val correctList: MutableList <Int> = mutableListOf()
-
-        assertEquals(correctList, BMW.gotNewDelayInHours)
-    }
-
-    @Test
     fun delayAndDrive_mixedDelaysAndDriveRequirements_driveRequirementsCorrectlyReported() {
         val tesla = Vehicle(1, mutableListOf(1, 5))
         assertTrue(tesla.vehicleWantsToDriveAt(1))
