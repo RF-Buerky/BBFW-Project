@@ -3,11 +3,7 @@ import org.junit.Test
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Assert.assertFalse
-
-import traffic_simulation.Car
-import traffic_simulation.Tram
-import traffic_simulation.Truck
-import traffic_simulation.Vehicle
+import traffic_simulation.*
 
 class VehicleTest {
 
@@ -40,11 +36,47 @@ class VehicleTest {
 
     @Test
     fun capacityFactor_Bike_capacityFactorIsCorrect(){
-        val testBike : Car = Car (5 , mutableListOf(1,2))
+        val testBike : Bike = Bike (5 , mutableListOf(1,2))
 
         val result : Int = testBike.capacityFactor
         assertEquals ( 1 , result)
     }
+
+    // Tests for the default value of delay in every sub-class of interface Vehicle
+    // __________________________________________________________________________________________
+
+    @Test
+    fun delay_delayOfNewCar_delayIsZero(){
+        val testCar : Car = Car (5 , mutableListOf(1,2))
+
+        val result : Int = testCar.delay
+        assertEquals ( 0 , result)
+    }
+
+    @Test
+    fun delay_delayOfNewTram_delayIsZero(){
+        val testTram : Tram = Tram (5 , mutableListOf(1,2))
+
+        val result : Int = testTram.delay
+        assertEquals ( 0 , result)
+    }
+
+    @Test
+    fun delay_delayOfNewTruck_delayIsZero(){
+        val testTruck : Truck = Truck (5 , mutableListOf(1,2))
+
+        val result : Int = testTruck.delay
+        assertEquals ( 0 , result)
+    }
+
+    @Test
+    fun delay_delayOfNewBike_delayIsZero(){
+        val testBike : Bike = Bike (5 , mutableListOf(1,2))
+
+        val result : Int = testBike.delay
+        assertEquals ( 0 , result)
+    }
+
 
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
