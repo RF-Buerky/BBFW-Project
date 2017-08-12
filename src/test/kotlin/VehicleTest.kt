@@ -375,10 +375,10 @@ class VehicleTest {
 
     @Test
     fun delayAndDrive_mixedDelaysAndDriveRequirements_driveRequirementsCarriedAcross() {
-        val testCar = Car(1, mutableListOf(1, 5))
-        val testBike = Bike(1, mutableListOf(1, 5))
-        val testTruck = Truck(1, mutableListOf(1, 5))
-        val testTram = Tram(1, mutableListOf(1, 5))
+        val testCar = Car(1, mutableListOf(1, 2, 5))
+        val testBike = Bike(1, mutableListOf(1, 2, 5))
+        val testTruck = Truck(1, mutableListOf(1, 2, 5))
+        val testTram = Tram(1, mutableListOf(1, 2, 5))
 
         val vehicles : List<Vehicle> = listOf(testCar , testBike , testTruck , testTram)
 
