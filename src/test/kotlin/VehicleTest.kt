@@ -218,6 +218,110 @@ class VehicleTest {
         assertEquals ( 0 , result2)
     }
 
+    // Tests if the function vehicleWantsToDriveAt(timestep) returns correct Boolean
+    // __________________________________________________________________________________________
+
+    @Test
+    fun vehicleWantsToDriveAt_CarIsDelayedOrWantsToDrive_CarWantsToDrive(){
+        val testCar1 : Car = Car (5 , mutableListOf(1,2,6))
+        val testCar2 : Car = Car (0 , mutableListOf(5,24))
+        testCar2.delay = 2
+
+        val result1 : Boolean = testCar1.vehicleWantsToDriveAt(6)
+        val result2 : Boolean = testCar2.vehicleWantsToDriveAt(6)
+
+        assertEquals ( true , result1)
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun vehicleWantsToDriveAt_TramIsDelayedOrWantsToDrive_TramWantsToDrive(){
+        val testTram1 : Tram = Tram (5 , mutableListOf(1,2,6))
+        val testTram2 : Tram = Tram (0 , mutableListOf(5,24))
+        testTram2.delay = 2
+
+        val result1 : Boolean = testTram1.vehicleWantsToDriveAt(6)
+        val result2 : Boolean = testTram2.vehicleWantsToDriveAt(6)
+
+        assertEquals ( true , result1)
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun vehicleWantsToDriveAt_TruckIsDelayedOrWantsToDrive_TramWantsToDrive(){
+        val testTram1 : Tram = Tram (5 , mutableListOf(1,2,6))
+        val testTram2 : Tram = Tram (0 , mutableListOf(5,24))
+        testTram2.delay = 2
+
+        val result1 : Boolean = testTram1.vehicleWantsToDriveAt(6)
+        val result2 : Boolean = testTram2.vehicleWantsToDriveAt(6)
+
+        assertEquals ( true , result1)
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun vehicleWantsToDriveAt_BikeIsDelayedOrWantsToDrive_BikeWantsToDrive(){
+        val testBike1 : Bike = Bike (5 , mutableListOf(1,2,6))
+        val testBike2 : Bike = Bike (0 , mutableListOf(5,24))
+        testBike2.delay = 2
+
+        val result1 : Boolean = testBike1.vehicleWantsToDriveAt(6)
+        val result2 : Boolean = testBike2.vehicleWantsToDriveAt(6)
+
+        assertEquals ( true , result1)
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun vehicleWantsToDriveAt_CarmIsNotDelayedOrWantsNotToDrive_CarWantsNotToDrive(){
+        val testCar1 : Car = Car (5 , mutableListOf(1,2,6))
+        val testCar2 : Car = Car (0 , mutableListOf(5,24))
+
+        val result1 : Boolean = testCar1.vehicleWantsToDriveAt(7)
+        val result2 : Boolean = testCar2.vehicleWantsToDriveAt(7)
+
+        assertEquals ( false , result1)
+        assertEquals ( false , result2)
+    }
+
+    @Test
+    fun vehicleWantsToDriveAt_TramIsNotDelayedOrWantsNotToDrive_TramWantsNotToDrive(){
+        val testTram1 : Tram = Tram (5 , mutableListOf(1,2,6))
+        val testTram2 : Tram = Tram (0 , mutableListOf(5,24))
+
+        val result1 : Boolean = testTram1.vehicleWantsToDriveAt(7)
+        val result2 : Boolean = testTram2.vehicleWantsToDriveAt(7)
+
+        assertEquals ( false , result1)
+        assertEquals ( false , result2)
+    }
+
+    @Test
+    fun vehicleWantsToDriveAt_TruckIsNotDelayedOrWantsNotToDrive_TruckWantsNotToDrive(){
+        val testTram1 : Tram = Tram (5 , mutableListOf(1,2,6))
+        val testTram2 : Tram = Tram (0 , mutableListOf(5,24))
+
+        val result1 : Boolean = testTram1.vehicleWantsToDriveAt(7)
+        val result2 : Boolean = testTram2.vehicleWantsToDriveAt(7)
+
+        assertEquals ( false , result1)
+        assertEquals ( false , result2)
+    }
+
+    @Test
+    fun vehicleWantsToDriveAt_BikeIsNotDelayedOrWantsNotToDrive_BikeWantsNotToDrive(){
+        val testBike1 : Bike = Bike (5 , mutableListOf(1,2,6))
+        val testBike2 : Bike = Bike (0 , mutableListOf(5,24))
+
+        val result1 : Boolean = testBike1.vehicleWantsToDriveAt(7)
+        val result2 : Boolean = testBike2.vehicleWantsToDriveAt(7)
+
+        assertEquals ( false , result1)
+        assertEquals ( false , result2)
+    }
+
+
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
