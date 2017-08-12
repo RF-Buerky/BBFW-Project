@@ -322,6 +322,10 @@ class VehicleTest {
     }
 
 
+    // Tests if the function getDelayedAtHour works
+    // __________________________________________________________________________________________
+/*
+
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
@@ -334,6 +338,7 @@ class VehicleTest {
         val correctList: MutableList <Int> = mutableListOf(1, 3, 4, 5)
         assertEquals(correctList, BMW.gotNewDelayInHours)
     }
+*/
 
     @Test
     fun defaultOfVehicleIsNotDelayed() {
