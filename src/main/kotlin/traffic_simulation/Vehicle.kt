@@ -192,7 +192,6 @@ class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         val percentOfCapacityUsage_Double: Double = (demandX.toDouble() / capacity.toDouble()) * 100
         val percentOfCapacityUsage: Int = percentOfCapacityUsage_Double.toInt()
         when (percentOfCapacityUsage) {
-            !in 0..Int.MAX_VALUE -> println("Weird capacity!")
             in 0..49 -> probabilityOfDelay = 5
             in 50..69 -> probabilityOfDelay = 10
             in 70..89 -> probabilityOfDelay = 20

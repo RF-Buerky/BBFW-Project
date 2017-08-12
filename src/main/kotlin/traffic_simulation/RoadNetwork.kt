@@ -32,5 +32,5 @@ class RoadNetwork(var capacity: Int) {
         }
         return vehicleList
     }
-    
+
 }
