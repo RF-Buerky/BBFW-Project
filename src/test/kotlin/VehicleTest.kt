@@ -167,6 +167,57 @@ class VehicleTest {
         assertEquals ( "Bike" , result)
     }
 
+    // Tests if the function getID works correctly for every Vehicle
+    // __________________________________________________________________________________________
+
+    @Test
+    fun getID_getIDOFCar_givesIDCorrectly(){
+        val testCar1 : Car = Car (5 , mutableListOf(1,2))
+        val testCar2 : Car = Car (0 , mutableListOf(1,24))
+
+        val result1 : Int = testCar1.getID()
+        val result2 : Int = testCar2.getID()
+
+        assertEquals ( 5 , result1)
+        assertEquals ( 0 , result2)
+    }
+
+    @Test
+    fun getID_getIDOFTram_givesIDCorrectly(){
+        val testTram1 : Tram = Tram (5 , mutableListOf(1,2))
+        val testTram2 : Tram = Tram (0 , mutableListOf(1,24))
+
+        val result1 : Int = testTram1.getID()
+        val result2 : Int = testTram2.getID()
+
+        assertEquals ( 5 , result1)
+        assertEquals ( 0 , result2)
+    }
+
+    @Test
+    fun getID_getIDOFTruck_givesIDCorrectly(){
+        val testTruck1 : Truck = Truck (5 , mutableListOf(1,2))
+        val testTruck2 : Tram = Tram (0 , mutableListOf(1,24))
+
+        val result1 : Int = testTruck1.getID()
+        val result2 : Int = testTruck2.getID()
+
+        assertEquals ( 5 , result1)
+        assertEquals ( 0 , result2)
+    }
+
+    @Test
+    fun getID_getIDOFBike_givesIDCorrectly(){
+        val testBike1 : Bike = Bike (5 , mutableListOf(1,2))
+        val testBike2 : Tram = Tram (0 , mutableListOf(1,24))
+
+        val result1 : Int = testBike1.getID()
+        val result2 : Int = testBike2.getID()
+
+        assertEquals ( 5 , result1)
+        assertEquals ( 0 , result2)
+    }
+
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
         val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
