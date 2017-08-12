@@ -4,8 +4,8 @@ import java.util.*
 
 interface Vehicle {
 
-    val gotNewDelayInHours: MutableList<Int>
-    val droveWithoutNewDelayInHours: MutableList<Int>
+    val gotNewDelayInHours: List<Int>
+    val droveWithoutNewDelayInHours: List<Int>
 
     fun getClass(): String
     fun getID(): Int
