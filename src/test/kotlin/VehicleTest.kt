@@ -77,6 +77,60 @@ class VehicleTest {
         assertEquals ( 0 , result)
     }
 
+    // Tests if the lists of Vehicles sub-classes are empty at the beginning
+    // __________________________________________________________________________________________
+
+    @Test
+    fun delay_listsOfNewCar_listsAreEmpty(){
+        val testCar : Car = Car (5 , mutableListOf(1,2))
+
+        val list1 : MutableList<Int> = testCar.gotNewDelayInHours
+        val list2 : MutableList<Int> = testCar.droveWithoutNewDelayInHours
+
+        val result1 : Boolean = list1.isEmpty()
+        assertEquals ( true , result1)
+        val result2 : Boolean = list2.isEmpty()
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun delay_listsOfNewTram_listsAreEmpty(){
+        val testTram : Tram = Tram (5 , mutableListOf(1,2))
+
+        val list1 : MutableList<Int> = testTram.gotNewDelayInHours
+        val list2 : MutableList<Int> = testTram.droveWithoutNewDelayInHours
+
+        val result1 : Boolean = list1.isEmpty()
+        assertEquals ( true , result1)
+        val result2 : Boolean = list2.isEmpty()
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun delay_listsOfNewTruck_listsAreEmpty(){
+        val testTruck : Truck = Truck (5 , mutableListOf(1,2))
+
+        val list1 : MutableList<Int> = testTruck.gotNewDelayInHours
+        val list2 : MutableList<Int> = testTruck.droveWithoutNewDelayInHours
+
+        val result1 : Boolean = list1.isEmpty()
+        assertEquals ( true , result1)
+        val result2 : Boolean = list2.isEmpty()
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun delay_listsOfNewBike_listsAreEmpty(){
+        val testBike : Bike = Bike (5 , mutableListOf(1,2))
+
+        val list1 : MutableList<Int> = testBike.gotNewDelayInHours
+        val list2 : MutableList<Int> = testBike.droveWithoutNewDelayInHours
+
+        val result1 : Boolean = list1.isEmpty()
+        assertEquals ( true , result1)
+        val result2 : Boolean = list2.isEmpty()
+        assertEquals ( true , result2)
+    }
 
     @Test
     fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
