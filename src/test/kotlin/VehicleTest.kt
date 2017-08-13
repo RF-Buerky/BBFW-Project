@@ -377,6 +377,66 @@ class VehicleTest {
         }
     }
 
+    @Test
+    fun driveAtHour_CarDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
+        val testCar = Car(1, mutableListOf(1, 2, 5))
+        testCar.delay = 2
+
+        val result1: Int = testCar.delay
+        testCar.driveAtHour(7)
+        val result2: Boolean = testCar.droveWithoutNewDelayInHours.contains(7)
+        val result3: Int = testCar.delay
+
+        assertEquals(2, result1)
+        assertEquals(true, result2)
+        assertEquals (1, result3)
+    }
+
+    @Test
+    fun driveAtHour_BikeDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
+        val testBike = Bike(1, mutableListOf(1, 2, 5))
+        testBike.delay = 2
+
+        val result1: Int = testBike.delay
+        testBike.driveAtHour(7)
+        val result2: Boolean = testBike.droveWithoutNewDelayInHours.contains(7)
+        val result3: Int = testBike.delay
+
+        assertEquals(2, result1)
+        assertEquals(true, result2)
+        assertEquals (1, result3)
+    }
+
+    @Test
+    fun driveAtHour_TruckDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
+        val testTruck = Truck(1, mutableListOf(1, 2, 5))
+        testTruck.delay = 2
+
+        val result1: Int = testTruck.delay
+        testTruck.driveAtHour(7)
+        val result2: Boolean = testTruck.droveWithoutNewDelayInHours.contains(7)
+        val result3: Int = testTruck.delay
+
+        assertEquals(2, result1)
+        assertEquals(true, result2)
+        assertEquals (1, result3)
+    }
+
+    @Test
+    fun driveAtHour_TramDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
+        val testTram = Tram(1, mutableListOf(1, 2, 5))
+        testTram.delay = 2
+        
+        val result1: Int = testTram.delay
+        testTram.driveAtHour(7)
+        val result2: Boolean = testTram.droveWithoutNewDelayInHours.contains(7)
+        val result3: Int = testTram.delay
+
+        assertEquals(2, result1)
+        assertEquals(true, result2)
+        assertEquals (1, result3)
+    }
+
     // Tests with mix of getDelayedAtHour and driveAtHour
     // __________________________________________________________________________________________
 
