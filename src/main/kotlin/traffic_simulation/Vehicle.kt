@@ -7,7 +7,7 @@ interface Vehicle {
 
     val gotNewDelayInHours: List<Int>
     val droveWithoutNewDelayInHours: List<Int>
-    val capacityFactor:Int
+    val capacityFactor: Int
 
 
     fun getClass(): String

@@ -128,8 +128,8 @@ class RoadNetworkTest {
         val testTram1 = Tram(1, mutableListOf(1, 2, 5))
         val testTram2 = Tram(1, mutableListOf(1, 2, 5))
 
-        val vehicles: List<Vehicle> = listOf(testCar1, testCar2,testCar3,testCar4,testCar5,testCar6,testCar7,testCar8,testCar9,
-                testBike1,testBike2,testBike3,testBike4,testBike5,testBike6, testTruck1, testTruck2, testTruck3, testTram1, testTram2)
+        val vehicles: List<Vehicle> = listOf(testCar1, testCar2, testCar3, testCar4, testCar5, testCar6, testCar7, testCar8, testCar9,
+                testBike1, testBike2, testBike3, testBike4, testBike5, testBike6, testTruck1, testTruck2, testTruck3, testTram1, testTram2)
 
 
         val calculated = road.calculateDemandAtTimestep(vehicles, 5)
