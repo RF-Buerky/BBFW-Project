@@ -340,7 +340,44 @@ class VehicleTest {
     }
 */
 
-    // Tests with mix of delay and drive
+    // Tests if the function driveAtHour works
+    // __________________________________________________________________________________________
+
+    @Test
+    fun driveAtHour_CarDrivesAtOneHour_drivenHourGetsAddedInListOfDrivesWithoutNewDelay(){
+        val testCar : Car = Car (5 , mutableListOf(1,2,6))
+
+        val result1 : Boolean = testCar.droveWithoutNewDelayInHours.isEmpty()
+
+        testCar.driveAtHour(1)
+        val result2 : Boolean = testCar.droveWithoutNewDelayInHours.contains(1)
+
+        assertEquals ( true , result1)
+        assertEquals ( true , result2)
+    }
+
+    @Test
+    fun driveAtHour_VehiclesDriveAtOneHour_drivenHourGetsAddedInListOfDrivesWithoutNewDelay() {
+        val testCar = Car(1, mutableListOf(1, 2, 5))
+        val testBike = Bike(1, mutableListOf(1, 2, 5))
+        val testTruck = Truck(1, mutableListOf(1, 2, 5))
+        val testTram = Tram(1, mutableListOf(1, 2, 5))
+
+        val vehicles: List<Vehicle> = listOf(testCar, testBike, testTruck, testTram)
+
+        for (vehicle in vehicles) {
+
+            val result1: Boolean = vehicle.droveWithoutNewDelayInHours.isEmpty()
+
+            vehicle.driveAtHour(1)
+            val result2: Boolean = vehicle.droveWithoutNewDelayInHours.contains(1)
+
+            assertEquals(true, result1)
+            assertEquals(true, result2)
+        }
+    }
+
+    // Tests with mix of getDelayedAtHour and driveAtHour
     // __________________________________________________________________________________________
 
     @Test
