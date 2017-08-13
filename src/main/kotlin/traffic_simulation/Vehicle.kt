@@ -39,8 +39,8 @@ class Car(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     }
 
     override fun getDelayedAtHour(timestep: Int) {
-        // if the vehicle wanted to drive, its delay increased
-        // (otherwise it just waited an hour, not reducing its delay)
+        // if the vehicle wanted to drive, its lagTillDestination increased
+        // (otherwise it just waited an hour, not reducing its lagTillDestination)
         if (wannaDriveInHours.contains(timestep)) {
             lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
@@ -50,7 +50,7 @@ class Car(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
     override fun driveAtHour(timestep: Int) {
         // if the vehicle wanted to drive, it is still as delayed as before
-        // (otherwise it just gained an hour, thus reducing delay)
+        // (otherwise it just gained an hour, thus reducing lagTillDestination)
         if (!wannaDriveInHours.contains(timestep)) {
             lagTillDestination -= 1
         }
@@ -102,8 +102,8 @@ class Tram(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     }
 
     override fun getDelayedAtHour(timestep: Int) {
-        // if the vehicle wanted to drive, its delay increased
-        // (otherwise it just waited an hour, not reducing its delay)
+        // if the vehicle wanted to drive, its lagTillDestination increased
+        // (otherwise it just waited an hour, not reducing its lagTillDestination)
         if (wannaDriveInHours.contains(timestep)) {
             lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
@@ -113,7 +113,7 @@ class Tram(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
     override fun driveAtHour(timestep: Int) {
         // if the vehicle wanted to drive, it is still as delayed as before
-        // (otherwise it just gained an hour, thus reducing delay)
+        // (otherwise it just gained an hour, thus reducing lagTillDestination)
         if (!wannaDriveInHours.contains(timestep)) {
             lagTillDestination -= 1
         }
@@ -166,8 +166,8 @@ class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     }
 
     override fun getDelayedAtHour(timestep: Int) {
-        // if the vehicle wanted to drive, its delay increased
-        // (otherwise it just waited an hour, not reducing its delay)
+        // if the vehicle wanted to drive, its lagTillDestination increased
+        // (otherwise it just waited an hour, not reducing its lagTillDestination)
         if (wannaDriveInHours.contains(timestep)) {
             lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
@@ -177,7 +177,7 @@ class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
     override fun driveAtHour(timestep: Int) {
         // if the vehicle wanted to drive, it is still as delayed as before
-        // (otherwise it just gained an hour, thus reducing delay)
+        // (otherwise it just gained an hour, thus reducing lagTillDestination)
         if (!wannaDriveInHours.contains(timestep)) {
             lagTillDestination -= 1
         }
@@ -230,8 +230,8 @@ class Bike(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     }
 
     override fun getDelayedAtHour(timestep: Int) {
-        // if the vehicle wanted to drive, its delay increased
-        // (otherwise it just waited an hour, not reducing its delay)
+        // if the vehicle wanted to drive, its lagTillDestination increased
+        // (otherwise it just waited an hour, not reducing its lagTillDestination)
         if (wannaDriveInHours.contains(timestep)) {
             lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
@@ -241,7 +241,7 @@ class Bike(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
 
     override fun driveAtHour(timestep: Int) {
         // if the vehicle wanted to drive, it is still as delayed as before
-        // (otherwise it just gained an hour, thus reducing delay)
+        // (otherwise it just gained an hour, thus reducing lagTillDestination)
         if (!wannaDriveInHours.contains(timestep)) {
             lagTillDestination -= 1
         }
