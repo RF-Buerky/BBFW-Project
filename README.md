@@ -25,26 +25,38 @@ Die Lizenzrechte sind in der Datei [LICENSE.txt](LICENSE.txt "Link zur Datei LIC
 
 ## Ausführen des Programmes - How to launch the application
 
-1.) Das Programm wird ausgeführt, indem man die .jar-Datei eines [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") ausführt. Durch die Ausführung dieser .jar-Datei wird die Lösung der Verkehrssimulatin in eine CSV-Datei ausgegeben. Diese CSV-Datei wird lokal auf Ihrer Maschine erstellt und Trägt den Namen `results.csv`. Öffnen Sie die Datei um das Ergebnis zu betrachten.
+### Heruntergeladen der .jar-Datei
+Sie können eine beliebige .jar-Datei unter dem Link der bisher veröffentlichten Versionen (ab 1.0) herunterladen: [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes"). Laden Sie dort die Datei mit der Endung `.jar` herunter. Entsprechend der Versionen sind dazugehörige Informationen auf der Internetseite zu finden. Neben der ausführbaren .jar-Datei ist das Herunterladen von komprimierten Ordnern möglich, die u. a. den Source-Code enthalten und dienen Entwicklern für weitere Informationen.
 
-Wie kommt man zu der .jar-Datei?    
-Bei den [Releases](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu bisherigen Releases des Projektes") finden sich am Ende deren beschreibung herunterladbare Dateien bzw. Ordner. Laden Sie dort die Datei mit der Endung `.jar` herunter (die Ordner brauchen Sie nicht - dort ist der Source-Code drin).
+### Ausführung der .jar-Datei über eine Konsole
+Generell benötigen Sie dazu die JRE-Java Runtime Environment. Zu finden unter diesem [LINK](https://www.java.com/de/download/).
 
-Die Datenbasis, auf welcher das Programm läuft kann angepasst werden. Lesen Sie hierfür den Abschnitt "Datengrundlage anpassen" in der Rubrik "Informationen für Mitwirkende.
-
-2.) Ausführen mit Windows PowerShell   
-PowerShell können Sie etwa unter Windows 8/10+ über die Suchfunktion (Windowstaste + S) leicht finden und mit einem Klick darauf aufrufen.
-In Windows PowerShell gibt man folgenden `Befehl` in der Konsole ein (der Pfad, an dem man sich Befindet ist egal):  
+Die Datei kann etwa über die Konsole PowerShell von Windows ausgeführt werden. PowerShell können Sie beispielsweise unter Windows 8/10+ über die Suchfunktion (Windowstaste + S) finden und mit einem Klick darauf aufrufen. Mit folgenden `Befehlen` in der Konsole kann man die Datei ausführen:
+1. Der Pfad, an dem man sich Befindet ist egal:  
 `java -jar "PfadZurDatei"`   
-Hier ein Beispiel zu Version 2.0:   
-`java -jar "C:\Users\Name\Documents\traffic_solution-2.0.jar"`
-
-Alternativ kann man mit `cd "Pfad"` direkt in den Ordnerpfad der .jar-Datei gehen. Daraufhin genügt `java -jar "Dateiname.jar"` als Eingabe, um das Programm auszuführen.
-Beispiel-Code für den Pfad:
+Hier ein Beispiel zu Version 3.0:   
+`java -jar "C:\Users\Name\Documents\traffic_solution-3.0.jar"`
+2. Alternative
+Man kann man mit `cd "Pfad"` direkt in den Ordnerpfad der Datei gehen, an dem sie gespeichert wurde. Daraufhin genügt `java -jar "Dateiname.jar"` als Eingabe, um das Programm auszuführen.
+Beispiel-Befehl für den Pfad:
 `cd C:\Users\Name\Documents\`
 
-Es sollte nun die Ausgabe des Programms in der Konsole erscheinen:
-Die Ausgabe entspricht dem Inhalt der .csv-Datei "result.csv". In dieser Datei sind jene Fahrzeuge gelistet die sich bei ihrer Fahrt aufgrund von Stau verspäten.
+In der Konsole wird das Ergebnis einer Internen Fahrzeugliste ausgegeben. Ab Version 3.0 wird das Ergebnis in einer CSV-Datei ausgegeben die im nächsten Abschnitt näher erläutert wird.
+
+### Ausführung der .jar-Datei mittels Explorer
+Per Doppelklick auf die heruntergeladene Datei können Sie diese ebenfalls ausführen.
+
+Durch die Ausführung der Datei wird die Lösung der Verkehrssimulation in eine CSV-Datei (Comma-separated values) ausgegeben. Diese CSV-Datei wird lokal auf Ihrer Maschine erstellt und trägt den Namen `results.csv`. Öffnen Sie die Datei um das Ergebnis zu betrachten.
+
+### Syntax der CSV-Datei
+Die Ergebnisse werden durch Kommata in der CSV-Datei getrennt. Unterschieden wird in Fahrzeugklasse, Fahrzeugnummer, Erhaltene Verspätung aufgrund von Stau zur Tageszeit x und Tageszeiten an denen ohne verstätung (Stau) gefahren wurde.
+Beispiel aus CSV-Datei:
+1.  Spaltenkopf (Header):
+    `VehicleID,Got a new delay in hours because of traffic jam,Driven without a new delay in hours (no traffic jam)`
+2.  Fahrzeug x:
+    `1,"[7, 9]","[1, 2, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24]"`
+
+Die Datenbasis, auf welcher das Programm läuft kann angepasst werden. Lesen Sie hierfür den Abschnitt "Datengrundlage anpassen" in der Rubrik "Informationen für Mitwirkende.
 
 ## Informationen für Mitwirkende
 
@@ -71,18 +83,34 @@ Die Bearbeiter sind Neulinge auf dem Gebiet der Versionskontrolle und dem Kodier
 
 ### Datengrundlage anpassen
 
-Um die Datengrundlage des Programmes zu ändern, müssen Sie den src-Ordner eines Releases herunterladen. Die Releases finden Sie [hier](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu Releases"). Laden Sie den Ordner `Source code (zip)`eines Release herunter. Nach dem entpacken finden Sie in dem Ordnerpfad `...\BBFW-Project-3.0\src\main\resources` eine CSV-Datei namens `driveInterest.csv`. Diese Datei beinhaltet die Datengrundlage.
+Um die Datengrundlage des Programmes zu ändern, müssen Sie den src-Ordner eines Releases herunterladen. Die Releases finden Sie [hier](https://github.com/RF-Buerky/BBFW-Project/releases "Link zu Releases"). Laden Sie den Ordner `Source code (zip)`eines Release herunter. Nach dem entpacken finden Sie etwa in dem Ordnerpfad `...\BBFW-Project-3.0\src\main\resources` eine CSV-Datei namens `driveInterest.csv`. Diese Datei beinhaltet die Datengrundlage.
 
 Öffnen Sie die Datei mit einem Editor. Fügen Sie neue Fahrzeuge hinzu/löschen Sie unerwünschte Fahrzeuge heraus. Die Eingabe muss zwingend folgenden Syntax haben:
-    `{eindeutige Fahrzeugkennung als Ganzzahl}, {Stunden in denen das Fahrzeug plant zu fahren, getrennt durch /}`    
-Zum Beispiel: `6,	7/19/12/23`    
-Wenn das Fahrzeug die Kennung "6" hat und in den Stunden "7, 19, 12, 23" zu fahren plant (die Reihenfolge der Stunden darf wie in diesem Beispiel ungeordnet sein).
+In der ersten Zeile steht der `Header` der nicht geändert werden soll!
+1.  eindeutige Fahrzeugklasse: `{Vehicle class}`
+    Fahrzeugklassen sind: `Car`, `Truck`, `Tram` und `Bike`
+2.  Eindeutige Fahrzeugnummer als Ganzzahl: `{Vehicle Id}`
+    Laufende Nummern sind: `1`, `2`, `3`, ..., `n`
+3.  Tagesstunde die das Fahrzeug plant zu fahren: `Hour of day the vehicle is planning to drive`
+    Mit Schrägstrich getrennt: `7/19/12/23/1/5`
 
-Speichern Sie nach den Änderungen die Datei ab und erstellen Sie die .jar-Datei.
+Syntax Beispiele:
+1. `Truck, 6, 7/19/12/23/1/5`
+2. `Car, 3, 6/7/8/9/10/11/12/16/17/18/19/20/21/22/23/24/1/2/3/4/5/13/14/15`
+
+Erläuterung zu 1:
+Das Fahrzeug `Truck` hat die Kennung `6` und plant in den Stunden "7, 19, 12, 23, 1 und 5" zu fahren. (die Reihenfolge der Stunden darf wie in diesem Beispiel ungeordnet sein).
+
+Speichern Sie nach den Änderungen die Datei ab und erstellen Sie die .jar-Datei wie im nächsten Abschnitt beschrieben.
+
+#### Weitere Hinweise
+Die Fahrzeugklassen unterscheiden sich in ihrem Kapazitätsfaktor und lasten das Straßennetz unterschiedlich stark aus:
+- Cars (Autos) beanspruchen `1` Kapazitätspunkt des Staraßennetzes
+- Trucks (LKWs) `3` Punkte
+- Trams (Straßenbahnen) `5`
+- bikes (Motorräder) kosten `0,1` Kapazitätspunkte
 
 Alternativ können Sie eine andere Datengrundlage im Source-Code des Projektes öffnen. Von diesem Eingriff ist jedoch  abzuraten, dies sollten nur Experten vornehmen. Aus diesen Gründen wird das Vorgehen hier nicht erläutert.
-
-
 
 ### Erstellung der .jar-Datei zum Ausführen
 
