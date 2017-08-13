@@ -374,41 +374,41 @@ class VehicleTest {
         val testTruck = Truck(1, mutableListOf(1, 2, 5, 6))
         val testTram = Tram(1, mutableListOf(1, 2, 5, 6))
 
-        var result1 : Int = testCar.lagTillDestination
-        assertEquals (0 , result1)
+        var result1: Int = testCar.lagTillDestination
+        assertEquals(0, result1)
         testCar.getDelayedAtHour(5)
-        var result2 : Int = testCar.lagTillDestination
-        assertEquals (1 , result2)
+        var result2: Int = testCar.lagTillDestination
+        assertEquals(1, result2)
         testCar.getDelayedAtHour(6)
-        var result3 : Int = testCar.lagTillDestination
-        assertEquals (2 , result3)
+        var result3: Int = testCar.lagTillDestination
+        assertEquals(2, result3)
 
         result1 = testBike.lagTillDestination
-        assertEquals (0 , result1)
+        assertEquals(0, result1)
         testBike.getDelayedAtHour(5)
         result2 = testBike.lagTillDestination
-        assertEquals (1 , result2)
+        assertEquals(1, result2)
         testBike.getDelayedAtHour(6)
         result3 = testBike.lagTillDestination
-        assertEquals (2 , result3)
+        assertEquals(2, result3)
 
         result1 = testTruck.lagTillDestination
-        assertEquals (0 , result1)
+        assertEquals(0, result1)
         testTruck.getDelayedAtHour(5)
         result2 = testTruck.lagTillDestination
-        assertEquals (1 , result2)
+        assertEquals(1, result2)
         testTruck.getDelayedAtHour(6)
         result3 = testTruck.lagTillDestination
-        assertEquals (2 , result3)
+        assertEquals(2, result3)
 
         result1 = testTram.lagTillDestination
-        assertEquals (0 , result1)
+        assertEquals(0, result1)
         testTram.getDelayedAtHour(5)
         result2 = testTram.lagTillDestination
-        assertEquals (1 , result2)
+        assertEquals(1, result2)
         testTram.getDelayedAtHour(6)
         result3 = testTram.lagTillDestination
-        assertEquals (2 , result3)
+        assertEquals(2, result3)
 
     }
 
@@ -419,41 +419,41 @@ class VehicleTest {
         val testTruck = Truck(1, mutableListOf(1, 2, 5, 6))
         val testTram = Tram(1, mutableListOf(1, 2, 5, 6))
 
-        var result1 : Int = testCar.lagTillDestination
-        assertEquals (0 , result1)
+        var result1: Int = testCar.lagTillDestination
+        assertEquals(0, result1)
         testCar.getDelayedAtHour(8)
-        var result2 : Int = testCar.lagTillDestination
-        assertEquals (0 , result2)
+        var result2: Int = testCar.lagTillDestination
+        assertEquals(0, result2)
         testCar.getDelayedAtHour(9)
-        var result3 : Int = testCar.lagTillDestination
-        assertEquals (0 , result3)
+        var result3: Int = testCar.lagTillDestination
+        assertEquals(0, result3)
 
         result1 = testBike.lagTillDestination
-        assertEquals (0 , result1)
+        assertEquals(0, result1)
         testBike.getDelayedAtHour(8)
         result2 = testBike.lagTillDestination
-        assertEquals (0 , result2)
+        assertEquals(0, result2)
         testBike.getDelayedAtHour(9)
         result3 = testBike.lagTillDestination
-        assertEquals (0 , result3)
+        assertEquals(0, result3)
 
         result1 = testTruck.lagTillDestination
-        assertEquals (0 , result1)
+        assertEquals(0, result1)
         testTruck.getDelayedAtHour(8)
         result2 = testTruck.lagTillDestination
-        assertEquals (0 , result2)
+        assertEquals(0, result2)
         testTruck.getDelayedAtHour(9)
         result3 = testTruck.lagTillDestination
-        assertEquals (0 , result3)
+        assertEquals(0, result3)
 
         result1 = testTram.lagTillDestination
-        assertEquals (0 , result1)
+        assertEquals(0, result1)
         testTram.getDelayedAtHour(8)
         result2 = testTram.lagTillDestination
-        assertEquals (0 , result2)
+        assertEquals(0, result2)
         testTram.getDelayedAtHour(9)
         result3 = testTram.lagTillDestination
-        assertEquals (0 , result3)
+        assertEquals(0, result3)
 
     }
 
