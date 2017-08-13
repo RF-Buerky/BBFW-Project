@@ -50,7 +50,7 @@ class VehicleTest {
     fun delay_delayOfNewCar_delayIsZero() {
         val testCar: Car = Car(5, mutableListOf(1, 2))
 
-        val result: Int = testCar.delay
+        val result: Int = testCar.lagTillDestination
         assertEquals(0, result)
     }
 
@@ -58,7 +58,7 @@ class VehicleTest {
     fun delay_delayOfNewTram_delayIsZero() {
         val testTram: Tram = Tram(5, mutableListOf(1, 2))
 
-        val result: Int = testTram.delay
+        val result: Int = testTram.lagTillDestination
         assertEquals(0, result)
     }
 
@@ -66,7 +66,7 @@ class VehicleTest {
     fun delay_delayOfNewTruck_delayIsZero() {
         val testTruck: Truck = Truck(5, mutableListOf(1, 2))
 
-        val result: Int = testTruck.delay
+        val result: Int = testTruck.lagTillDestination
         assertEquals(0, result)
     }
 
@@ -74,7 +74,7 @@ class VehicleTest {
     fun delay_delayOfNewBike_delayIsZero() {
         val testBike: Bike = Bike(5, mutableListOf(1, 2))
 
-        val result: Int = testBike.delay
+        val result: Int = testBike.lagTillDestination
         assertEquals(0, result)
     }
 
@@ -230,7 +230,7 @@ class VehicleTest {
     fun vehicleWantsToDriveAt_CarIsDelayedOrWantsToDrive_CarWantsToDrive() {
         val testCar1: Car = Car(5, mutableListOf(1, 2, 6))
         val testCar2: Car = Car(0, mutableListOf(5, 24))
-        testCar2.delay = 2
+        testCar2.lagTillDestination = 2
 
         val result1: Boolean = testCar1.vehicleWantsToDriveAt(6)
         val result2: Boolean = testCar2.vehicleWantsToDriveAt(6)
@@ -243,7 +243,7 @@ class VehicleTest {
     fun vehicleWantsToDriveAt_TramIsDelayedOrWantsToDrive_TramWantsToDrive() {
         val testTram1: Tram = Tram(5, mutableListOf(1, 2, 6))
         val testTram2: Tram = Tram(0, mutableListOf(5, 24))
-        testTram2.delay = 2
+        testTram2.lagTillDestination = 2
 
         val result1: Boolean = testTram1.vehicleWantsToDriveAt(6)
         val result2: Boolean = testTram2.vehicleWantsToDriveAt(6)
@@ -256,7 +256,7 @@ class VehicleTest {
     fun vehicleWantsToDriveAt_TruckIsDelayedOrWantsToDrive_TramWantsToDrive() {
         val testTram1: Tram = Tram(5, mutableListOf(1, 2, 6))
         val testTram2: Tram = Tram(0, mutableListOf(5, 24))
-        testTram2.delay = 2
+        testTram2.lagTillDestination = 2
 
         val result1: Boolean = testTram1.vehicleWantsToDriveAt(6)
         val result2: Boolean = testTram2.vehicleWantsToDriveAt(6)
@@ -269,7 +269,7 @@ class VehicleTest {
     fun vehicleWantsToDriveAt_BikeIsDelayedOrWantsToDrive_BikeWantsToDrive() {
         val testBike1: Bike = Bike(5, mutableListOf(1, 2, 6))
         val testBike2: Bike = Bike(0, mutableListOf(5, 24))
-        testBike2.delay = 2
+        testBike2.lagTillDestination = 2
 
         val result1: Boolean = testBike1.vehicleWantsToDriveAt(6)
         val result2: Boolean = testBike2.vehicleWantsToDriveAt(6)
@@ -331,21 +331,131 @@ class VehicleTest {
     // ____________________________________________________________________________________________________
     // ____________________________________________________________________________________________________
 
-/*
+    @Test
+    fun getDelayedAtHour_vehicleGetsDelayed_newDelayIsAddedToListOfDelays() {
+        val testCar = Car(1, mutableListOf(1, 2, 5))
+        val testBike = Bike(1, mutableListOf(1, 2, 5))
+        val testTruck = Truck(1, mutableListOf(1, 2, 5))
+        val testTram = Tram(1, mutableListOf(1, 2, 5))
+
+        val vehicles: List<Vehicle> = listOf(testCar, testBike, testTruck, testTram)
+
+        for (vehicle in vehicles) {
+
+            vehicle.getDelayedAtHour(5)
+            val result: Boolean = vehicle.gotNewDelayInHours.contains(5)
+
+            assertEquals(true, result)
+        }
+    }
 
     @Test
-    fun getDelayedAtHour_trafficJamInUnorderedSeveralHours_vehicleGetsOftenDelayedAndOutputIsInOrder() {
-        val BMW: Vehicle = Vehicle(1, mutableListOf(1, 2, 3, 4, 5, 6))
+    fun getDelayedAtHour_vehicleGetsDelayed_NotANewDelayIfTimestepWasNotInWannaDriveList() {
+        val testCar = Car(1, mutableListOf(1, 2, 5))
+        val testBike = Bike(1, mutableListOf(1, 2, 5))
+        val testTruck = Truck(1, mutableListOf(1, 2, 5))
+        val testTram = Tram(1, mutableListOf(1, 2, 5))
 
-        BMW.getDelayedAtHour(1)
-        BMW.getDelayedAtHour(5)
-        BMW.getDelayedAtHour(3)
-        BMW.getDelayedAtHour(4)
+        val vehicles: List<Vehicle> = listOf(testCar, testBike, testTruck, testTram)
 
-        val correctList: MutableList <Int> = mutableListOf(1, 3, 4, 5)
-        assertEquals(correctList, BMW.gotNewDelayInHours)
+        for (vehicle in vehicles) {
+
+            vehicle.getDelayedAtHour(6)
+            val result: Boolean = vehicle.gotNewDelayInHours.contains(6)
+
+            assertEquals(false, result)
+        }
     }
-*/
+
+    @Test
+    fun getDelayedAtHour_vehicleGetsDelayed_lagTillDestinationIncreasesIfTimestepWasInList() {
+        val testCar = Car(1, mutableListOf(1, 2, 5, 6))
+        val testBike = Bike(1, mutableListOf(1, 2, 5, 6))
+        val testTruck = Truck(1, mutableListOf(1, 2, 5, 6))
+        val testTram = Tram(1, mutableListOf(1, 2, 5, 6))
+
+        var result1 : Int = testCar.lagTillDestination
+        assertEquals (0 , result1)
+        testCar.getDelayedAtHour(5)
+        var result2 : Int = testCar.lagTillDestination
+        assertEquals (1 , result2)
+        testCar.getDelayedAtHour(6)
+        var result3 : Int = testCar.lagTillDestination
+        assertEquals (2 , result3)
+
+        result1 = testBike.lagTillDestination
+        assertEquals (0 , result1)
+        testBike.getDelayedAtHour(5)
+        result2 = testBike.lagTillDestination
+        assertEquals (1 , result2)
+        testBike.getDelayedAtHour(6)
+        result3 = testBike.lagTillDestination
+        assertEquals (2 , result3)
+
+        result1 = testTruck.lagTillDestination
+        assertEquals (0 , result1)
+        testTruck.getDelayedAtHour(5)
+        result2 = testTruck.lagTillDestination
+        assertEquals (1 , result2)
+        testTruck.getDelayedAtHour(6)
+        result3 = testTruck.lagTillDestination
+        assertEquals (2 , result3)
+
+        result1 = testTram.lagTillDestination
+        assertEquals (0 , result1)
+        testTram.getDelayedAtHour(5)
+        result2 = testTram.lagTillDestination
+        assertEquals (1 , result2)
+        testTram.getDelayedAtHour(6)
+        result3 = testTram.lagTillDestination
+        assertEquals (2 , result3)
+
+    }
+
+    @Test
+    fun getDelayedAtHour_vehicleGetsDelayed_lagTillDestinationDoesNotIncreaseAsTimestepIsNotInWannaDriveList() {
+        val testCar = Car(1, mutableListOf(1, 2, 5, 6))
+        val testBike = Bike(1, mutableListOf(1, 2, 5, 6))
+        val testTruck = Truck(1, mutableListOf(1, 2, 5, 6))
+        val testTram = Tram(1, mutableListOf(1, 2, 5, 6))
+
+        var result1 : Int = testCar.lagTillDestination
+        assertEquals (0 , result1)
+        testCar.getDelayedAtHour(8)
+        var result2 : Int = testCar.lagTillDestination
+        assertEquals (0 , result2)
+        testCar.getDelayedAtHour(9)
+        var result3 : Int = testCar.lagTillDestination
+        assertEquals (0 , result3)
+
+        result1 = testBike.lagTillDestination
+        assertEquals (0 , result1)
+        testBike.getDelayedAtHour(8)
+        result2 = testBike.lagTillDestination
+        assertEquals (0 , result2)
+        testBike.getDelayedAtHour(9)
+        result3 = testBike.lagTillDestination
+        assertEquals (0 , result3)
+
+        result1 = testTruck.lagTillDestination
+        assertEquals (0 , result1)
+        testTruck.getDelayedAtHour(8)
+        result2 = testTruck.lagTillDestination
+        assertEquals (0 , result2)
+        testTruck.getDelayedAtHour(9)
+        result3 = testTruck.lagTillDestination
+        assertEquals (0 , result3)
+
+        result1 = testTram.lagTillDestination
+        assertEquals (0 , result1)
+        testTram.getDelayedAtHour(8)
+        result2 = testTram.lagTillDestination
+        assertEquals (0 , result2)
+        testTram.getDelayedAtHour(9)
+        result3 = testTram.lagTillDestination
+        assertEquals (0 , result3)
+
+    }
 
     // Tests if the function driveAtHour works
     // ____________________________________________________________________________________________________
@@ -388,12 +498,12 @@ class VehicleTest {
     @Test
     fun driveAtHour_CarDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
         val testCar = Car(1, mutableListOf(1, 2, 5))
-        testCar.delay = 2
+        testCar.lagTillDestination = 2
 
-        val result1: Int = testCar.delay
+        val result1: Int = testCar.lagTillDestination
         testCar.driveAtHour(7)
         val result2: Boolean = testCar.droveWithoutNewDelayInHours.contains(7)
-        val result3: Int = testCar.delay
+        val result3: Int = testCar.lagTillDestination
 
         assertEquals(2, result1)
         assertEquals(true, result2)
@@ -403,12 +513,12 @@ class VehicleTest {
     @Test
     fun driveAtHour_BikeDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
         val testBike = Bike(1, mutableListOf(1, 2, 5))
-        testBike.delay = 2
+        testBike.lagTillDestination = 2
 
-        val result1: Int = testBike.delay
+        val result1: Int = testBike.lagTillDestination
         testBike.driveAtHour(7)
         val result2: Boolean = testBike.droveWithoutNewDelayInHours.contains(7)
-        val result3: Int = testBike.delay
+        val result3: Int = testBike.lagTillDestination
 
         assertEquals(2, result1)
         assertEquals(true, result2)
@@ -418,12 +528,12 @@ class VehicleTest {
     @Test
     fun driveAtHour_TruckDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
         val testTruck = Truck(1, mutableListOf(1, 2, 5))
-        testTruck.delay = 2
+        testTruck.lagTillDestination = 2
 
-        val result1: Int = testTruck.delay
+        val result1: Int = testTruck.lagTillDestination
         testTruck.driveAtHour(7)
         val result2: Boolean = testTruck.droveWithoutNewDelayInHours.contains(7)
-        val result3: Int = testTruck.delay
+        val result3: Int = testTruck.lagTillDestination
 
         assertEquals(2, result1)
         assertEquals(true, result2)
@@ -433,12 +543,12 @@ class VehicleTest {
     @Test
     fun driveAtHour_TramDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
         val testTram = Tram(1, mutableListOf(1, 2, 5))
-        testTram.delay = 2
+        testTram.lagTillDestination = 2
 
-        val result1: Int = testTram.delay
+        val result1: Int = testTram.lagTillDestination
         testTram.driveAtHour(7)
         val result2: Boolean = testTram.droveWithoutNewDelayInHours.contains(7)
-        val result3: Int = testTram.delay
+        val result3: Int = testTram.lagTillDestination
 
         assertEquals(2, result1)
         assertEquals(true, result2)
