@@ -426,7 +426,7 @@ class VehicleTest {
     fun driveAtHour_TramDriveAtOneHourBecauseOfDelay_drivenHourAddedInListOfDrivesWithoutNewDelayAndDelayDecreases() {
         val testTram = Tram(1, mutableListOf(1, 2, 5))
         testTram.delay = 2
-        
+
         val result1: Int = testTram.delay
         testTram.driveAtHour(7)
         val result2: Boolean = testTram.droveWithoutNewDelayInHours.contains(7)
@@ -503,4 +503,9 @@ class VehicleTest {
             assertFalse(vehicle.vehicleWantsToDriveAt(6))
         }
     }
+
+    // Tests for randomDelayByCapacityAndDemand
+    // __________________________________________________________________________________________
+
+    
 }
