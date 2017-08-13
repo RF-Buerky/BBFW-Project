@@ -22,7 +22,7 @@ class Car(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override val capacityFactor = 10
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
+    var lagTillDestination = 0
 
     override fun getClass(): String {
         return "Car"
@@ -35,14 +35,14 @@ class Car(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override fun vehicleWantsToDriveAt(timestep: Int): Boolean {
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
-        return wannaDriveInHours.contains(timestep) || delay > 0
+        return wannaDriveInHours.contains(timestep) || lagTillDestination > 0
     }
 
     override fun getDelayedAtHour(timestep: Int) {
         // if the vehicle wanted to drive, its delay increased
         // (otherwise it just waited an hour, not reducing its delay)
         if (wannaDriveInHours.contains(timestep)) {
-            delay += 1
+            lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
             this.gotNewDelayInHours.sort()
         }
@@ -52,7 +52,7 @@ class Car(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         // if the vehicle wanted to drive, it is still as delayed as before
         // (otherwise it just gained an hour, thus reducing delay)
         if (!wannaDriveInHours.contains(timestep)) {
-            delay -= 1
+            lagTillDestination -= 1
         }
 
         this.droveWithoutNewDelayInHours.add(timestep)
@@ -85,7 +85,7 @@ class Tram(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override val capacityFactor = 50
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
+    var lagTillDestination = 0
 
     override fun getClass(): String {
         return "Tram"
@@ -98,14 +98,14 @@ class Tram(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override fun vehicleWantsToDriveAt(timestep: Int): Boolean {
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
-        return wannaDriveInHours.contains(timestep) || delay > 0
+        return wannaDriveInHours.contains(timestep) || lagTillDestination > 0
     }
 
     override fun getDelayedAtHour(timestep: Int) {
         // if the vehicle wanted to drive, its delay increased
         // (otherwise it just waited an hour, not reducing its delay)
         if (wannaDriveInHours.contains(timestep)) {
-            delay += 1
+            lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
             this.gotNewDelayInHours.sort()
         }
@@ -115,7 +115,7 @@ class Tram(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         // if the vehicle wanted to drive, it is still as delayed as before
         // (otherwise it just gained an hour, thus reducing delay)
         if (!wannaDriveInHours.contains(timestep)) {
-            delay -= 1
+            lagTillDestination -= 1
         }
 
         this.droveWithoutNewDelayInHours.add(timestep)
@@ -149,7 +149,7 @@ class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override val capacityFactor = 30
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
+    var lagTillDestination = 0
 
     override fun getClass(): String {
         return "Truck"
@@ -162,14 +162,14 @@ class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override fun vehicleWantsToDriveAt(timestep: Int): Boolean {
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
-        return wannaDriveInHours.contains(timestep) || delay > 0
+        return wannaDriveInHours.contains(timestep) || lagTillDestination > 0
     }
 
     override fun getDelayedAtHour(timestep: Int) {
         // if the vehicle wanted to drive, its delay increased
         // (otherwise it just waited an hour, not reducing its delay)
         if (wannaDriveInHours.contains(timestep)) {
-            delay += 1
+            lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
             this.gotNewDelayInHours.sort()
         }
@@ -179,7 +179,7 @@ class Truck(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         // if the vehicle wanted to drive, it is still as delayed as before
         // (otherwise it just gained an hour, thus reducing delay)
         if (!wannaDriveInHours.contains(timestep)) {
-            delay -= 1
+            lagTillDestination -= 1
         }
 
         this.droveWithoutNewDelayInHours.add(timestep)
@@ -213,7 +213,7 @@ class Bike(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override val capacityFactor = 1
     override val gotNewDelayInHours: MutableList<Int> = mutableListOf()
     override val droveWithoutNewDelayInHours: MutableList<Int> = mutableListOf()
-    var delay = 0
+    var lagTillDestination = 0
 
     override fun getClass(): String {
         return "Bike"
@@ -226,14 +226,14 @@ class Bike(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
     override fun vehicleWantsToDriveAt(timestep: Int): Boolean {
         // the vehicle wants to drive if its drive plan says so
         // or if it got previously delayed
-        return wannaDriveInHours.contains(timestep) || delay > 0
+        return wannaDriveInHours.contains(timestep) || lagTillDestination > 0
     }
 
     override fun getDelayedAtHour(timestep: Int) {
         // if the vehicle wanted to drive, its delay increased
         // (otherwise it just waited an hour, not reducing its delay)
         if (wannaDriveInHours.contains(timestep)) {
-            delay += 1
+            lagTillDestination += 1
             this.gotNewDelayInHours.add(timestep)
             this.gotNewDelayInHours.sort()
         }
@@ -243,7 +243,7 @@ class Bike(val id: Int, val wannaDriveInHours: MutableList<Int>) : Vehicle {
         // if the vehicle wanted to drive, it is still as delayed as before
         // (otherwise it just gained an hour, thus reducing delay)
         if (!wannaDriveInHours.contains(timestep)) {
-            delay -= 1
+            lagTillDestination -= 1
         }
 
         this.droveWithoutNewDelayInHours.add(timestep)
