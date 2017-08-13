@@ -178,7 +178,7 @@ class RoadNetworkTest {
         road.simulateScenario(allVehicles)
 
         for (vehicle in allVehicles) {
-            val test: Boolean = ( vehicle.delay > 0 )
+            val test: Boolean = ( vehicle.lagTillDestination > 0 )
             assertEquals(true, test)
         }
     }*//*
